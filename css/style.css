@@ -367,3 +367,22 @@ footer.site a{color:#fff}
 .tl-img{width:100%;max-height:220px;object-fit:cover;border-radius:10px;margin:6px 0 10px}
 .tl.reveal{transform:translateX(-20px)}.tl.reveal.in{transform:none}
 @media (max-width:640px){.tl-progress{left:8px}}
+
+/* Menu principal plus visible */
+.topnav nav{background:rgba(22,30,20,.55);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:5px;gap:2px;box-shadow:0 6px 24px rgba(0,0,0,.25)}
+.topnav nav a{font-size:1rem;padding:9px 15px;opacity:1;color:#fff}
+.topnav nav a:hover,.topnav nav a.active{background:var(--ochre);color:#fff}
+.topnav.solid nav{background:var(--card);border-color:var(--line);box-shadow:var(--shadow)}
+.topnav.solid nav a{color:var(--forest)}
+.topnav.solid nav a:hover,.topnav.solid nav a.active{background:var(--forest);color:#fff}
+.topnav .iconbtn{background:rgba(22,30,20,.55);border:1px solid rgba(255,255,255,.28);backdrop-filter:blur(10px)}
+@media (max-width:1180px){.topnav nav a{font-size:.9rem;padding:8px 10px}}
+.install-btn{display:none}
+.install-btn.on{display:inline-flex}
+.pwa-banner{position:fixed;left:12px;right:12px;bottom:calc(var(--nav-h) + 12px + env(safe-area-inset-bottom));z-index:120;background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow-lg);display:flex;gap:12px;align-items:center;padding:12px 12px 12px 14px;transform:translateY(160%);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.pwa-banner.on{transform:none}
+.pwa-banner img{width:44px;height:44px;border-radius:12px;flex:none}
+.pwa-banner div{flex:1;line-height:1.25}
+.pwa-banner small{display:block;color:var(--ink-3);font-size:.78rem}
+.pwa-banner .x{border:0;background:none;color:var(--ink-3);font-size:1rem;padding:4px}
+body.admin .pwa-banner{bottom:12px}

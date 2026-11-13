@@ -489,5 +489,6 @@ function startTour(){
 }
 $('#aTour').onclick = startTour;
 
+PWA('Belizel Admin');
 boot();
 })();

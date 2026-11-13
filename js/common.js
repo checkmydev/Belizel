@@ -149,6 +149,36 @@ window.Tour = function(steps, key){
     document.body.append(hole, pop); document.addEventListener('keydown', onKey); window.addEventListener('resize', place); go(0); } };
 };
 
+/* Application installable (PWA) : bouton + bannière discrète sur mobile, consignes sur iPhone */
+window.PWA = (appName) => {
+  if('serviceWorker' in navigator && location.protocol !== 'file:') navigator.serviceWorker.register('sw.js').catch(()=>{});
+  const standalone = matchMedia('(display-mode: standalone)').matches || navigator.standalone;
+  if(standalone) return;
+  const ios = /iphone|ipad|ipod/i.test(navigator.userAgent) && !/crios|fxios/i.test(navigator.userAgent);
+  let deferred = null;
+  const btns = () => $$('.install-btn');
+  const iosHelp = () => {
+    const m = document.createElement('div'); m.className = 'modal-bg on'; m.innerHTML = `<div class="modal"><div class="bd"><h3>Installer ${esc(appName)}</h3>
+      <div class="steps"><div><span class="n">1</span><span>Touchez le bouton <b>Partager</b> <span style="font-size:1.2em">⎋</span> en bas de Safari.</span></div>
+      <div><span class="n">2</span><span>Choisissez <b>« Sur l'écran d'accueil »</b>.</span></div><div><span class="n">3</span><span>Touchez <b>Ajouter</b> : l'icône apparaît avec vos applications.</span></div></div>
+      <button class="btn btn-primary">Compris</button></div></div>`;
+    document.body.appendChild(m); m.onclick = e => { if(e.target===m || e.target.closest('button')) m.remove(); };
+  };
+  const install = async () => {
+    if(deferred){ deferred.prompt(); const r = await deferred.userChoice; if(r.outcome==='accepted'){ toast('Application installée ✓'); hide(); } deferred = null; }
+    else if(ios) iosHelp();
+  };
+  const banner = document.createElement('div'); banner.className = 'pwa-banner';
+  banner.innerHTML = `<img src="${document.querySelector('link[rel=apple-touch-icon]')?.href||''}" alt=""><div><b>Installer ${esc(appName)}</b><small>Accès en un geste depuis votre écran d'accueil, même hors ligne.</small></div><button class="btn btn-primary btn-sm">Installer</button><button class="x" aria-label="Fermer">✕</button>`;
+  banner.querySelector('.btn').onclick = install; banner.querySelector('.x').onclick = () => { hide(); store.set('pwa.dismissed', Date.now()); };
+  const hide = () => { banner.classList.remove('on'); btns().forEach(b => b.classList.remove('on')); };
+  const show = () => { btns().forEach(b => { b.classList.add('on'); b.onclick = install; });
+    const d = store.get('pwa.dismissed', 0); if(matchMedia('(max-width:900px)').matches && Date.now()-d > 7*864e5){ document.body.appendChild(banner); setTimeout(() => banner.classList.add('on'), 8000); } };
+  addEventListener('beforeinstallprompt', e => { e.preventDefault(); deferred = e; show(); });
+  addEventListener('appinstalled', hide);
+  if(ios) show();
+};
+
 /* Révélation au défilement */
 window.revealAll = () => {
   const io = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold:.12});

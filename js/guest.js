@@ -477,6 +477,7 @@ $('#guideLink').onclick = e => { e.preventDefault(); openDrawer('<h3>Guide d\'ut
 if(!store.get('toured', false)) setTimeout(() => $('#welcome').classList.add('on'), 1800);
 if(location.hash === '#tour') setTimeout(startTour, 800);
 
+PWA('Belizel');
 revealAll();
 addEventListener('scroll', () => { const tl = $('.timeline'), pr = $('.tl-progress'); if(!tl || !pr) return; const r = tl.getBoundingClientRect(); const p = Math.max(0, Math.min(1, (innerHeight*0.6 - r.top) / r.height)); pr.style.height = (p*100)+'%'; }, {passive:true});
 })();

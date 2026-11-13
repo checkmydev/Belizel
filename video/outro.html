@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><title>Belizel</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Fraunces:opsz,wght@9..144,700&family=Nunito+Sans:wght@700;800&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;height:100%;overflow:hidden;background:#1d2a1f;font-family:"Nunito Sans",sans-serif}
+.bg{position:absolute;inset:0;background:url(../img/p20.jpg) center/cover;transform:scale(1.12);animation:kb 9s ease-out forwards;filter:saturate(1.05)}
+.bg.owner{background-image:url(../img/p01.jpg)}
+@keyframes kb{to{transform:scale(1)}}
+.veil{position:absolute;inset:0;background:radial-gradient(circle at 50% 55%,rgba(20,28,18,.35),rgba(20,28,18,.82))}
+.c{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-align:center}
+.c>*{opacity:0;transform:translateY(18px);animation:up .9s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes up{to{opacity:1;transform:none}}
+svg{width:110px;height:110px;animation-delay:.2s!important}
+.hand{font-family:Caveat,cursive;color:#d8b46a;font-size:56px;transform:rotate(-2deg);animation-delay:.5s!important;margin-top:10px}
+h1{font-family:Fraunces,serif;font-size:150px;margin:0;line-height:1;letter-spacing:-.02em;animation-delay:.7s!important}
+p{font-size:32px;margin:18px 0 34px;opacity:.95;animation-delay:1s!important}
+.cta{background:#c4552c;border-radius:999px;padding:20px 44px;font-size:30px;font-weight:800;box-shadow:0 10px 30px rgba(196,85,44,.45);animation-delay:1.3s!important}
+.url{font-size:24px;margin-top:26px;opacity:.85;animation-delay:1.6s!important;letter-spacing:.03em}
+</style></head><body>
+<div class="bg" id="bg"></div><div class="veil"></div>
+<div class="c">
+  <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="19" fill="#c4552c"/><path d="M8 27c4-3 8-3 12 0s8 3 12 0" stroke="#f6f0e3" stroke-width="2.2" fill="none" stroke-linecap="round"/><path d="M11 22 20 12l9 10" stroke="#f6f0e3" stroke-width="2.4" fill="none" stroke-linejoin="round" stroke-linecap="round"/><path d="M27 12v4" stroke="#f6f0e3" stroke-width="2.2" stroke-linecap="round"/></svg>
+  <span class="hand" id="hand">Au cœur de la Gaume</span>
+  <h1>Belizel</h1>
+  <p id="sub">Izel · Chiny · Vallée de la Semois</p>
+  <span class="cta" id="cta">Réservez sur Airbnb</span>
+  <span class="url">checkmydev.github.io/Belizel</span>
+</div>
+<script>
+if(new URLSearchParams(location.search).get('v')==='owner'){
+  document.getElementById('bg').classList.add('owner');
+  document.getElementById('hand').textContent = 'Espace propriétaire';
+  document.getElementById('sub').textContent = 'Comparer · Tarifer · Suivre · Accueillir';
+  document.getElementById('cta').textContent = 'Louer mieux, en toute sérénité';
+}
+</script>
+</body></html>

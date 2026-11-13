@@ -38,6 +38,9 @@ const DB = {
     this.manual = m.data?.data || structuredClone(window.MANUAL); this.guestCode = m.data?.guest_code || this.guestCode;
     const s = await this.sb.from('content').select('data').eq('key','stories').maybeSingle();
     this.stories = s.data?.data || structuredClone(window.STORIES || []);
+    const sn = await this.sb.from('content').select('data').eq('key','stories_nl').maybeSingle();
+    this.storiesNl = sn.data?.data || structuredClone(window.STORIES_NL || []);
+    if(!this.manual.nl && window.MANUAL.nl) this.manual.nl = structuredClone(window.MANUAL.nl);
   },
   loadDemo(){
     const fd = window.FINANCE_DEMO || {bookings:[],expenses:[]};
@@ -46,6 +49,8 @@ const DB = {
     this.comps = window.COMPS || null;
     this.manual = store.get('adm.manual', null) || structuredClone(window.MANUAL);
     this.stories = store.get('adm.stories', null) || structuredClone(window.STORIES || []);
+    this.storiesNl = store.get('adm.storiesNl', null) || structuredClone(window.STORIES_NL || []);
+    if(!this.manual.nl && window.MANUAL.nl) this.manual.nl = structuredClone(window.MANUAL.nl);
     this.guestCode = store.get('adm.gcode', 'IZEL2027');
   },
   key: r => r.id || r.uid,
@@ -75,7 +80,8 @@ const DB = {
     if(this.mode==='live'){
       const a = await this.sb.from('manual').upsert({id:1, data:this.manual, guest_code:this.guestCode, updated_at:new Date().toISOString()}); if(a.error) throw a.error;
       const b = await this.sb.from('content').upsert({key:'stories', data:this.stories, updated_at:new Date().toISOString(), updated_by:this.email}); if(b.error) throw b.error;
-    } else { store.set('adm.manual', this.manual); store.set('adm.stories', this.stories); store.set('adm.gcode', this.guestCode); }
+      const c = await this.sb.from('content').upsert({key:'stories_nl', data:this.storiesNl.map(x => ({year:x.year, title:x.title, text:x.text})), updated_at:new Date().toISOString(), updated_by:this.email}); if(c.error) throw c.error;
+    } else { store.set('adm.manual', this.manual); store.set('adm.stories', this.stories); store.set('adm.storiesNl', this.storiesNl); store.set('adm.gcode', this.guestCode); }
   },
   persist(){ if(this.mode==='demo'){ store.set('adm.bookings', this.bookings); store.set('adm.expenses', this.expenses); } }
 };
@@ -204,11 +210,11 @@ function drawMarche(){
   const med = median(withP.map(l=>priceOf(l,sc)));
   $('#mInfo').textContent = `${list.length} annonces · ${withP.length} disponibles à ces dates · médiane ${eur(med)} / nuit`;
   const pts = withP.map(l => ({x:priceOf(l,sc), y:l.rating||null, r:Math.max(4,Math.sqrt(l.reviews||1)*1.6), l})).filter(p=>p.y);
-  const mp = priceOf(SELF,sc);
+  const mpReal = priceOf(SELF,sc), mp = mpReal || SELF.prices?.hiver_semaine?.nightly || L.price2027.hiver_semaine;
   mk('cScatter',{type:'bubble',data:{datasets:[
     {label:'Concurrents',data:pts,backgroundColor:pts.map(p=>p.l.guestFav?'rgba(47,74,52,.65)':'rgba(91,147,160,.45)'),borderColor:'#fff'},
-    ...(mp?[{label:'Belizel',order:-1,data:[{x:mp,y:L.rating,r:Math.sqrt(L.reviews)*1.6+3}],backgroundColor:COL.ochre,borderColor:'#2b2a25',borderWidth:2}]:[])]},
-    options:{plugins:{tooltip:{callbacks:{label:c=>{ const l = c.raw.l; return l ? `${l.name} · ${eur(c.raw.x)} · ★${num(c.raw.y,2)} (${l.reviews})` : `Belizel · ${eur(c.raw.x)} · ★${num(L.rating,2)}`; }}}},
+    ...[{label: mpReal ? 'Belizel' : 'Belizel (indisponible à ces dates, prix de base)',order:-1,data:[{x:mp,y:L.rating,r:Math.sqrt(L.reviews)*1.6+3}],backgroundColor: mpReal ? COL.ochre : 'rgba(196,85,44,.35)',borderColor: mpReal ? '#2b2a25' : COL.ochre,borderWidth:2,borderDash:[4,3]}]]},
+    options:{plugins:{tooltip:{callbacks:{label:c=>{ const l = c.raw.l; return l ? `${l.name} · ${eur(c.raw.x)} · ★${num(c.raw.y,2)} (${l.reviews})` : `Belizel · ${eur(c.raw.x)}${mpReal?'':' (prix de base, indisponible à ces dates)'} · ★${num(L.rating,2)}`; }}}},
       scales:{x:{title:{display:true,text:'Prix par nuit'},ticks:{callback:v=>v+' €'}},y:{title:{display:true,text:'Note'},min:4.2,max:5.02}}}});
   // carte
   cMapLayer.clearLayers(); const ps = withP.map(l=>priceOf(l,sc)); const lo = quant(ps,.1), hi = quant(ps,.9);
@@ -446,29 +452,34 @@ function renderContent(){
   $('#wSsid').oninput = () => { M.wifi.ssid = $('#wSsid').value; dirty(); }; $('#wPass').oninput = () => { M.wifi.password = $('#wPass').value; dirty(); };
   $('#cpLink').onclick = () => navigator.clipboard.writeText($('#gLink').value).then(()=>toast('Lien copié'));
   drawManEd(); drawStories();
-  $('#addStory').onclick = () => { DB.stories.push({year:'', title:'Nouvelle histoire', text:'', photo:'img/p01.jpg'}); drawStories(); dirty(); };
+  $$('#edLang button').forEach(b => b.onclick = () => { edLang = b.dataset.l; $$('#edLang button').forEach(x => x.classList.toggle('on', x===b)); drawManEd(); drawStories(); });
+  $('#addStory').onclick = () => { curStories().push({year:'', title:'Nouvelle histoire', text:'', photo:'img/p01.jpg'}); drawStories(); dirty(); };
   $('#saveContent').onclick = async () => { try{ await DB.saveContent(); $('#saveState').textContent = 'Enregistré ✓'; toast(DB.mode==='live'?'Contenus publiés : le guide est à jour':'Enregistré dans ce navigateur (mode démo)'); }catch(e){ toast('Erreur : '+e.message); } };
   $('#exportContent').onclick = () => { download('manual.js', `// Mode d'emploi exporté depuis l'admin le ${new Date().toLocaleDateString('fr-BE')}\nwindow.MANUAL = ${JSON.stringify(DB.manual, null, 2)};\n`, 'text/javascript');
     download('stories.js', `window.STORIES = ${JSON.stringify(DB.stories, null, 2)};\n`, 'text/javascript'); };
 }
 function dirty(){ $('#saveState').textContent = 'Modifications non enregistrées'; }
+let edLang = 'fr';
+const curMan = () => edLang === 'nl' ? (DB.manual.nl = DB.manual.nl || {sections: structuredClone(DB.manual.sections)}) : DB.manual;
+const curStories = () => edLang === 'nl' ? DB.storiesNl : DB.stories;
 function drawManEd(){
-  const M = DB.manual;
-  $('#manEd').innerHTML = (M.demo?'<div class="banner">Contenu d\'exemple : relisez chaque réponse avec le propriétaire avant d\'activer le code invité.</div>':'') + M.sections.map((s,si) => `<div class="edsec"><h4>${icon(s.icon)} <input class="field" data-st="${si}" value="${esc(s.title)}" style="flex:1;border-radius:10px"></h4>
+  const M = curMan();
+  $('#manEd').innerHTML = (DB.manual.demo?'<div class="banner">Contenu d\'exemple : relisez chaque réponse avec le propriétaire avant d\'activer le code invité.</div>':'') + M.sections.map((s,si) => `<div class="edsec"><h4>${icon(s.icon)} <input class="field" data-st="${si}" value="${esc(s.title)}" style="flex:1;border-radius:10px"></h4>
     ${s.items.map((it,ii) => `<div class="edrow ${/\[/.test(it.a)?'todo-row':''}"><input class="field" data-q="${si}.${ii}" value="${esc(it.q)}"><textarea class="field" data-a="${si}.${ii}">${esc(it.a)}</textarea><button class="mini" data-rm="${si}.${ii}" title="Supprimer" style="border:0;background:none">✕</button></div>`).join('')}
     <button class="btn btn-soft btn-sm" data-addq="${si}">+ Question</button></div>`).join('');
 }
-$('#manEd') && document.addEventListener('input', e => { const t = e.target; const M = DB.manual; if(!M) return;
+$('#manEd') && document.addEventListener('input', e => { const t = e.target; const M = DB.manual ? curMan() : null; if(!M) return;
   if(t.dataset.st!=null){ M.sections[+t.dataset.st].title = t.value; dirty(); }
   if(t.dataset.q){ const [a,b] = t.dataset.q.split('.').map(Number); M.sections[a].items[b].q = t.value; dirty(); }
   if(t.dataset.a){ const [a,b] = t.dataset.a.split('.').map(Number); M.sections[a].items[b].a = t.value; t.closest('.edrow').classList.toggle('todo-row', /\[/.test(t.value)); dirty(); }
-  if(t.dataset.sf){ const [i,k] = t.dataset.sf.split('.'); DB.stories[+i][k] = t.value; if(k==='text' || k==='title') DB.stories[+i].demo = false; dirty(); } });
-document.addEventListener('click', e => { const M = DB.manual; const t = e.target.closest('[data-rm],[data-addq],[data-rs]'); if(!t || !M) return;
+  if(t.dataset.sf){ const [i,k] = t.dataset.sf.split('.'); curStories()[+i][k] = t.value; if(k==='text' || k==='title') curStories()[+i].demo = false; dirty(); } });
+document.addEventListener('click', e => { const M = DB.manual ? curMan() : null; const t = e.target.closest('[data-rm],[data-addq],[data-rs]'); if(!t || !M) return;
   if(t.dataset.rm){ const [a,b] = t.dataset.rm.split('.').map(Number); M.sections[a].items.splice(b,1); drawManEd(); dirty(); }
   if(t.dataset.addq){ M.sections[+t.dataset.addq].items.push({q:'Nouvelle question', a:'[Réponse]'}); drawManEd(); dirty(); }
-  if(t.dataset.rs){ DB.stories.splice(+t.dataset.rs,1); drawStories(); dirty(); } });
+  if(t.dataset.rs){ curStories().splice(+t.dataset.rs,1); drawStories(); dirty(); } });
 function drawStories(){
-  $('#storyEd').innerHTML = DB.stories.map((s,i) => `<div class="edsec">${s.demo?'<span class="demo" style="font-size:.7rem;background:#fff3cd;padding:2px 6px;border-radius:6px;font-weight:800">EXEMPLE</span>':''}
+  const SL = curStories(); if(edLang==='nl') SL.forEach((x,i) => { if(!x.photo && DB.stories[i]) x.photo = DB.stories[i].photo; });
+  $('#storyEd').innerHTML = SL.map((s,i) => `<div class="edsec">${s.demo?'<span class="demo" style="font-size:.7rem;background:#fff3cd;padding:2px 6px;border-radius:6px;font-weight:800">EXEMPLE</span>':''}
     <div class="edrow" style="grid-template-columns:110px 1fr 30px"><input class="field" data-sf="${i}.year" value="${esc(s.year)}" placeholder="Année"><input class="field" data-sf="${i}.title" value="${esc(s.title)}"><button class="mini" data-rs="${i}" style="border:0;background:none">✕</button></div>
     <textarea class="field area" data-sf="${i}.text" rows="3">${esc(s.text)}</textarea><input class="field" data-sf="${i}.photo" value="${esc(s.photo||'')}" placeholder="Photo (ex. img/p04.jpg)" style="border-radius:10px;width:100%"></div>`).join('');
 }

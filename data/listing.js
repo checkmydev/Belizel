@@ -55,3 +55,25 @@ window.LISTING = {
     { src: "img/p26.jpg", cap: "La vallée sous la neige", tag: "Saisons" }
   ]
 };
+
+// Version néerlandaise (alignée par index sur les listes françaises)
+window.LISTING.nl = {
+  tagline: "In het hart van de Gaume",
+  intro: "Een Gaumais huis met okerkleurige muren, verscholen in het dorpje Izel. Hier leeft u op het ritme van de Semois: bossen zover het oog reikt, een kronkelende rivier, de abdij van Orval op enkele minuten en 's avonds een knapperend houtvuur.",
+  highlights: [
+    { title: "Houtkachel", text: "Gezellige leefruimte met eiken parket en zichtbare streekstenen." },
+    { title: "Tuin & terras", text: "Ligstoelen, parasols, tuintafel en barbecue met zicht op het groen." },
+    { title: "3 ruime slaapkamers", text: "Waaronder een volledig houten kamer onder het dak, met kingsize bed." },
+    { title: "Gezinnen welkom", text: "Babybedje, kinderboeken en speelgoed, gezelschapsspellen." },
+    { title: "Telewerken kan", text: "Wifi en een aparte werkplek onder het dak." },
+    { title: "In het hart van de Gaume", text: "Orval, Chiny, Chassepierre en Florenville op minder dan 10 km." }
+  ],
+  rooms: [
+    { name: "Grote kamer onder het dak", beds: "1 kingsize bed · 1 eenpersoonsbed · babybedje" },
+    { name: "Kamer op de eerste verdieping", beds: "1 queensize bed" },
+    { name: "Groene kamer", beds: "1 queensize bed · 1 eenpersoonsbed" },
+    { name: "Leefruimte", beds: "1 slaapbank" }
+  ],
+  amenities: ["Wifi","Werkplek","Houtkachel","Centrale verwarming","Uitgeruste keuken","Vaatwasser","Wasmachine","Oven","Microgolfoven","Diepvriezer","Koffiezetapparaat","Waterkoker","Barbecue","Tuinmeubilair","Ligstoelen","Zicht op de tuin","Bad","Babybedje","Kinderboeken en speelgoed","Gezelschapsspellen","Bluetooth-luidspreker JBL","Mobiele airco","Gratis parking ter plaatse","Verduisterende gordijnen","Bedlinnen","Extra kussens en dekens","EHBO-kit","Rook- en CO-melders","Brandblusser","Lange verblijven"],
+  gallery: ["Het huis aan de tuinkant","De tuin in de lente","Het stenen terras","De leefruimte met streekstenen","De grote eiken tafel","De uitgeruste keuken","De kamer onder het dak","De groene kamer","De kamer op de eerste verdieping","Ochtendlicht","De werkplek onder het dak","De badkamer","De douchekamer","Achtergevel en terras","De okerkleurige gevel, straatkant","Kerstmis in Belizel","De meanders van de Semois","De Semois in de lente","Herfstkleuren","Winterlicht op de rivier","De vallei onder de sneeuw"]
+};

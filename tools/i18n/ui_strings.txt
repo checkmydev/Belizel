@@ -1,0 +1,516 @@
+Belizel · Gîte au cœur de la Gaume
+Belizel, maison de vacances pour 6 personnes à Izel (Chiny), au cœur de la Gaume et de la vallée de la Semois : balades à télécharger, activités, agenda, terroir et histoire.
+Belizel · au cœur de la Gaume
+Une maison gaumaise pour 6, entre forêts, Semois et abbaye d'Orval.
+La maison
+Mode d'emploi
+Installer l'application
+Installer l'appli
+Mon séjour
+Visite guidée
+Bienvenue à Izel
+Une maison gaumaise aux murs ocre, entre forêts profondes, méandres de la Semois et abbaye d'Orval. Le feu de bois en plus.
+Réserver sur Airbnb
+Explorer la région
+Maintenant à Izel
+Chargement de la météo…
+Une vraie maison de village
+En images
+Au fil des saisons
+Cliquez sur une photo pour l'agrandir ; les flèches du clavier permettent de naviguer.
+Pour bien dormir
+3 chambres, 6 couchages
+Chauffage central dans toutes les chambres, stores occultants, linge de lit fourni et lit bébé toujours disponible.
+Tout ce qu'il faut sur place
+Ils sont venus
+Ce que disent les voyageurs
+Les mots qui reviennent
+Thèmes repérés dans les commentaires, avec leur nombre de mentions.
+Autour de la maison
+La carte de vos escapades
+Balades, activités, tables, producteurs, patrimoine et événements : tout est sur la carte, avec la maison au centre.
+À pied ou à vélo
+Balades balisées autour d'Izel
+Tracés officiels balisés, avec profil d'altitude, et fichier GPX à télécharger pour votre téléphone, votre montre ou votre GPS.
+Toutes difficultés
+Toutes distances
+Moins de 6 km
+6 à 12 km
+Plus de 12 km
+Les plus proches
+Les plus courtes
+Les plus longues
+Les moins pentues
+Voir plus de balades
+Vos balades dans la poche
+Guidé pas à pas, même sans réseau
+En forêt d'Anlier ou dans la vallée de la Semois, le réseau mobile est capricieux. Nous conseillons
+Organic Maps
+: gratuite, sans publicité ni compte, elle fonctionne entièrement hors ligne et affiche votre position sur le tracé.
+Installez l'application
+(gratuite) :
+App Store (iPhone)
+Google Play (Android)
+Téléchargez la carte « Belgique, Luxembourg »
+dans l'application, de préférence en wifi à la maison (environ 60 Mo).
+Importez les balades
+: touchez un pack ci-dessous, puis « Ouvrir avec Organic Maps ». Toutes les balades apparaissent dans vos listes, prêtes à suivre.
+Les 15 balades les plus proches
+Au départ d'Izel ou à moins de 10 min
+Toutes les balades à pied
+Mes balades favorites
+Celles que vous avez marquées
+Itinéraires vélo
+RAVeL et voies vertes
+Format GPX, compatible aussi avec OsmAnd, Komoot, Visorando, Garmin et Suunto.
+Que faire ?
+Activités du coin
+Kayak sur la Semois, abbaye d'Orval, châteaux, villages classés, sorties en famille… avec le temps de route depuis la maison.
+Spécial jour de pluie
+Ça se passe en Gaume
+Agenda des événements
+Festivals, marchés, fêtes de village… Indiquez vos dates pour voir ce qui se passe pendant votre séjour.
+Mon séjour :
+Voir mes événements
+Tout l'agenda
+À table !
+Saveurs de Gaume
+Orval, pâté gaumais, Plate de Florenville, saucisson IGP… Les spécialités à goûter, nos tables préférées, les producteurs et quelques recettes à cuisiner dans la maison.
+Mémoire du village
+Izel, une histoire de Gaume
+De la chaussée romaine aux incendies d'août 1914, de l'occupation à la Libération : ce que racontent les pierres du village, et ce que vous pouvez encore voir aujourd'hui.
+L'âme gaumaise
+Culture et traditions
+Une langue à part, des légendes, des festivals de renom et des villages aux façades colorées : bienvenue dans la « petite Provence belge ».
+Votre carnet
+Mon séjour, jour par jour
+Ajoutez des balades, activités et restaurants à vos favoris (♥), puis glissez-les dans vos journées. Votre programme reste enregistré sur cet appareil.
+Mes favoris
+Agenda (.ics)
+Durée :
+Comme à la maison
+Mode d'emploi de la maison
+Tout ce qu'il faut savoir pour profiter de Belizel : arrivée, poêle à bois, wifi, tri, départ et numéros utiles.
+Rechercher (poêle, poubelles, clés…)
+Maison de vacances à Izel (Chiny), au cœur de la Gaume et de la vallée de la Semois.
+Tracés : © contributeurs OpenStreetMap (ODbL), balisage des syndicats d'initiative. Altitudes et météo : Open-Meteo. Fonds de carte : OpenStreetMap / OpenTopoMap. Informations touristiques vérifiées en novembre 2026 : confirmez les horaires auprès des sites officiels.
+Revoir la visite guidée
+Guide d'utilisation
+Espace propriétaire
+Bienvenue !
+Ce guide vous accompagne avant et pendant votre séjour à Belizel. En deux mots :
+la carte, les balades balisées (GPX à télécharger), les activités et l'agenda.
+Ajoutez en favori ♥
+ce qui vous tente, puis organisez vos journées dans « Mon séjour ».
+Sur place
+, le mode d'emploi de la maison répond à toutes vos questions : wifi, poêle, tri, départ…
+Visite guidée (1 min)
+Je découvre seul
+Plus de rubriques
+{}
+{}{}
+c===0?['☀️','Ensoleillé']:c
+vent {} km/h
+{} {}° à Izel
+{})}
+{}°
+{ $('#forecast').innerHTML = '
+Météo indisponible hors connexion.
+h.kind==='pied' && h.km
+Idéal pour marcher
+{} · {} · départ à {}
+Voir la balade →
+{} · {} min en voiture
+Voir les activités →
+40) lbShow(lbI + (dx
+{} · {} · {} min en voiture
+{}Itinéraire
+{ const b = e.target.closest('.fav-pop'); if(b){ toggleFav(b.dataset.fav); b.innerHTML = icon('heart')+(isFav(b.dataset.fav)?'Retirer':'Favori'); } }); function initMap(){ const osm = L_.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'© OpenStreetMap'}); const topo = L_.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',{maxZoom:17,attribution:'© OpenStreetMap, SRTM · © OpenTopoMap'}); const sat = L_.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{maxZoom:18,attribution:'© Esri'}); map = L_.map('map',{scrollWheelZoom:false, layers:[topo], zoomControl:true}).setView(HOUSE, 11); L_.control.layers({'Relief':topo,'Plan':osm,'Satellite':sat},null,{position:'bottomright'}).addTo(map); L_.marker(HOUSE,{icon:L_.divIcon({className:'',html:'
+Votre maison à Izel
+{} · {}
+{}…
+{}À pied
+{}À vélo
+{}Mes favoris
+{}{} m
+${h.nearest
+Aucune balade ne correspond. Ajoutez des favoris avec ♥ ou élargissez les filtres.
+haversine(c,[p.lat,p.lng])
+Survolez le profil pour suivre votre position sur la carte.
+{}Télécharger le GPX
+{}Aller au départ
+${favBtn('h:'+h.id).replace('class="fav','class="btn btn-soft fav').replace('
+','Favori
+{}OpenStreetMap
+Départ à pied depuis la maison
+En chemin
+{} {}
+Tracé © contributeurs OpenStreetMap (ODbL). Durée estimée à 4,2 km/h, plus 1 h par 450 m de montée. Altitudes EU-DEM 25 m. Prévoyez de bonnes chaussures : les sentiers gaumais sont souvent humides.
+{ dMap = L_.map('hikeMap',{zoomControl:true,attributionControl:false}); L_.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',{maxZoom:17}).addTo(dMap); const line = L_.polyline(h.coords,{color:h.color,weight:5}).addTo(dMap); dMap.fitBounds(line.getBounds(),{padding:[20,20]}); L_.circleMarker(h.start,{radius:8,color:'#fff',weight:3,fillColor:'#2f4a34',fillOpacity:1}).addTo(dMap).bindTooltip('Départ'); L_.marker(HOUSE,{icon:L_.divIcon({className:'',html:'
+{} m
+« {} »
+{} {} min
+☔ par temps de pluie
+Site ↗
+new Date(startM.getFullYear(), startM.getMonth()+i, 1)); let selM = null; let stay = store.get('stay', null); if(stay){ $('#stayIn').value = stay.in; $('#stayOut').value = stay.out; } function stayMonths(){ if(!stay) return new Set(); const a = new Date(stay.in), b = new Date(stay.out); const s = new Set(); for(let d = new Date(a.getFullYear(),a.getMonth(),1); d
+{} évén.
+Chaque semaine
+· {}${e.confirmed===false?' ·
+date à confirmer
++ Mon agenda
+Site officiel ↗
+Pas d\'événement répertorié sur cette période : profitez du calme et des balades !
+Où ? {}
+🍴 {} · {}
+Réservez, surtout le week-end et en été. Horaires à vérifier : beaucoup de tables ferment en début de semaine.
+🧺 {} · {}
+🕒 {}
+👩‍🍳 {} · {}
+Ingrédients ({})
+{}Mode cuisine
+{}Liste de courses
+Étape {} / {}
+{}Précédent
+Mode cuisine · l'écran reste allumé
+Afficher :
+Les guerres
+Histoires de la maison
+Histoire de la maison
+Source ↗
+🏛️ ${km!=null?(km
+Voir sur la carte
+Il était une fois…
+Les souvenirs de ceux qui ont fait revivre Belizel.
+En savoir plus ↗
+{} jour{}
+Jour…
+Jour {}
+{}):''}{}
+itemRow(id,true)).join('') || '
+Glissez une activité ici
+Mon séjour à Belizel
+body{font-family:Georgia,serif;padding:30px;color:#2b2a25}h1{color:#2f4a34}h2{border-bottom:1px solid #ccc;padding-bottom:4px;color:#c4552c}li{margin:6px 0}
+— {}
+Journée libre
+Wifi : {} / {}
+esc(s).replace(/\[([^\]]+)\]/g, '
+Réservé à nos hôtes
+Entrez le code reçu dans votre message de confirmation Airbnb.
+Le wifi s'affiche ici une fois le code saisi.
+Aucun résultat. Contactez-nous via Airbnb !
+{} Wifi
+Mot de passe :
+Copier le mot de passe
+{ e.preventDefault(); openDrawer('
+Guide d\'utilisation
+{} La carte
+Les boutons en haut de la carte affichent ou masquent chaque catégorie. En bas à droite, choisissez le fond : relief, plan ou satellite. Cliquez sur un tracé de balade pour ouvrir sa fiche.
+{} Les fichiers GPX
+Le bouton « Télécharger le GPX » enregistre le tracé. Sur téléphone, ouvrez-le avec une application de randonnée (Komoot, Visorando, OsmAnd, Organic Maps…) ou importez-le dans votre montre GPS (Garmin Connect, Suunto…). Le suivi fonctionne sans réseau une fois la carte téléchargée dans l'application.
+{} Favoris et Mon séjour
+Le cœur ♥ ajoute un élément à « Mon séjour ». Sur ordinateur, glissez-déposez les éléments dans les journées ; sur téléphone, utilisez le menu « Jour… ». Tout est enregistré sur votre appareil, sans compte. « Partager » génère un lien qui transmet votre programme.
+{} Agenda
+Renseignez vos dates : la pastille orange signale les mois de votre séjour. « + Mon agenda » ajoute un événement à votre calendrier (.ics).
+{} Mode cuisine
+Les recettes s'affichent étape par étape en grand, et l'écran reste allumé pendant que vous cuisinez.
+{} Hors connexion
+La météo et les fonds de carte demandent une connexion. Le reste du guide s'affiche normalement.
+{ const tl = $('.timeline'), pr = $('.tl-progress'); if(!tl || !pr) return; const r = tl.getBoundingClientRect(); const p = Math.max(0, Math.min(1, (innerHeight*0.6 - r.top) / r.height)); pr.style.height = (p*100)+'%'; }, {passive:true}); })(); /* Belizel — utilitaires partagés (icônes, stockage, toast, visite guidée, GPX, ICS) */ (function(){ const P = { flame:'
+', leaf:'
+', bed:'
+', baby:'
+', laptop:'
+', map:'
+', key:'
+', chef:'
+', music:'
+', recycle:'
+', house:'
+', door:'
+', phone:'
+', heart:'
+', download:'
+', nav:'
+', clock:'
+', ruler:'
+', car:'
+', close:'
+', chev:'
+', left:'
+', right:'
+', cal:'
+', star:'
+', help:'
+', sun:'
+', rain:'
+', compass:'
+', book:'
+', sparkle:'
+', print:'
+', share:'
+', check:'
+', plus:'
+', bike:'
+', scroll:'
+', search:'
+', wifi:'
+', lock:'
+String(s ?? '').replace(/[&
+({'&':'&amp;','
+Données © contributeurs OpenStreetMap (ODbL)
+Départ · {}
+vh - 16) top = r.top - ph - 18; if(top
+Installer {}
+Touchez le bouton
+en bas de Safari.
+« Sur l'écran d'accueil »
+: l'icône apparaît avec vos applications.
+Accès en un geste depuis votre écran d'accueil, même hors ligne.
+Ajouté à « Mon séjour » ♥
+}" data-fav="${esc(id)}" title="Ajouter à mon séjour">${icon(
+, e => { const b = e.target.closest(
+#mainnav a, #bottomnav a
+main section[id]
+).onclick = () => location.hash =
+).onclick = e => { e.preventDefault(); $(
+,"Mode d
+).onclick = e => { if(e.target.id===
+).innerHTML = heroImgs.map((s,i) => `<div class="slide ${i===0?
+).innerHTML = [`${L.guests} voyageurs`,`${L.bedrooms} chambres`,`${L.baths} salles de bain`,`★ ${String(L.rating).replace(
+Poêle à bois
+Averses de neige
+).textContent = Math.round(w.current.temperature_2m)+
+).innerHTML = w.daily.time.map((d,i) => { const [ee] = WMO(w.daily.weather_code[i]); const dd = new Date(d+
+})}</b><div class="e">${ee}</div><small>${Math.round(w.daily.temperature_2m_max[i])}°</small> <small class="muted">${Math.round(w.daily.temperature_2m_min[i])}°</small></div>`; }).join(
+<span class="muted">Météo indisponible hors connexion.</span>
+Journée humide : une idée à l\
+) || C.places[0]; why =
+).innerHTML = `<div class="ico">${icon(
+).innerHTML = `<div class="ico">${icon(wet?
+)}</div><div><b class="muted" style="font-size:.78rem;text-transform:uppercase;letter-spacing:.08em">${why}</b><h4 style="margin:2px 0">${esc(pick.name)}</h4><span class="muted">${esc(pick.duration||
+, e => { const a = e.target.closest(
+).innerHTML = L.highlights.map(h => `<div class="card hl reveal"><div class="ico">${icon(h.icon)}</div><div><h4>${h.title}</h4><p>${h.text}</p></div></div>`).join(
+, ...new Set(L.gallery.map(g => g.tag))]; let gTag =
+).innerHTML = tags.map(t => `<button class="fchip ${t===gTag?
+).innerHTML = gList.map((g,i) => `<figure data-i="${i}"><img src="${g.src}" alt="${esc(g.cap)}" loading="lazy"><figcaption>${esc(g.cap)}</figcaption></figure>`).join(
+).onclick = e => { const b = e.target.closest(
+).src = gList[lbI].src; lb.querySelector(
+).onclick = e => { const f = e.target.closest(
+).onclick = () => lbShow(lbI-1); lb.querySelector(
+).onclick = () => lb.classList.remove(
+).innerHTML = L.rooms.map(r => `<div class="card room reveal"><img src="${r.photo}" alt="${esc(r.name)}" loading="lazy"><div class="b"><h4>${r.name}</h4><span class="muted" style="font-size:.9rem">${r.beds}</span></div></div>`).join(
+).textContent = String(L.rating).replace(
+class="icon "
+).innerHTML = Object.entries(L.cats).map(([k,v]) => `<div class="row"><span>${CATN[k]}</span><div class="track"><div class="fill" data-w="${(v-3.5)/1.5*100}"></div></div><b>${v.toFixed(1).replace(
+#catBars .fill
+).innerHTML = Object.entries(L.tags).sort((a,b)=>b[1]-a[1]).map(([t,n]) => `<span class="theme" style="font-size:${.85+n/tmax*.55}rem">${t}<b>${n}</b></span>`).join(
+){ return L_.divIcon({className:
+, html:`<div class="pin ${cls}" style="background:${color||
+<div class="pin pin-house"><span>🏡</span></div>
+).innerHTML = Object.entries(groups).map(([k,g]) => `<button class="fchip ${g.on?
+}" data-l="${k}"><span class="dot" style="background:${g.color}"></span>${g.label}</button>`).join(
+); } else { layers[k].addTo(map); b.classList.add(
+focus click
+).innerHTML = `<button class="fchip on" data-k="pied">${icon(
+)}À pied</button><button class="fchip" data-k="velo">${icon(
+)}À vélo</button><button class="fchip" data-k="fav">${icon(
+); if(!b) return; hKind = b.dataset.k; $$(
+).value, len = $(
+).textContent = `${list.length} itinéraire${list.length>1?
+Itinéraire balisé
+à pied depuis la maison
+<p class="muted">Aucune balade ne correspond. Ajoutez des favoris avec ♥ ou élargissez les filtres.</p>
+).style.display = list.length > hShown ?
+).onclick = e => { const c = e.target.closest(
+).onclick = closeDrawer; $(
+).onclick = closeDrawer; addEventListener(
+class="btn btn-soft fav
+Suivez le balisage
+peint sur les arbres et les poteaux.
+Itinéraire vélo balisé.
+<div class="pin" style="background:#c4552c;width:28px;height:28px"><span style="font-size:13px">🏡</span></div>
+).onclick = () => { download(slug(h.name)+
+, gpx(h.name, h.samples.length > h.coords.length ? h.samples : h.coords, h.samples.length > h.coords.length ? h.ele : null, `${h.km} km, +${h.up} m — balisage ${h.ref||
+GPX téléchargé : ouvrez-le dans votre app de randonnée
+).textContent = `${H.filter(h=>h.kind===
+Ajoutez d\
+Aucun itinéraire
+).innerHTML = `<button class="fchip on" data-c="">Tout</button>` + Object.entries(PCAT).map(([k,v]) => `<button class="fchip" data-c="${k}"><span class="dot" style="background:${v.color}"></span>${v.label}</button>`).join(
+#actFilters .fchip
+).innerHTML = list.map(p => { const c = PCAT[p.category]||{}; const id =
+<span class="rainy">☔ par temps de pluie</span>
+); if(a){ const [la,ln] = a.dataset.fly.split(
+).value = stay.in; $(
+).innerHTML = `<button class="${selM===null?
+) + `<button class="${selM===0?
+).innerHTML = list.map(e => { const dd = evDate(e); const id =
+· <i>date à confirmer</i>
+}${e.url?`<a href="${e.url}" target="_blank" rel="noopener">Site officiel ↗</a>`:
+événement répertorié sur cette période : profitez du calme et des balades !</p>
+).onclick = () => { if(!$(
+).value || !$(
+).value) return toast(
+arrivée et de départ
+Agenda filtré sur votre séjour
+).onclick = () => { stay = null; store.set(
+).value = $(
+).value =
+]]; let ft =
+).innerHTML = FT.map(([k,t]) => `<button class="fchip ${k===ft?
+#foodTabs .fchip
+) B.innerHTML = `<div class="grid g3">${C.specialties.map(s => `<article class="card act"><div class="b"><div style="font-size:2.2rem">${s.emoji||
+}</div><h4>${esc(s.name)}</h4><p>${esc(s.text)}</p>${s.where?`<div class="tip">Où ? ${esc(s.where)}</div>`:
+) B.innerHTML = `<div class="grid g3">${C.restaurants.map(r => { const id =
+)} ${driveMin(km)} min</span><span class="grow"></span>${r.url?`<a href="${r.url}" target="_blank" rel="noopener">Site ↗</a>`:
+) B.innerHTML = `<div class="grid g3">${C.producers.map(r => { const id =
+) B.innerHTML = `<div class="grid g2">${C.recipes.map((r,i) => `<article class="card act"><div class="b"><span class="cat" style="color:var(--moss)">👩‍🍳 ${esc(r.serves)} · ${esc(r.time)}</span><h4>${esc(r.name)}</h4>${r.story?`<div class="tip">${esc(r.story)}</div>`:
+)}Mode cuisine</button><button class="btn btn-soft btn-sm" data-shop="${i}">${icon(
+)}Liste de courses</button></div></div></article>`).join(
+); if(s){ const r = C.recipes[+s.dataset.shop]; download(slug(r.name)+
+, `Liste de courses – ${r.name}\n(${r.serves})\n\n`+r.ingredients.map(x=>
+)}Précédent</button><button class="btn btn-primary" id="ckN">${k===r.steps.length-1?
+).onclick = () => { if(k < r.steps.length-1){ k++; show(); } else closeDrawer(); }; $(
+écran reste allumé</span><h3>${esc(r.name)}</h3>`,
+Frise du temps
+À voir au village
+).innerHTML = HT.map(([k,t]) => `<button class="fchip ${k===ht?
+#histTabs .fchip
+}"><div class="tl-y">${esc(t.year)}</div><div class="card tl-c">${t.family?`<span class="hand" style="font-size:1.25rem">Histoire de la maison</span>`:
+}${t.photo?`<img src="${t.photo}" alt="" class="tl-img">`:
+}<h4>${esc(t.title)}</h4><p>${esc(t.text)}</p>${t.source?`<a class="muted" style="font-size:.78rem" href="${t.source}" target="_blank" rel="noopener">Source ↗</a>`:
+.tl-filter .fchip
+.timeline .tl
+) B.innerHTML = `<div class="grid g3">${C.history.sites.map(s => { const km = s.lat ? haversine(HOUSE,[s.lat,s.lng]) : null; const id =
+}<div class="b"><span class="cat" style="color:#7a4f8a">🏛️ ${km!=null?(km<1.5?
+}<span class="grow"></span>${s.source?`<a href="${s.source}" target="_blank" rel="noopener">Source ↗</a>`:
+) B.innerHTML = `<div class="grid g2">${C.history.legends.map(l => `<article class="card act legend"><div class="b"><span class="hand" style="font-size:1.4rem">Il était une fois…</span><h4>${esc(l.title)}</h4><p>${esc(l.text)}</p></div></article>`).join(
+) B.innerHTML = `<p class="muted" style="margin-top:0">Les souvenirs de ceux qui ont fait revivre Belizel.</p><div class="grid g3">${S.map(s => `<article class="card room"><img src="${s.photo}" alt=""><div class="b"><span class="hand" style="font-size:1.3rem">${esc(s.year)}</span><h4>${esc(s.title)}</h4><p style="margin:0;font-size:.93rem;color:var(--ink-2)">${esc(s.text)}</p></div></article>`).join(
+).innerHTML = C.culture.map(c => `<article class="card act reveal"><div class="b"><span class="cat" style="color:var(--semois)">${CCAT[c.category]||
+}${c.url?`<a href="${c.url}" target="_blank" rel="noopener">En savoir plus ↗</a>`:
+Programme partagé importé ✨
+).innerHTML = Array.from({length:14},(_,i)=>`<option value="${i+1}">${i+1} jour${i?
+).onchange = () => { store.set(
+}22">${it.emoji}</span><span>${esc(it.name)}<br><small class="muted">${it.type}${it.minutes?
+)}</button>`:`<select class="field" data-assign="${esc(id)}" style="margin-left:auto;padding:4px 6px;font-size:.75rem" title="Choisir un jour"><option value="">Jour…</option>${Array.from({length:nDays()},(_,i)=>`<option value="${i}">J${i+1}</option>`).join(
+).value = nd; $(
+).textContent = stay ? `du ${new Date(stay.in).toLocaleDateString(
+)} au ${new Date(stay.out).toLocaleDateString(
+Indiquez vos dates dans l\
+) || `<div class="empty">${favs.length?
+Ajoutez des favoris ♥ depuis les balades, activités, restaurants ou l\
+<div class="empty">Glissez une activité ici</div>
+, e => { const it = e.target.closest(
+, e => { const d = e.target.closest(
+, e => { const s = e.target.closest(
+Planifiez d\
+).onclick = () => { const url = location.href.split(
+Notre séjour à Belizel
+Lien copié : envoyez-le à vos compagnons de voyage
+).onclick = () => { const w = open(
+<li>Journée libre</li>
+emploi (wifi, boîte à clés) n
+<span class="todo">$1</span>
+).innerHTML = `<div class="lockbox">${icon(
+).innerHTML = `<div style="text-align:center;width:100%">${icon(
+)}<p class="muted" style="margin:6px 0 0">Le wifi s
+).onsubmit = async e => { e.preventDefault(); if(!(await unlockManual($(
+Code incorrect
+).innerHTML = M.sections.map((s,i) => { const its = s.items.filter(it => !q || (it.q+
++s.title).toLowerCase().includes(q)); if(!its.length) return
+}"><button><span class="ico">${icon(s.icon)}</span>${esc(s.title)}${icon(
+)}</button><div class="panel"><div><dl>${its.map(it => `<dt>${esc(it.q)}</dt><dd>${todo(it.a)}</dd>`).join(
+<p style="padding:20px">Aucun résultat. Contactez-nous via Airbnb !</p>
+; try{ const qr = qrcode(0,
+).innerHTML = `<div class="qr">${qrHtml}</div><div><span class="muted" style="font-weight:800;font-size:.78rem;text-transform:uppercase;letter-spacing:.08em">${icon(
+).onclick = () => navigator.clipboard.writeText(M.wifi.password).then(() => toast(
+).then(rows => { rows.forEach(r => { if(r.key===
+&& Array.isArray(r.data)){ S.length = 0; S.push(...r.data); if(ht===
+Bienvenue à Belizel 👋
+Cette visite express vous montre comment tirer le meilleur de ce guide. Vous pouvez la quitter à tout moment (Échap).
+#today .card
+La météo et l\
+Météo en direct à Izel et une suggestion adaptée au temps : balade s\
+abri s\
+#explorer .mapbox
+La carte interactive
+Activez les calques (balades, activités, restaurants, histoire, événements) et cliquez sur un tracé pour ouvrir sa fiche.
+#hikes .hike
+Les balades balisées
+Chaque fiche montre le tracé, le dénivelé et le profil d\
+#activites .hike-tools
+Activités, même sous la pluie
+Filtrez par envie et activez « Spécial jour de pluie » pour ne garder que les activités à l\
+#agenda .stay-box
+Votre séjour dans l\
+Entrez vos dates : l\
+#terroir .filters
+Spécialités, bonnes tables et producteurs, avec des recettes gaumaises à cuisiner pas à pas en mode cuisine.
+#sejour .planner
+Tous vos ♥ arrivent ici. Glissez-les dans vos journées, puis exportez vers votre agenda, imprimez ou partagez le programme.
+Scannez le QR code pour le wifi. Le mode d\
+Besoin d\
+Ce bouton relance la visite à tout moment. Bon séjour en Gaume ! 🌿
+).onclick = startTour; $(
+).onclick = () => { $(
+).onclick = e => { e.preventDefault(); openDrawer(
+)} Les fichiers GPX</h4><p>Le bouton « Télécharger le GPX » enregistre le tracé. Sur téléphone, ouvrez-le avec une application de randonnée (Komoot, Visorando, OsmAnd, Organic Maps…) ou importez-le dans votre montre GPS (Garmin Connect, Suunto…). Le suivi fonctionne sans réseau une fois la carte téléchargée dans l
+)} Mode cuisine</h4><p>Les recettes s
+)} Hors connexion</h4><p>La météo et les fonds de carte demandent une connexion. Le reste du guide s
+, () => { const tl = $(
+); if(!tl || !pr) return; const r = tl.getBoundingClientRect(); const p = Math.max(0, Math.min(1, (innerHeight*0.6 - r.top) / r.height)); pr.style.height = (p*100)+
+<path d="M12 22c4 0 7-2.7 7-7 0-3.5-2.5-6-4-8-.5 2-1.5 3-3 3 0-3-1-6-4-8 .5 3-3 6-3 10 0 5.5 3 10 7 10z"/>
+<path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10Z"/><path d="M2 21c0-3 1.9-5.4 5.1-6"/>
+<path d="M2 4v16M2 8h18a2 2 0 0 1 2 2v10M2 17h20M6 8v9"/>
+<circle cx="12" cy="6" r="3"/><path d="M8 21v-5l-3-3 3-2h8l3 2-3 3v5"/>
+<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M2 20h20"/>
+<path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3z"/><path d="M9 3v15M15 6v15"/>
+<circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6M15.5 7.5l3 3L22 7l-3-3"/>
+<path d="M6 13.9A4 4 0 0 1 7.2 6a5 5 0 0 1 9.6 0A4 4 0 0 1 18 13.9V21H6z"/><path d="M6 17h12"/>
+<path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>
+<path d="M7 19H4.8a1.8 1.8 0 0 1-1.6-2.7L7 9.7M11 19h8.2a1.8 1.8 0 0 0 1.6-2.7l-1.2-2M14 16l-3 3 3 3M8.3 13.6 7 9.7 3 11M9.3 5.6l1.1-1.9a1.8 1.8 0 0 1 3.1 0l3.9 6.8M13.4 10.6l3.9-1.1 1.1 3.9"/>
+<path d="M3 10.5 12 3l9 7.5V21H3z"/><path d="M9 21v-6h6v6"/>
+<path d="M13 4h3a2 2 0 0 1 2 2v14M2 20h20M13 20V4l-7 2v14M10 12v.01"/>
+<path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/>
+<path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7z"/>
+<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+<path d="m3 11 19-9-9 19-2-8z"/>
+<circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+<path d="m2 20 7-10 4 5 3-4 6 9z"/>
+<path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.4 2.4 0 0 1 0-3.4l2.6-2.6a2.4 2.4 0 0 1 3.4 0zM14.5 12.5l2-2M11.5 9.5l2-2M8.5 6.5l2-2M17.5 15.5l2-2"/>
+<path d="M19 17h2v-5l-2-5H5L3 12v5h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M9 17h6M3 12h18"/>
+<path d="M18 6 6 18M6 6l12 12"/>
+<path d="m6 9 6 6 6-6"/>
+<path d="m15 18-6-6 6-6"/>
+<path d="m9 18 6-6-6-6"/>
+<rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>
+<path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/>
+<circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01"/>
+<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M6.3 17.7l-1.4 1.4M19.1 4.9l-1.4 1.4"/>
+<path d="M4 14.9A7 7 0 1 1 15.7 8h1.8a4.5 4.5 0 0 1 2.5 8.2M16 14v6M8 14v6M12 16v6"/>
+<circle cx="12" cy="12" r="10"/><path d="m16.2 7.8-2.1 6.3-6.3 2.1 2.1-6.3z"/>
+<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+<path d="M12 3l1.9 5.8L20 10l-6.1 1.2L12 17l-1.9-5.8L4 10l6.1-1.2z"/><path d="M19 17l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z"/>
+<path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/>
+<circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/>
+<path d="M20 6 9 17l-5-5"/>
+<path d="M12 5v14M5 12h14"/>
+<circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><path d="M15 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM12 17.5V14l-3-3 4-3 2 3h2"/>
+<path d="M8 21h12a2 2 0 0 0 2-2v-2H10v2a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v3h4"/><path d="M19 17V5a2 2 0 0 0-2-2H4"/>
+<circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+<path d="M5 13a10 10 0 0 1 14 0M8.5 16.4a5 5 0 0 1 7 0M2 8.8a15 15 0 0 1 20 0M12 20h.01"/>
+<rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+, `UID:belizel-${Date.now()}-${i}@belizel`, `DTSTAMP:${new Date().toISOString().replace(/[-:]/g,
+<button class="btn btn-soft btn-sm prev">Retour</button>
+}<button class="btn btn-primary btn-sm next">${i===steps.length-1?
+).onclick = end; pop.querySelector(
+, block: s.block ||
+; pop = document.createElement(
+in navigator && location.protocol !==
+); m.className =
+écran d
+Application installée ✓
+); banner.className =
+}" alt=""><div><b>Installer ${esc(appName)}</b><small>Accès en un geste depuis votre écran d
+).onclick = install; banner.querySelector(
+).onclick = () => { hide(); store.set(
+).matches && Date.now()-d > 7*864e5){ document.body.appendChild(banner); setTimeout(() => banner.classList.add(

@@ -21,12 +21,19 @@ def env_key():
         if line.startswith('ELEVENLABS_API_KEY='): return line.split('=', 1)[1].strip()
     raise SystemExit('ELEVENLABS_API_KEY manquante dans .env')
 
+# Prononciations locales (voix off seulement ; les sous-titres gardent l'orthographe) : « Gaume » se dit /ɡom/, e muet.
+PRONONCIATION = {'Gaume': 'Gôme'}
+# Réglages edge-tts par voix (débit, hauteur) pour une diction plus vivante
+PROSODIE = {'fr-BE-CharlineNeural': ('+3%', '+3Hz'), 'fr-BE-GerardNeural': ('+2%', '+2Hz')}
+
 def tts(text, voice):
+    for mot, dit in PRONONCIATION.items(): text = text.replace(mot, dit)
     TTS.mkdir(parents=True, exist_ok=True)
-    f = TTS / (hashlib.sha1((voice + '|' + text).encode()).hexdigest()[:16] + '.mp3')
+    rate, pitch = PROSODIE.get(voice, ('-3%', '+0Hz'))
+    f = TTS / (hashlib.sha1((voice + '|' + rate + pitch + '|' + text).encode()).hexdigest()[:16] + '.mp3')
     if not f.exists() and voice.startswith('fr-'):
         # voix neuronales Microsoft natives (edge-tts) : fr-BE-CharlineNeural, fr-BE-GerardNeural…
-        subprocess.run([sys.executable, '-m', 'edge_tts', '--voice', voice, '--rate=-3%', '--text', text, '--write-media', str(f)], check=True, capture_output=True)
+        subprocess.run([sys.executable, '-m', 'edge_tts', '--voice', voice, f'--rate={rate}', f'--pitch={pitch}', '--text', text, '--write-media', str(f)], check=True, capture_output=True)
     if not f.exists():
         body = json.dumps({'text': text, 'model_id': 'eleven_multilingual_v2',
                            'voice_settings': {'stability': 0.55, 'similarity_boost': 0.75, 'style': 0.15, 'use_speaker_boost': True}}).encode()

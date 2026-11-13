@@ -1,7 +1,7 @@
 /* Belizel — service worker : l'interface et les données publiques restent disponibles hors connexion.
    Réseau d'abord pour les pages (contenu frais), cache d'abord pour les images et bibliothèques. Jamais de cache pour Supabase ni la météo. */
-const V = 'belizel-v1';
-const SHELL = ['./', 'index.html', 'admin.html', 'css/style.css', 'css/admin.css', 'js/common.js', 'js/guest.js', 'js/admin.js', 'js/config.js',
+const V = 'belizel-v2';
+const SHELL = ['./', 'index.html', 'admin.html', 'css/style.css', 'css/admin.css', 'js/common.js', 'js/guest.js', 'js/admin.js', 'js/config.js', 'js/i18n.js', 'data/content.nl.js',
   'data/listing.js', 'data/hikes.js', 'data/content.js', 'data/manual.js', 'data/stories.js', 'manifest.webmanifest', 'admin.webmanifest',
   'icons/guest-192.png', 'icons/admin-192.png', 'img/p01.jpg', 'img/p04.jpg', 'img/p20.jpg'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(V).then(c => c.addAll(SHELL)).then(() => self.skipWaiting())); });

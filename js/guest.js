@@ -1,11 +1,22 @@
 /* Belizel — page locataire */
 (function(){
-const L = window.LISTING, C = window.CONTENT, H = (window.HIKES||[]), M = window.MANUAL, S = window.STORIES||[];
-const HOUSE = [L.lat, L.lng];
 const slug = s => String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+const NLD = window.LANG === 'nl', LOCALE = window.LOCALE || 'fr-BE';
+const CF = window.CONTENT, C = (NLD && window.CONTENT_NL) ? window.CONTENT_NL : CF;
+const L = (() => { const b = window.LISTING; if(!NLD || !b.nl) return b; const n = b.nl;
+  return {...b, intro:n.intro, tagline:n.tagline, highlights:b.highlights.map((h,i)=>({...h, ...(n.highlights[i]||{})})), rooms:b.rooms.map((r,i)=>({...r, ...(n.rooms[i]||{})})),
+    amenities:n.amenities||b.amenities, gallery:b.gallery.map((g,i)=>({...g, cap:n.gallery[i]||g.cap, tag:T(g.tag)})), tags:Object.fromEntries(Object.entries(b.tags).map(([k,v])=>[T(k),v]))}; })();
+const H = (window.HIKES||[]), M = window.MANUAL;
+if(NLD && M && M.nl) M.sections = M.nl.sections;
+const S = (NLD && window.STORIES_NL) ? window.STORIES_NL.map((x,i) => ({...(window.STORIES[i]||{}), ...x})) : (window.STORIES||[]);
+// identifiants stables (calculés sur la version française) pour que favoris et programme survivent au changement de langue
+const ID = new Map();
+[['p:','places'],['r:','restaurants'],['d:','producers'],['e:','events']].forEach(([pre,k]) => C[k].forEach((o,i) => ID.set(o, pre + slug(CF[k][i].name))));
+C.history.sites.forEach((o,i) => ID.set(o, 's:' + slug(CF.history.sites[i].name)));
+const HOUSE = [L.lat, L.lng];
 const fmtKm = k => k < 1 ? Math.round(k*1000)+' m' : (Math.round(k*10)/10).toString().replace('.',',')+' km';
 const fmtDur = m => m < 60 ? m+' min' : Math.floor(m/60)+' h'+(m%60? String(m%60).padStart(2,'0'):'');
-const MONTHS = ['janv.','févr.','mars','avr.','mai','juin','juil.','août','sept.','oct.','nov.','déc.'];
+const MONTHS = window.MONTHS_UI;
 const MONTHS_L = ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
 const hydrate = (root=document) => $$('[data-i]', root).forEach(el => { el.outerHTML = icon(el.dataset.i); });
 
@@ -18,12 +29,12 @@ const PCAT = {
 };
 const ECAT = {festival:'🎪',marché:'🧺',sport:'🏃',culture:'🎭',gastronomie:'🍷',nature:'🌿',enfants:'🎈'};
 const items = {}; // id -> {id,type,name,lat,lng,emoji,color}
-H.forEach(h => items['h:'+h.id] = {id:'h:'+h.id,type:'Balade',name:h.name,lat:h.start[0],lng:h.start[1],emoji:h.kind==='velo'?'🚲':'🥾',color:h.color,minutes:h.minutes});
-C.places.forEach(p => items['p:'+slug(p.name)] = {id:'p:'+slug(p.name),type:'Activité',name:p.name,lat:p.lat,lng:p.lng,emoji:(PCAT[p.category]||{}).emoji||'📍',color:(PCAT[p.category]||{}).color});
-C.restaurants.forEach(r => items['r:'+slug(r.name)] = {id:'r:'+slug(r.name),type:'Restaurant',name:r.name,lat:r.lat,lng:r.lng,emoji:'🍴',color:'#c4552c'});
-C.producers.forEach(r => items['d:'+slug(r.name)] = {id:'d:'+slug(r.name),type:'Producteur',name:r.name,lat:r.lat,lng:r.lng,emoji:'🧺',color:'#c99a2e'});
-C.events.forEach(e => items['e:'+slug(e.name)] = {id:'e:'+slug(e.name),type:'Événement',name:e.name,lat:e.lat,lng:e.lng,emoji:ECAT[e.category]||'📅',color:'#2f4a34'});
-C.history.sites.forEach(s => s.lat && (items['s:'+slug(s.name)] = {id:'s:'+slug(s.name),type:'Patrimoine',name:s.name,lat:s.lat,lng:s.lng,emoji:'🏛️',color:'#7a4f8a'}));
+H.forEach(h => items['h:'+h.id] = {id:'h:'+h.id,type:T('Balade'),name:h.name,lat:h.start[0],lng:h.start[1],emoji:h.kind==='velo'?'🚲':'🥾',color:h.color,minutes:h.minutes});
+C.places.forEach(p => items[ID.get(p)] = {id:ID.get(p),type:T('Activité'),name:p.name,lat:p.lat,lng:p.lng,emoji:(PCAT[p.category]||{}).emoji||'📍',color:(PCAT[p.category]||{}).color});
+C.restaurants.forEach(r => items[ID.get(r)] = {id:ID.get(r),type:T('Restaurant'),name:r.name,lat:r.lat,lng:r.lng,emoji:'🍴',color:'#c4552c'});
+C.producers.forEach(r => items[ID.get(r)] = {id:ID.get(r),type:T('Producteur'),name:r.name,lat:r.lat,lng:r.lng,emoji:'🧺',color:'#c99a2e'});
+C.events.forEach(e => items[ID.get(e)] = {id:ID.get(e),type:T('Événement'),name:e.name,lat:e.lat,lng:e.lng,emoji:ECAT[e.category]||'📅',color:'#2f4a34'});
+C.history.sites.forEach(s => s.lat && (items[ID.get(s)] = {id:ID.get(s),type:T('Patrimoine'),name:s.name,lat:s.lat,lng:s.lng,emoji:'🏛️',color:'#7a4f8a'}));
 
 let favs = store.get('favs', []);
 function isFav(id){ return favs.includes(id); }
@@ -62,12 +73,12 @@ const WMO = c => c===0?['☀️','Ensoleillé']:c<=2?['🌤️','Éclaircies']:c
 fetch(`https://api.open-meteo.com/v1/forecast?latitude=${L.lat}&longitude=${L.lng}&current=temperature_2m,weather_code,wind_speed_10m&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,sunrise,sunset&timezone=Europe%2FBrussels&forecast_days=6`)
   .then(r => r.json()).then(w => {
     const [e,t] = WMO(w.current.weather_code);
-    $('#wxNow').textContent = Math.round(w.current.temperature_2m)+'°'; $('#wxNowTxt').innerHTML = `${e} ${t}<br><small>vent ${Math.round(w.current.wind_speed_10m)} km/h</small>`;
+    $('#wxNow').textContent = Math.round(w.current.temperature_2m)+'°'; $('#wxNowTxt').innerHTML = `${e} ${T(t)}<br><small>vent ${Math.round(w.current.wind_speed_10m)} km/h</small>`;
     $('#heroWx').innerHTML = `<span class="chip">${e} ${Math.round(w.current.temperature_2m)}° à Izel</span>`;
     const hm = s => s.slice(11,16).replace(':','h');
     $('#sunTimes').innerHTML = `🌅 ${hm(w.daily.sunrise[0])} · 🌇 ${hm(w.daily.sunset[0])}`;
     $('#forecast').innerHTML = w.daily.time.map((d,i) => { const [ee] = WMO(w.daily.weather_code[i]); const dd = new Date(d+'T12:00');
-      return `<div class="d ${i===0?'sel':''}"><b>${i===0?"Auj.":dd.toLocaleDateString('fr-BE',{weekday:'short'})}</b><div class="e">${ee}</div><small>${Math.round(w.daily.temperature_2m_max[i])}°</small> <small class="muted">${Math.round(w.daily.temperature_2m_min[i])}°</small></div>`; }).join('');
+      return `<div class="d ${i===0?'sel':''}"><b>${i===0?"Auj.":dd.toLocaleDateString(LOCALE,{weekday:'short'})}</b><div class="e">${ee}</div><small>${Math.round(w.daily.temperature_2m_max[i])}°</small> <small class="muted">${Math.round(w.daily.temperature_2m_min[i])}°</small></div>`; }).join('');
     suggest(w.daily.weather_code[0], w.daily.precipitation_probability_max[0], w.daily.temperature_2m_max[0]);
   }).catch(() => { $('#forecast').innerHTML = '<span class="muted">Météo indisponible hors connexion.</span>'; suggest(1, 0, 15); });
 function suggest(code, rain, tmax){
@@ -142,11 +153,11 @@ function initMap(){
     line.bindTooltip(`${h.name} · ${fmtKm(h.km)}`,{sticky:true});
     layers.balades.addLayer(line);
   });
-  C.places.forEach(p => { const it = items['p:'+slug(p.name)]; layers.activites.addLayer(L_.marker([p.lat,p.lng],{icon:pinIcon(it.emoji,it.color)}).bindPopup(popupFor(it,`<p style="margin:0">${esc(p.description)}</p>`))); });
-  C.restaurants.forEach(p => { const it = items['r:'+slug(p.name)]; layers.tables.addLayer(L_.marker([p.lat,p.lng],{icon:pinIcon('🍴','#c4552c')}).bindPopup(popupFor(it,`<p style="margin:0">${esc(p.style)} · ${p.price||''}</p>`))); });
-  C.producers.forEach(p => { const it = items['d:'+slug(p.name)]; layers.terroir.addLayer(L_.marker([p.lat,p.lng],{icon:pinIcon('🧺','#c99a2e')}).bindPopup(popupFor(it,`<p style="margin:0">${esc(p.text).slice(0,160)}…</p>`))); });
-  C.history.sites.filter(s=>s.lat).forEach(p => { const it = items['s:'+slug(p.name)]; layers.patrimoine.addLayer(L_.marker([p.lat,p.lng],{icon:pinIcon('🏛️','#7a4f8a')}).bindPopup(popupFor(it,`<p style="margin:0">${esc(p.text).slice(0,180)}…</p>`))); });
-  C.events.filter(e=>e.lat).forEach(p => { const it = items['e:'+slug(p.name)]; layers.agenda.addLayer(L_.marker([p.lat,p.lng],{icon:pinIcon(it.emoji,'#2f4a34')}).bindPopup(popupFor(it,`<p style="margin:0"><b>${esc(p.dates)}</b></p>`))); });
+  C.places.forEach(p => { const it = items[ID.get(p)]; layers.activites.addLayer(L_.marker([p.lat,p.lng],{icon:pinIcon(it.emoji,it.color)}).bindPopup(popupFor(it,`<p style="margin:0">${esc(p.description)}</p>`))); });
+  C.restaurants.forEach(p => { const it = items[ID.get(p)]; layers.tables.addLayer(L_.marker([p.lat,p.lng],{icon:pinIcon('🍴','#c4552c')}).bindPopup(popupFor(it,`<p style="margin:0">${esc(p.style)} · ${p.price||''}</p>`))); });
+  C.producers.forEach(p => { const it = items[ID.get(p)]; layers.terroir.addLayer(L_.marker([p.lat,p.lng],{icon:pinIcon('🧺','#c99a2e')}).bindPopup(popupFor(it,`<p style="margin:0">${esc(p.text).slice(0,160)}…</p>`))); });
+  C.history.sites.filter(s=>s.lat).forEach(p => { const it = items[ID.get(p)]; layers.patrimoine.addLayer(L_.marker([p.lat,p.lng],{icon:pinIcon('🏛️','#7a4f8a')}).bindPopup(popupFor(it,`<p style="margin:0">${esc(p.text).slice(0,180)}…</p>`))); });
+  C.events.filter(e=>e.lat).forEach(p => { const it = items[ID.get(p)]; layers.agenda.addLayer(L_.marker([p.lat,p.lng],{icon:pinIcon(it.emoji,'#2f4a34')}).bindPopup(popupFor(it,`<p style="margin:0"><b>${esc(p.dates)}</b></p>`))); });
   Object.entries(groups).forEach(([k,g]) => { if(g.on) layers[k].addTo(map); });
   $('#mapLegend').innerHTML = Object.entries(groups).map(([k,g]) => `<button class="fchip ${g.on?'on':''}" data-l="${k}"><span class="dot" style="background:${g.color}"></span>${g.label}</button>`).join('');
   $('#mapLegend').onclick = e => { const b = e.target.closest('button'); if(!b) return; const k = b.dataset.l;
@@ -264,9 +275,9 @@ $('#rainOnly').onchange = renderActs;
 function renderActs(){
   const list = C.places.filter(p => (!aCat || p.category===aCat) && (!$('#rainOnly').checked || p.rainy))
     .map(p => ({...p, km: haversine(HOUSE,[p.lat,p.lng])})).sort((a,b) => a.km-b.km);
-  $('#acts').innerHTML = list.map(p => { const c = PCAT[p.category]||{}; const id = 'p:'+slug(p.name);
+  $('#acts').innerHTML = list.map(p => { const c = PCAT[p.category]||{}; const id = ID.get(p);
     return `<article class="card act reveal in" style="position:relative"><div class="top" style="background:${c.color}"></div>${favBtn(id).replace('class="fav','class="fav" style="top:16px')}<div class="b">
-    <span class="cat" style="color:${c.color}">${c.emoji} ${c.label}</span><h4 style="padding-right:36px">${esc(p.name)}</h4><p>${esc(p.description)}</p>
+    <span class="cat" style="color:${c.color}">${c.emoji} ${T(c.label)}</span><h4 style="padding-right:36px">${esc(p.name)}</h4><p>${esc(p.description)}</p>
     ${p.tip?`<div class="tip">« ${esc(p.tip)} »</div>`:''}
     <div class="meta"><span>${icon('car')} ${driveMin(p.km)} min</span>${p.duration?`<span>${icon('clock')} ${esc(p.duration)}</span>`:''}${p.rainy?'<span class="rainy">☔ par temps de pluie</span>':''}<span class="grow"></span>
     ${p.url?`<a href="${p.url}" target="_blank" rel="noopener">Site ↗</a>`:''}<a href="#explorer" data-fly="${p.lat},${p.lng}">Carte</a></div></div></article>`; }).join('');
@@ -280,7 +291,7 @@ const monthList = Array.from({length:13}, (_,i) => new Date(startM.getFullYear()
 let selM = null; let stay = store.get('stay', null);
 if(stay){ $('#stayIn').value = stay.in; $('#stayOut').value = stay.out; }
 function stayMonths(){ if(!stay) return new Set(); const a = new Date(stay.in), b = new Date(stay.out); const s = new Set(); for(let d = new Date(a.getFullYear(),a.getMonth(),1); d <= b; d.setMonth(d.getMonth()+1)) s.add(d.getMonth()+1); return s; }
-function evDate(e){ const m = (e.dates||'').match(/(\d{1,2})(?:er)?\s*(?:[-–au ]+\s*\d{1,2}(?:er)?)?\s+(janvier|février|mars|avril|mai|juin|juillet|août|septembre|octobre|novembre|décembre)\s+(20\d\d)/i);
+function evDate(e){ e = CF.events[C.events.indexOf(e)] || e; const m = (e.dates||'').match(/(\d{1,2})(?:er)?\s*(?:[-–au ]+\s*\d{1,2}(?:er)?)?\s+(janvier|février|mars|avril|mai|juin|juillet|août|septembre|octobre|novembre|décembre)\s+(20\d\d)/i);
   if(m) return {day:+m[1], month:MONTHS_L.indexOf(m[2].toLowerCase())+1, year:+m[3]}; return null; }
 function renderMonths(){
   const sm = stayMonths();
@@ -293,15 +304,15 @@ function renderEvents(){
   let list = C.events.filter(e => selM===null ? (stay ? (sm.has(e.month) || e.month==null) : true) : selM===0 ? e.month==null : e.month===selM);
   const order = m => m==null ? 99 : ((m - (now.getMonth()+1) + 12) % 12);
   list.sort((a,b) => order(a.month)-order(b.month));
-  $('#events').innerHTML = list.map(e => { const dd = evDate(e); const id = 'e:'+slug(e.name);
+  $('#events').innerHTML = list.map(e => { const dd = evDate(e); const id = ID.get(e);
     return `<article class="card ev" style="position:relative;color:var(--ink)"><div class="date">${e.month?`<small>${MONTHS[e.month-1]}</small><b>${dd?dd.day:'·'}</b>`:'<small>chaque</small><b>📆</b>'}</div>
-    <div class="b">${favBtn(id)}<span class="cat" style="font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--semois)">${ECAT[e.category]||''} ${esc(e.category)}</span><h4 style="padding-right:36px">${esc(e.name)}</h4>
+    <div class="b">${favBtn(id)}<span class="cat" style="font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--semois)">${ECAT[e.category]||''} ${esc(T(e.category))}</span><h4 style="padding-right:36px">${esc(e.name)}</h4>
     <p>${esc(e.description)}</p><div class="muted" style="font-size:.84rem"><b>${esc(e.dates)}</b> · ${esc(e.place)}${e.confirmed===false?' · <i>date à confirmer</i>':''}</div>
     <div style="display:flex;gap:10px;margin-top:8px;font-size:.85rem;font-weight:700">${dd?`<a href="#" data-ics="${esc(id)}">+ Mon agenda</a>`:''}${e.url?`<a href="${e.url}" target="_blank" rel="noopener">Site officiel ↗</a>`:''}<a href="#explorer" data-fly="${e.lat},${e.lng}">Carte</a></div></div></article>`; }).join('')
     || '<p>Pas d\'événement répertorié sur cette période : profitez du calme et des balades !</p>';
 }
 document.addEventListener('click', e => { const a = e.target.closest('[data-ics]'); if(!a) return; e.preventDefault();
-  const ev = C.events.find(x => 'e:'+slug(x.name)===a.dataset.ics); const dd = evDate(ev);
+  const ev = C.events.find(x => ID.get(x)===a.dataset.ics); const dd = evDate(ev);
   const s = `${dd.year}-${String(dd.month).padStart(2,'0')}-${String(dd.day).padStart(2,'0')}`; const end = new Date(s); end.setDate(end.getDate()+1);
   download(slug(ev.name)+'.ics', ics([{start:s,end:end.toISOString().slice(0,10),title:ev.name,place:ev.place,desc:ev.description+' '+(ev.url||'')}]), 'text/calendar'); });
 $('#stayApply').onclick = () => { if(!$('#stayIn').value || !$('#stayOut').value) return toast('Indiquez vos dates d\'arrivée et de départ');
@@ -316,11 +327,11 @@ $('#foodTabs').onclick = e => { const b = e.target.closest('button'); if(!b) ret
 function renderFood(){
   const B = $('#foodBody');
   if(ft==='spec') B.innerHTML = `<div class="grid g3">${C.specialties.map(s => `<article class="card act"><div class="b"><div style="font-size:2.2rem">${s.emoji||'🍽️'}</div><h4>${esc(s.name)}</h4><p>${esc(s.text)}</p>${s.where?`<div class="tip">Où ? ${esc(s.where)}</div>`:''}</div></article>`).join('')}</div>`;
-  if(ft==='resto') B.innerHTML = `<div class="grid g3">${C.restaurants.map(r => { const id = 'r:'+slug(r.name), km = haversine(HOUSE,[r.lat,r.lng]);
+  if(ft==='resto') B.innerHTML = `<div class="grid g3">${C.restaurants.map(r => { const id = ID.get(r), km = haversine(HOUSE,[r.lat,r.lng]);
     return `<article class="card act" style="position:relative">${favBtn(id)}<div class="b"><span class="cat" style="color:var(--ochre)">🍴 ${esc(r.town)} · ${r.price||''}</span><h4 style="padding-right:36px">${esc(r.name)}</h4><p><b>${esc(r.style)}</b></p><p>${esc(r.text)}</p>
     <div class="meta"><span>${icon('car')} ${driveMin(km)} min</span><span class="grow"></span>${r.url?`<a href="${r.url}" target="_blank" rel="noopener">Site ↗</a>`:''}<a href="#explorer" data-fly="${r.lat},${r.lng}">Carte</a></div></div></article>`; }).join('')}</div>
     <p class="muted" style="font-size:.85rem;margin-top:14px">Réservez, surtout le week-end et en été. Horaires à vérifier : beaucoup de tables ferment en début de semaine.</p>`;
-  if(ft==='prod') B.innerHTML = `<div class="grid g3">${C.producers.map(r => { const id = 'd:'+slug(r.name), km = haversine(HOUSE,[r.lat,r.lng]);
+  if(ft==='prod') B.innerHTML = `<div class="grid g3">${C.producers.map(r => { const id = ID.get(r), km = haversine(HOUSE,[r.lat,r.lng]);
     return `<article class="card act" style="position:relative">${favBtn(id)}<div class="b"><span class="cat" style="color:var(--wheat)">🧺 ${esc(r.type)} · ${esc(r.town)}</span><h4 style="padding-right:36px">${esc(r.name)}</h4><p>${esc(r.text)}</p>${r.hours?`<div class="muted" style="font-size:.84rem">🕒 ${esc(r.hours)}</div>`:''}
     <div class="meta"><span>${icon('car')} ${driveMin(km)} min</span><span class="grow"></span>${r.url?`<a href="${r.url}" target="_blank" rel="noopener">Site ↗</a>`:''}<a href="#explorer" data-fly="${r.lat},${r.lng}">Carte</a></div></div></article>`; }).join('')}</div>`;
   if(ft==='recette') B.innerHTML = `<div class="grid g2">${C.recipes.map((r,i) => `<article class="card act"><div class="b"><span class="cat" style="color:var(--moss)">👩‍🍳 ${esc(r.serves)} · ${esc(r.time)}</span><h4>${esc(r.name)}</h4>${r.story?`<div class="tip">${esc(r.story)}</div>`:''}
@@ -360,8 +371,8 @@ function renderHist(){
     B.querySelector('.tl-filter').onclick = e => { const b = e.target.closest('[data-tf]'); if(!b) return; $$('.tl-filter .fchip').forEach(x => x.classList.toggle('on', x===b));
       $$('.timeline .tl').forEach(n => n.style.display = b.dataset.tf==='all' || n.classList.contains(b.dataset.tf) ? '' : 'none'); };
   }
-  if(ht==='lieux') B.innerHTML = `<div class="grid g3">${C.history.sites.map(s => { const km = s.lat ? haversine(HOUSE,[s.lat,s.lng]) : null; const id = 's:'+slug(s.name);
-    return `<article class="card act" style="position:relative">${s.lat?favBtn(id):''}<div class="b"><span class="cat" style="color:#7a4f8a">🏛️ ${km!=null?(km<1.5?'À pied depuis la maison':fmtKm(km)):''}</span><h4 style="padding-right:36px">${esc(s.name)}</h4><p>${esc(s.text)}</p>
+  if(ht==='lieux') B.innerHTML = `<div class="grid g3">${C.history.sites.map(s => { const km = s.lat ? haversine(HOUSE,[s.lat,s.lng]) : null; const id = ID.get(s);
+    return `<article class="card act" style="position:relative">${s.lat?favBtn(id):''}<div class="b"><span class="cat" style="color:#7a4f8a">🏛️ ${km!=null?(km<1.5?T('À pied depuis la maison'):fmtKm(km)):''}</span><h4 style="padding-right:36px">${esc(s.name)}</h4><p>${esc(s.text)}</p>
     <div class="meta">${s.lat?`<a href="#explorer" data-fly="${s.lat},${s.lng}">Voir sur la carte</a>`:''}<span class="grow"></span>${s.source?`<a href="${s.source}" target="_blank" rel="noopener">Source ↗</a>`:''}</div></div></article>`; }).join('')}</div>`;
   if(ht==='legendes') B.innerHTML = `<div class="grid g2">${C.history.legends.map(l => `<article class="card act legend"><div class="b"><span class="hand" style="font-size:1.4rem">Il était une fois…</span><h4>${esc(l.title)}</h4><p>${esc(l.text)}</p></div></article>`).join('')}</div>`;
   if(ht==='famille') B.innerHTML = `<p class="muted" style="margin-top:0">Les souvenirs de ceux qui ont fait revivre Belizel.</p><div class="grid g3">${S.map(s => `<article class="card room"><img src="${s.photo}" alt=""><div class="b"><span class="hand" style="font-size:1.3rem">${esc(s.year)}</span><h4>${esc(s.title)}</h4><p style="margin:0;font-size:.93rem;color:var(--ink-2)">${esc(s.text)}</p></div></article>`).join('')}</div>`;
@@ -371,7 +382,7 @@ renderHist();
 
 /* ---------- Culture ---------- */
 const CCAT = {langue:'🗣️',traditions:'🎉',art:'🎨',musée:'🖼️',littérature:'📚',musique:'🎷',légende:'🧚',nature:'🌿'};
-$('#cultureGrid').innerHTML = C.culture.map(c => `<article class="card act reveal"><div class="b"><span class="cat" style="color:var(--semois)">${CCAT[c.category]||'✨'} ${esc(c.category)}</span><h4>${esc(c.title)}</h4><p>${esc(c.text)}</p>
+$('#cultureGrid').innerHTML = C.culture.map(c => `<article class="card act reveal"><div class="b"><span class="cat" style="color:var(--semois)">${CCAT[c.category]||'✨'} ${esc(T(c.category))}</span><h4>${esc(c.title)}</h4><p>${esc(c.text)}</p>
   <div class="meta"><span class="grow"></span>${c.lat?`<a href="#explorer" data-fly="${c.lat},${c.lng}">Carte</a>`:''}${c.url?`<a href="${c.url}" target="_blank" rel="noopener">En savoir plus ↗</a>`:''}</div></div></article>`).join('');
 
 /* ---------- Mon séjour ---------- */
@@ -386,13 +397,13 @@ function itemRow(id, removable){ const it = items[id]; if(!it) return '';
   ${removable?`<button class="x" data-unplan="${esc(id)}" title="Retirer de ce jour">${icon('close')}</button>`:`<select class="field" data-assign="${esc(id)}" style="margin-left:auto;padding:4px 6px;font-size:.75rem" title="Choisir un jour"><option value="">Jour…</option>${Array.from({length:nDays()},(_,i)=>`<option value="${i}">J${i+1}</option>`).join('')}</select>`}</div>`; }
 function renderPlanner(){
   const nd = nDays(); $('#nDays').value = nd; $('#nDays').disabled = !!stay;
-  $('#planDates').textContent = stay ? `du ${new Date(stay.in).toLocaleDateString('fr-BE')} au ${new Date(stay.out).toLocaleDateString('fr-BE')}` : 'Indiquez vos dates dans l\'agenda pour les caler sur votre séjour.';
+  $('#planDates').textContent = stay ? `du ${new Date(stay.in).toLocaleDateString(LOCALE)} au ${new Date(stay.out).toLocaleDateString(LOCALE)}` : 'Indiquez vos dates dans l\'agenda pour les caler sur votre séjour.';
   const planned = new Set(Object.values(plan).flat());
   const pool = favs.filter(f => !planned.has(f) && items[f]);
   $('#pool').innerHTML = pool.map(id => itemRow(id,false)).join('') || `<div class="empty">${favs.length?'Tout est planifié 👌':'Ajoutez des favoris ♥ depuis les balades, activités, restaurants ou l\'agenda.'}</div>`;
   $('#days').innerHTML = Array.from({length:nd},(_,i) => { const d = stay ? new Date(new Date(stay.in).getTime()+i*864e5) : null; const list = (plan[i]||[]).filter(id => items[id]);
     const mins = list.reduce((s,id)=>s+(items[id].minutes||90),0);
-    return `<div class="day" data-day="${i}"><h4>Jour ${i+1}<small>${d?d.toLocaleDateString('fr-BE',{weekday:'short',day:'numeric',month:'short'}):''}${list.length?' · ~'+fmtDur(mins):''}</small></h4>${list.map(id=>itemRow(id,true)).join('') || '<div class="empty">Glissez une activité ici</div>'}</div>`; }).join('');
+    return `<div class="day" data-day="${i}"><h4>Jour ${i+1}<small>${d?d.toLocaleDateString(LOCALE,{weekday:'short',day:'numeric',month:'short'}):''}${list.length?' · ~'+fmtDur(mins):''}</small></h4>${list.map(id=>itemRow(id,true)).join('') || '<div class="empty">Glissez une activité ici</div>'}</div>`; }).join('');
   updateFavCount();
 }
 document.addEventListener('dragstart', e => { const it = e.target.closest('.item'); if(it){ e.dataTransfer.setData('text/plain', it.dataset.id); } });
@@ -428,7 +439,7 @@ function lockScreen(){
   $('#wifiCard').innerHTML = `<div style="text-align:center;width:100%">${icon('wifi')}<p class="muted" style="margin:6px 0 0">Le wifi s'affiche ici une fois le code saisi.</p></div>`;
   $('#codeForm').onsubmit = async e => { e.preventDefault(); if(!(await unlockManual($('#gcode').value))) toast('Code incorrect'); };
 }
-function showManual(){ M.wifi = MAN.wifi; M.sections = MAN.sections; renderManual(); renderWifi(); }
+function showManual(){ M.wifi = MAN.wifi; M.sections = (NLD && MAN.nl) ? MAN.nl.sections : MAN.sections; renderManual(); renderWifi(); }
 function renderManual(q=''){
   if(!MAN) return lockScreen();
   q = q.trim().toLowerCase();
@@ -447,7 +458,7 @@ function renderWifi(){
 renderManual(); if(MAN) renderWifi();
 if(SB.on){ const qc = new URLSearchParams(location.search).get('code') || store.get('gcode', null); if(qc) unlockManual(qc); }
 // Contenus éditables depuis l'admin (histoires de la maison…)
-if(SB.on) SB.select('content','select=key,data').then(rows => { rows.forEach(r => { if(r.key==='stories' && Array.isArray(r.data)){ S.length = 0; S.push(...r.data); if(ht==='famille'||ht==='frise') renderHist(); } }); }).catch(()=>{});
+if(SB.on) SB.select('content','select=key,data').then(rows => { if(NLD){ const fr = rows.find(r=>r.key==='stories'); rows.forEach(r => { if(r.key==='stories_nl' && fr) r.data = r.data.map((x,i)=>({...(fr.data[i]||{}), ...x})); }); } return rows; }).then(rows => { rows.forEach(r => { if(r.key===(NLD?'stories_nl':'stories') && Array.isArray(r.data)){ S.length = 0; S.push(...r.data); if(ht==='famille'||ht==='frise') renderHist(); } }); }).catch(()=>{});
 
 /* ---------- Bienvenue, visite guidée, guide ---------- */
 function startTour(){
@@ -478,6 +489,7 @@ if(!store.get('toured', false)) setTimeout(() => $('#welcome').classList.add('on
 if(location.hash === '#tour') setTimeout(startTour, 800);
 
 PWA('Belizel');
+$$('.lang-btn').forEach(b => { b.textContent = NLD ? 'FR' : 'NL'; b.title = NLD ? 'Version française' : 'Nederlandse versie'; b.onclick = () => setLang(NLD ? 'fr' : 'nl'); });
 revealAll();
 addEventListener('scroll', () => { const tl = $('.timeline'), pr = $('.tl-progress'); if(!tl || !pr) return; const r = tl.getBoundingClientRect(); const p = Math.max(0, Math.min(1, (innerHeight*0.6 - r.top) / r.height)); pr.style.height = (p*100)+'%'; }, {passive:true});
 })();

@@ -1,0 +1,401 @@
+{
+ "specialties": [
+  {
+   "name": "Trappistenbier van Orval",
+   "text": "Gebrouwen in de abdij van Orval, gesticht in 1132. De klassieke Orval heeft zo'n 6,2 % alcohol. Tijdens de rijping wordt het bier koud gehopt en daarna nagegist met Brettanomyces-gist: een harsige neus, een uitgesproken bitterheid en een droge, ietwat « funky » afdronk. Het bier blijft jarenlang evolueren in de kelder (tonen van leder en rijp fruit na 1 à 2 jaar). In de handel wordt maar één Orval verkocht.",
+   "where": "Abdijwinkel van Orval (elke dag open, maximaal 2 bakken van 10 flessen per persoon), cafés en kruideniers in de hele streek.",
+   "emoji": "🍺"
+  },
+  {
+   "name": "Orval Vert (« Petite Orval »)",
+   "text": "Een lichtere en zeldzamere versie van de Orval, die u enkel drinkt in de taverne À l'Ange Gardien, tegenover de abdij. Het alcoholpercentage van ongeveer 4,5 % komt uit klantenreviews en moet ter plaatse nog bevestigd worden.",
+   "where": "À l'Ange Gardien, Route d'Orval 3, Villers-devant-Orval.",
+   "emoji": "🍻",
+   "confirmed": false
+  },
+  {
+   "name": "Orvalkaas (fromage d'Orval)",
+   "text": "Trappistenkaas met een geperste, ongekookte kaasmassa en een natuurlijke korst die met de hand gewassen wordt, sinds 1928 gemaakt op het domein van de abdij. Het recept komt van de trappisten van Port-du-Salut (1816). De volle, gepasteuriseerde koemelk komt van boerderijen uit de Gaume. Een soepele, smeuïge en romige kaas: de klassieke gezel van een Orval bij het aperitief.",
+   "where": "Abdijwinkel van Orval en taverne À l'Ange Gardien. Ook bij kaasboeren en kruideniers in de streek.",
+   "emoji": "🧀"
+  },
+  {
+   "name": "Gaumse paté (pâté gaumais) BGA",
+   "text": "Ondanks de naam is het een taart: minstens 30 % varkensvlees, gemarineerd in witte wijn (of azijn) met ui, tijm en laurier, in een goudbruin deeg. Hij is beschermd als Europese BGA (beschermde geografische aanduiding): alleen wat in de Gaume volgens een gecontroleerd lastenboek gemaakt wordt, mag die naam dragen. U eet hem warm of koud, als voorgerecht of hoofdgerecht, en warmt hem bij voorkeur op in de oven.",
+   "where": "Salaisons G. Blaise (Place Albert Ier 4, Florenville), slagers en charcutiers in de streek. Op de kaart van Le Chameleux (Florenville).",
+   "emoji": "🥧"
+  },
+  {
+   "name": "Gaumse worst (saucisson gaumais) BGA (en « pipe gaumaise »)",
+   "text": "Gefermenteerde varkensworst, licht gerookt en gedroogd, sinds juli 2024 erkend als Europese BGA. Ze bestaat in vier vormen, waaronder de « pipe » (dunne droge worst), de « collier » en de « baudruche ». Een vijftiental slagerijen en charcuteriezaken in de Gaume maken ze. Ideaal voor een aperitief of een picknick aan de oever van de Semois.",
+   "where": "Salaisons G. Blaise in Florenville en slagerijen in de Gaume (bijvoorbeeld Boucherie Protin in Chiny, niet geverifieerd).",
+   "emoji": "🥓"
+  },
+  {
+   "name": "Plate de Florenville BGA",
+   "text": "Vastkokende aardappel (ras Rosa), geteeld op de zandig-kalkrijke gronden van Florenville en de buurgemeenten, sinds 2015 beschermd als BGA. Fijn, smeuïg vruchtvlees met een lichte toets van hazelnoot. Het is een late aardappel (zo'n 120 dagen in de grond), die u vooral van de herfst tot de winter proeft. De productie is beperkt.",
+   "where": "Bij producenten en kruideniers in Florenville. Het Aardappelfeest (Fête de la pomme de terre) van Florenville vindt elk jaar plaats in het 3e weekend van oktober, met rechtstreekse verkoop door de telers.",
+   "emoji": "🥔"
+  },
+  {
+   "name": "Touffaye (Gaumse stoofschotel)",
+   "text": "Huiselijk gerecht uit de Gaume (de streeknaam « touffaye » betekent zoveel als stoofpot): aardappelen en uien, lang gestoofd in reuzel, met spek, varkenskoteletten en worstjes. U krijgt het geserveerd met de jus, een slaatje van paardenbloem of krulandijvie met vinaigrette en gepocheerde of hardgekookte eieren. Een echt wintergerecht.",
+   "where": "Op de kaart van Gaumse bistro's in het koude seizoen, gewoon even vragen. Makkelijk zelf te koken in de vakantiewoning (zie de recepten).",
+   "emoji": "🍲"
+  },
+  {
+   "name": "Ardense ham (jambon d'Ardenne) BGA",
+   "text": "Rauwe ham, droog of in pekel gezouten, gedroogd, vaak gerookt en gerijpt, minstens 33 weken voor ham met been. Hij is erkend in België sinds 1974 en als Europese BGA sinds 1996. Het is dé grote charcuteriespecialiteit van het zuiden van Wallonië.",
+   "where": "Slagerijen en charcuteriezaken in de streek (onder meer in Florenville), in flinterdunne sneetjes of als Ardense schotel in het restaurant.",
+   "emoji": "🍖"
+  },
+  {
+   "name": "Rivierforel",
+   "text": "De forel is het embleem van Orval: volgens de legende bracht een forel de ring terug van gravin Mathilde. In de herbergen langs de Semois eet u ze « meunière », in boter gebakken. Let op: er werd geen viskwekerij met rechtstreekse verkoop gevonden langs de Semois bij Chiny, en de meeste forellen die in België verkocht worden, zijn ingevoerd.",
+   "where": "Le Chameleux (Florenville), bekend om zijn forel meunière (ongeveer 20 €), en andere herbergen in de vallei.",
+   "emoji": "🐟",
+   "confirmed": false
+  },
+  {
+   "name": "Ambachtelijke bieren uit de Gaume (Gengoulf, La Clochette, Rulles)",
+   "text": "Rond Orval brouwen verschillende microbrouwerijen blonde, amberkleurige, bruine en tripelbieren. Gengoulf (Villers-devant-Orval, sinds 2013) won een gouden medaille en brouwt ook een amberbier met eekhoorntjesbrood. La Clochette zit in Étalle, en La Rulles, de bekendste, in Rulles (Habay).",
+   "where": "Kruideniers en cafés in de Gaume, verkoop aan de brouwerij na contact (zie de producenten).",
+   "emoji": "🍺"
+  },
+  {
+   "name": "Wijn uit Torgny (Le Poirier du Loup)",
+   "text": "Torgny, het zuidelijkste dorp van België, heeft wijngaarden op terrassen dankzij het zachtere klimaat van de Gaume. De biologische gemeentelijke wijngaard Le Poirier du Loup (zo'n 1,6 ha, onderhouden door een veertigtal vrijwilligers) maakt ongeveer 5 000 flessen per jaar, vooral witte schuimwijnen en een roze crémant, daarnaast stille wijnen en een ratafia.",
+   "where": "Toeristische dienst bij de kerk van Torgny, of een rondleiding in de wijngaard op reservatie.",
+   "emoji": "🍷"
+  },
+  {
+   "name": "Chocolade van Deremiens (Jamoigne)",
+   "text": "Ambachtelijke chocolatier en branderij in Jamoigne, op enkele kilometers van Izel. François Deremiens werkt met grands crus en creëerde de Okabo, een blonde chocolade met tonen van karamel en koekjes. Een heerlijk lokaal cadeautje om mee naar huis te nemen.",
+   "where": "Atelier Deremiens, Voie d'Orval 26, 6810 Jamoigne (openingsuren niet geverifieerd, bel +32 61 50 29 79).",
+   "emoji": "🍫",
+   "confirmed": false
+  },
+  {
+   "name": "Herfstwild",
+   "text": "Dankzij de bossen van de Gaume en Herbeumont is de herfst (oktober tot december) het wildseizoen: ree en everzwijn, vaak met veenbessen, peer en witloof. Algemene info: er werd geen enkele restaurantkaart voor 2026 geverifieerd.",
+   "where": "Seizoensmenu's van de restaurants in de streek (Au Cœur de Lacuisine, Le Florentin, L'Épisode, Coprin…), na te vragen bij de reservatie.",
+   "emoji": "🦌",
+   "confirmed": false
+  },
+  {
+   "name": "Semoistabak (historische teelt)",
+   "text": "In de benedenvallei van de Semois wordt al sinds de jaren 1850 tabak geteeld (Joseph Pierret, Alle-sur-Semois), met een hoogtepunt in de jaren 1930. In Bohan, Laforêt en Corbion ziet u nog houten droogschuren. De vakkennis is sinds eind 2024 erkend als immaterieel cultureel erfgoed van de Federatie Wallonië-Brussel, maar er zouden nog maar drie telers overblijven (2025).",
+   "where": "Tabaksroute (Route du Tabac, bewegwijzerde lussen rond Vresse-sur-Semois en Bouillon), op 35-45 km van Izel. Strikt genomen geen specialiteit van de Gaume.",
+   "emoji": "🍂"
+  }
+ ],
+ "recipes": [
+  {
+   "name": "Gaumse touffaye (stoofpot van aardappelen met spek)",
+   "serves": "4 personen",
+   "time": "30 min voorbereiding en 3 u zacht stoven",
+   "ingredients": [
+    "1 kg vastkokende aardappelen (idealiter Plate de Florenville)",
+    "4 grote uien, in reepjes",
+    "300 g gerookt spek in dikke plakken (of restjes ham en spek)",
+    "4 varkenskoteletten (type spierling)",
+    "4 worsten",
+    "2 el reuzel (of boter)",
+    "1 takje tijm, 2 laurierblaadjes, 2 teentjes look, 2 kruidnagels",
+    "Zout, peper",
+    "Om te serveren: slaatje van paardenbloem of krulandijvie met vinaigrette, 4 gepocheerde of hardgekookte eieren"
+   ],
+   "steps": [
+    "Laat de reuzel op zacht vuur smelten in een stoofpot. Bak het spek en de koteletten goudbruin en haal ze er dan uit.",
+    "Stoof de uien in het vet tot ze mooi bruin zijn en schraap daarbij de aanbaksels los.",
+    "Voeg de aardappelen in stukken, de look, de tijm, de laurier en de kruidnagels toe. Giet er water op tot alles net onder staat, zout lichtjes en peper.",
+    "Laat 2 u 30 tot 3 u zachtjes stoven met het deksel op een kier, tot de aardappelen met een vork fijn te prakken zijn.",
+    "Leg het spek en de koteletten er 20 min voor het opdienen terug in, en de worsten 10 min ervoor.",
+    "Serveer in diepe borden met de jus, het slaatje met vinaigrette en de eieren. Drink er een streekbier of een lichte rode wijn bij."
+   ],
+   "story": "De touffaye, of « touffâye », is de Gaumse naam voor de stoofpot: het gerecht dat de hele namiddag op een hoekje van de kachel stond te pruttelen.",
+   "source": "RTBF (Vivacité), recette de Claude Peignois, bistrot Au Cœur de la Gaume (Ethe) : https://www.rtbf.be/article/la-recette-de-la-touffaye-au-coeur-de-la-gaume-10035235. La source ne donne pas de quantités : celles-ci sont une proposition."
+  },
+  {
+   "name": "Rustieke taart met Plate de Florenville",
+   "serves": "4 personen",
+   "time": "20 min voorbereiding, 1 u rusten en 40 min in de oven",
+   "ingredients": [
+    "175 g bloem",
+    "115 g boter (Ardense boter, Beurre d'Ardenne BOB) op kamertemperatuur",
+    "4 kl koud water",
+    "1 kl zout",
+    "2 à 3 aardappelen Plate de Florenville",
+    "100 g kaas (Herve BOB in het recept; Orvalkaas past ook prima)",
+    "1 ui en 1 lente-uitje",
+    "1 el olijfolie",
+    "Verse rozemarijn, zout, peper"
+   ],
+   "steps": [
+    "Meng de boter, de bloem, het water en het zout tot een bal. Wikkel in folie en laat minstens 1 u rusten in de koelkast.",
+    "Verwarm de oven voor op 180 °C. Rol het deeg uit tot een schijf van zo'n 30 cm op bakpapier.",
+    "Snijd de aardappelen in dunne plakjes (3 mm) en leg ze op het deeg, met 5 cm vrije rand. Kruid met zout en peper en leg er de uiringen en de kaas in stukjes op.",
+    "Vouw de randen over de vulling, besprenkel met een scheutje olijfolie en bak 30 tot 40 min, tot de taart mooi goudbruin is.",
+    "Bestrooi met lente-ui en rozemarijn en serveer meteen."
+   ],
+   "story": "De Plate de Florenville is de BGA-aardappel van de Gaume, die elk najaar in Florenville gevierd wordt.",
+   "source": "Elle Belgique, en collaboration avec l'Apaq-W : https://www.elle.be/fr/?p=346248. Remplacer le Herve par de l'Orval est notre suggestion."
+  },
+  {
+   "name": "Kaaskorstjes met Orvalkaas",
+   "serves": "4 personen (voorgerecht of lichte maaltijd)",
+   "time": "15 min",
+   "ingredients": [
+    "8 sneden boerenbrood",
+    "250 g Orvalkaas in plakken",
+    "4 sneden Ardense ham (naar keuze)",
+    "Enkele lepels Orval (bier) of melk",
+    "Peper, groene salade om te serveren"
+   ],
+   "steps": [
+    "Verwarm de oven voor op de grillstand.",
+    "Leg de sneden brood op een bakplaat en besprenkel ze met enkele druppels bier.",
+    "Leg er de ham op als u die gebruikt, en bedek alles rijkelijk met Orvalkaas.",
+    "Zet 5 tot 8 min onder de grill, tot de kaas smelt en goudbruin kleurt.",
+    "Kruid met peper en serveer met een groene salade en een Orval."
+   ],
+   "story": "De twee producten van de abdij, het bier en de kaas, samen in een eenvoudig recept voor de eerste avond in de vakantiewoning.",
+   "source": "Recette générique de croûte au fromage, adaptée aux produits locaux. Non tirée d'une source gaumaise.",
+   "confirmed": false
+  },
+  {
+   "name": "Forel meunière",
+   "serves": "2 personen",
+   "time": "20 min",
+   "ingredients": [
+    "2 schoongemaakte forellen (van ongeveer 300 g)",
+    "Bloem",
+    "60 g boter",
+    "1 citroen",
+    "Gehakte peterselie, zout, peper",
+    "Gestoomde aardappelen (idealiter Plate de Florenville)"
+   ],
+   "steps": [
+    "Kruid de forellen vanbinnen en vanbuiten met zout en peper, bestuif ze licht met bloem en klop het overtollige eraf.",
+    "Laat de helft van de boter schuimen in een grote pan en bak de forellen 5 tot 6 min per kant op middelhoog vuur.",
+    "Houd ze warm op een voorverwarmde schotel. Doe de rest van de boter in de pan en laat hem hazelnootbruin worden.",
+    "Overgiet de forellen met de bruine boter en wat citroensap en bestrooi met peterselie.",
+    "Serveer met gestoomde aardappelen."
+   ],
+   "story": "Forel meunière is het klassieke gerecht van de herbergen langs de Semois, zoals in Le Chameleux, en de forel met de ring is het embleem van Orval.",
+   "source": "Recette classique de la cuisine française. Le lien avec la région vient de la carte du Chameleux (Le Fooding, 2024).",
+   "confirmed": false
+  }
+ ],
+ "producers": [
+  {
+   "name": "Abdij van Orval: winkel (bier, kaas, brood)",
+   "type": "brouwerij",
+   "town": "Villers-devant-Orval (Florenville)",
+   "lat": 49.6396,
+   "lng": 5.3486,
+   "text": "Cisterciënzerabdij met ruïnes uit de 12e eeuw, musea en een tuin met geneeskrachtige planten. In de winkel vindt u het Orvalbier (maximaal 2 bakken van 10 flessen per persoon), de Orvalkaas en andere producten. De brouwerij is enkel te bezoeken tijdens de opendeurdagen in september, na inschrijving.",
+   "url": "https://www.orval.be",
+   "hours": "Winkel en historisch gedeelte het hele jaar door elke dag open (exacte uren op orval.be). Tel. +32 61 31 10 60."
+  },
+  {
+   "name": "Brasserie Gengoulf",
+   "type": "brouwerij",
+   "town": "Villers-devant-Orval (Florenville)",
+   "lat": 49.6305,
+   "lng": 5.3205,
+   "text": "Microbrouwerij opgericht in 2013, op 2 km van Orval, genoemd naar de patroonheilige van het dorp. Ze brouwt een blond, een amber, een bruin en een tripel, en won een gouden medaille. Adres: rue des Hawys 24.",
+   "url": "https://gengoulf.be",
+   "hours": "Geen vaste openingsuren: neem contact op met de brouwerij via +32 494 18 14 45 (contact@gengoulf.be)."
+  },
+  {
+   "name": "Brasserie de la Clochette",
+   "type": "brouwerij",
+   "town": "Étalle",
+   "lat": 49.672,
+   "lng": 5.6,
+   "text": "Ambachtelijke brouwerij uit de Gaume die een blond, een amber, een tripel en seizoensbieren brouwt. Adres: rue de Virton 50. De site is toegankelijk (label Access-i).",
+   "url": "https://brasseriedelaclochette.be",
+   "hours": "Niet gevonden: bel +32 470 06 95 27.",
+   "confirmed": false
+  },
+  {
+   "name": "Brasserie artisanale de Rulles",
+   "type": "brouwerij",
+   "town": "Rulles (Habay)",
+   "lat": 49.717,
+   "lng": 5.56,
+   "text": "De bekendste microbrouwerij van de Gaume, met bieren die tot ver over de grens geëxporteerd worden. Adres: rue Maurice Grévisse 36. Op bepaalde data zijn er rondleidingen met proeverij, en groepsbezoeken op reservatie.",
+   "url": "https://www.larulles.be",
+   "hours": "Geen vaste openingsuren gevonden: bel +32 63 41 18 38.",
+   "confirmed": false
+  },
+  {
+   "name": "Salaisons G. Blaise",
+   "type": "kruidenier",
+   "town": "Florenville",
+   "lat": 49.6993,
+   "lng": 5.3102,
+   "text": "Familiale charcuteriezaak opgericht in 1910, herkenbaar aan de gevel met rode gotische letters. Specialiteiten: Gaumse paté (pâté gaumais) BGA (ongeveer 17 €/kg), pipe gaumaise, droge worsten, paté met bier en streekkazen. Adres: Place Albert Ier 4.",
+   "url": "https://lefooding.com/commerces/salaisons-g-blaise",
+   "hours": "9-12 u en 14-18 u, zondag vanaf 10 u, maandag gesloten (volgens Le Fooding, nog na te kijken)."
+  },
+  {
+   "name": "Deremiens, chocolatier",
+   "type": "kruidenier",
+   "town": "Jamoigne (Chiny)",
+   "lat": 49.696,
+   "lng": 5.412,
+   "text": "Ambachtelijk chocolade-atelier op zo'n 3 km van Izel, bekend om zijn grands crus en de blonde chocolade Okabo. Adres: Voie d'Orval 26.",
+   "url": "https://www.parismatch.be/i-like-belgium/2023/04/22/excellence-belge-deremiens-lalchimiste-des-grands-crus-de-chocolat-CZXCUFNTP5HVHMCN2IKQZXLQ2U/",
+   "hours": "Niet geverifieerd: tel. +32 61 50 29 79.",
+   "confirmed": false
+  },
+  {
+   "name": "Wijngaard Le Poirier du Loup",
+   "type": "wijn",
+   "town": "Torgny (Rouvroy)",
+   "lat": 49.509,
+   "lng": 5.474,
+   "text": "Biologische gemeentelijke wijngaard van zo'n 1,6 ha, onderhouden door een veertigtal vrijwilligers in het zuidelijkste dorp van België. Hij maakt schuimwijnen, een roze crémant, stille wijnen en een ratafia. De wijnkelder ligt in de rue l'Ermitage, op ongeveer 25 km van Izel.",
+   "url": "https://visitwallonia.com/en-gb/content/poirier-du-loup-vineyard",
+   "hours": "Verkoop in de toeristische dienst bij de kerk van Torgny. Rondleidingen op reservatie."
+  },
+  {
+   "name": "Boucherie Protin",
+   "type": "kruidenier",
+   "town": "Chiny",
+   "lat": 49.7389,
+   "lng": 5.3417,
+   "text": "Slagerij in Chiny, door info-lux vermeld bij de streekproducenten van de Gaume. Adres, producten en openingsuren werden niet geverifieerd.",
+   "url": "https://www.info-lux.com/terroir-producteurs-province-luxembourg/",
+   "confirmed": false
+  }
+ ],
+ "restaurants": [
+  {
+   "name": "Au Cœur de Lacuisine",
+   "town": "Lacuisine (Florenville)",
+   "lat": 49.7141,
+   "lng": 5.3238,
+   "style": "Regionale bistrokeuken met producten uit de Gaume, aan de oever van de Semois",
+   "price": "€€",
+   "text": "De beste prijs-kwaliteitverhouding van de omgeving: Michelin Bib Gourmand in 2024 en 2025 (een vermelding voor 2026 wordt gemeld) en 1 Radish van We're Smart in 2025. Seizoenskeuken met veel aandacht voor groenten, in een warme sfeer. Reserveren is aangeraden. Adres: rue du Fond-des-Naux 7.",
+   "url": "https://www.aucoeurdelacuisine.be/"
+  },
+  {
+   "name": "L'Épisode",
+   "town": "Saint-Médard (Herbeumont)",
+   "lat": 49.795,
+   "lng": 5.33,
+   "style": "Moderne Franse keuken, verrassingsmenu",
+   "price": "€€€",
+   "text": "Gastronomisch restaurant van chef Jordan Boreux, die de producten uit de streek in de kijker zet. Michelin Plate 2024-2025, 13,5/20 in Gault&Millau 2025, ongeveer 4,8/5 op Google. Adres: Waillimont 2. Reserveren per telefoon via +32 61 86 08 04.",
+   "url": "https://lepisode.be"
+  },
+  {
+   "name": "Coprin",
+   "town": "Straimont (Herbeumont)",
+   "lat": 49.787,
+   "lng": 5.387,
+   "style": "Seizoenskeuken « van de boerderij op uw bord », houten chalet in het bos",
+   "price": "€€€",
+   "text": "Restaurant in een houten chalet midden in het bos. Michelin Plate 2024-2025, vermeld door Gault&Millau, ongeveer 5/5 op Google (bijna 280 reviews). Menu's van 3 tot 5 gangen (ongeveer 55 tot 85 €, na te kijken), hetzelfde voor de hele tafel. Een wagen is onmisbaar. Adres: rue du Mont 5.",
+   "url": "https://guide.michelin.com/en/be-luxembourg/straimont_1065991/restaurant/coprin"
+  },
+  {
+   "name": "Le Florentin",
+   "town": "Florenville",
+   "lat": 49.6995,
+   "lng": 5.3095,
+   "style": "Hotel-restaurant, traditionele Belgische keuken en bistronomie",
+   "price": "€€",
+   "text": "Hotel uit de Michelinselectie, Place Albert Ier 58. Het restaurant ging in Gault&Millau 2025 van 12 naar 12,5/20. Tel. +32 61 31 11 23.",
+   "url": "https://guide.michelin.com/fr/fr/hotels-stays/florenville/le-florentin-hotel-restaurant-10659"
+  },
+  {
+   "name": "Hostellerie Sainte-Cécile",
+   "town": "Sainte-Cécile (Florenville)",
+   "lat": 49.727,
+   "lng": 5.245,
+   "style": "Franse keuken met verse producten, familiale hostellerie",
+   "price": "€€€",
+   "text": "Familiale hostellerie (Relais du Silence), vermeld door Gault&Millau. De chef zou Frédéric Garnier zijn (bron: gids). Adres: rue Neuve 1. Tel. +32 61 31 31 67. De status van het restaurant in 2025-2026 werd niet bevestigd.",
+   "url": "https://www.info-lux.com/ou-manger-province-luxembourg/pays/belgique/wallonie/province-de-luxembourg/",
+   "confirmed": false
+  },
+  {
+   "name": "À l'Ange Gardien",
+   "town": "Orval (Villers-devant-Orval)",
+   "lat": 49.6405,
+   "lng": 5.347,
+   "style": "Taverne-restaurant van de abdij",
+   "price": "€€",
+   "text": "De enige plek waar u de Orval Vert kunt drinken. U krijgt er ook de kaas, het brood en het bier van Orval: een verplichte halte na een bezoek aan de ruïnes. Buiten het seizoen: 10.30-18.30 u, woensdag gesloten. Adres: Route d'Orval 3. Tel. +32 61 31 18 86.",
+   "url": "https://www.orval.be/en/page/457-a-l-ange-gardien"
+  },
+  {
+   "name": "Le Chameleux",
+   "town": "Chamleux (Florenville)",
+   "lat": 49.668,
+   "lng": 5.33,
+   "style": "Herberg langs de weg, traditionele keuken",
+   "price": "€",
+   "text": "Een begrip sinds de jaren 1960, met een gelambriseerde zaal in de stijl van een berghut. Le Fooding raadt er de forel meunière aan, de omelet, de Gaumse paté, de quiche met Orvalkaas en de dame blanche. Menu's van 16 tot 35 €. Open van 11 tot 20.30 u, woensdag gesloten (en dinsdag van 15/5 tot 15/9): openingsuren van 2024.",
+   "url": "https://lefooding.com/restaurants/le-chameleux"
+  },
+  {
+   "name": "Le Moulin Cambier",
+   "town": "Chiny",
+   "lat": 49.7395,
+   "lng": 5.3365,
+   "style": "Bistro-brasserie in een oude molen aan de Semois",
+   "price": "€€",
+   "text": "Oude molen aan de Semois, in Chiny. De keuken wordt omschreven als bistronomisch en seizoensgebonden (stoofvlees, balletjes met bier en kaas), en de zaak scoort ongeveer 4,3/5 op Google (meer dan 400 reviews). De beschrijvingen komen van verzamelsites en spreken elkaar tegen (Petit Futé heeft het over Savoyaardse keuken): na te kijken.",
+   "url": "https://rankeat.fr/restaurants/le-moulin-cambier-chiny",
+   "confirmed": false
+  },
+  {
+   "name": "Le Tandem",
+   "town": "Chiny",
+   "lat": 49.7385,
+   "lng": 5.341,
+   "style": "Dorpsrestaurant, verzorgde keuken en wijnkelder",
+   "price": "€€",
+   "text": "Nummer één in de rangschikkingen van verzamelsites voor Chiny, met ongeveer 4,5 à 4,7/5 (150 tot 300 reviews). Gasten spreken van een gezellige zaal, lekkere wijnen en een vriendelijk onthaal. Adres en openingsuren werden niet geverifieerd.",
+   "url": "https://rankeat.fr/restaurants/le-tandem-chiny",
+   "confirmed": false
+  },
+  {
+   "name": "Hostellerie Les Comtes de Chiny",
+   "town": "Chiny",
+   "lat": 49.7392,
+   "lng": 5.342,
+   "style": "Logis-hotel-restaurant, traditionele keuken",
+   "price": "€€",
+   "text": "Logis-hotel-restaurant in het centrum van Chiny, door Logis beoordeeld met 9,7/10. Lunch van 12 tot 13.30 u, diner van 18.30 tot 20.30 u.",
+   "url": "https://www.logishotels.com/en/restaurant/logis-hostellerie-comtes-de-chiny-254418"
+  },
+  {
+   "name": "Le Relais de Chassepierre",
+   "town": "Chassepierre (Florenville)",
+   "lat": 49.7088,
+   "lng": 5.265,
+   "style": "Familiale brasserie-restaurant met terras",
+   "price": "€€",
+   "text": "Familiale brasserie met terras in het hart van Chassepierre, een van de Mooiste Dorpen van Wallonië. Ze blijft open tijdens het straattheaterfestival (reserveren aangeraden). Adres: rue Warlomont 7. Geen geverifieerde reviewscore.",
+   "url": "https://rankeat.fr/restaurants/le-relais-de-chassepierre-florenville",
+   "confirmed": false
+  },
+  {
+   "name": "Frank Bar@Burgers",
+   "town": "Sainte-Marie-sur-Semois (Étalle)",
+   "lat": 49.67,
+   "lng": 5.545,
+   "style": "Huisgemaakte burgers (voormalig dorpsfrituur)",
+   "price": "€",
+   "text": "Een dorpsfrituur die uitgroeide tot burgerrestaurant, met maar liefst 53 burgers op de kaart. Sinds 2021 opgenomen in Gault&Millau (categorie « Pop ») en een favoriet van info-lux. Een fijne, ontspannen keuze voor gezinnen. Op ongeveer 12 km van Izel.",
+   "url": "https://www.info-lux.com/meilleurs-hamburgers-gaume-frank-etalle/"
+  }
+ ]
+}

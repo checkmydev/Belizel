@@ -102,6 +102,6 @@ OWNER = [
 ]
 
 VIDEOS = {
-  'guest': dict(scenes=GUEST, voice='EXAVITQu4vr4xnSDxMaL', music_vol=0.17),
-  'owner': dict(scenes=OWNER, voice='JBFqnCBsd6RMkjVDRZzb', music_vol=0.14),
+  'guest': dict(scenes=GUEST, voice='fr-BE-CharlineNeural', music_vol=0.17),
+  'owner': dict(scenes=OWNER, voice='fr-BE-GerardNeural', music_vol=0.14),
 }

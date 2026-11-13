@@ -1,5 +1,5 @@
-"""Vidéos Belizel : l'application est pilotée par Playwright et enregistrée en 1920x1080, voix off ElevenLabs
-(mise en cache), musique originale (music.py), sous-titres incrustés.
+"""Vidéos Belizel : l'application est pilotée par Playwright et enregistrée en 1920x1080, voix off native francophone (edge-tts, voix belges)
+ou ElevenLabs (mise en cache), musique originale (music.py), sous-titres incrustés.
 
 Usage : python video/make_video.py guest|owner
 Sortie : video/out/belizel-<guest|owner>.mp4
@@ -24,6 +24,9 @@ def env_key():
 def tts(text, voice):
     TTS.mkdir(parents=True, exist_ok=True)
     f = TTS / (hashlib.sha1((voice + '|' + text).encode()).hexdigest()[:16] + '.mp3')
+    if not f.exists() and voice.startswith('fr-'):
+        # voix neuronales Microsoft natives (edge-tts) : fr-BE-CharlineNeural, fr-BE-GerardNeural…
+        subprocess.run([sys.executable, '-m', 'edge_tts', '--voice', voice, '--rate=-3%', '--text', text, '--write-media', str(f)], check=True, capture_output=True)
     if not f.exists():
         body = json.dumps({'text': text, 'model_id': 'eleven_multilingual_v2',
                            'voice_settings': {'stability': 0.55, 'similarity_boost': 0.75, 'style': 0.15, 'use_speaker_boost': True}}).encode()

@@ -17,7 +17,7 @@ def js_obj(name):
     try: return json.loads(body)
     except json.JSONDecodeError:  # objets JS « à la main » (manual.js, stories.js) : passage par node
         import subprocess
-        out = subprocess.run(['node', '-e', f"const window={{}};{s};console.log(JSON.stringify(Object.values(window)[0]))"], capture_output=True, text=True, check=True)
+        out = subprocess.run(['node', '-e', f"const window={{}};{s};console.log(JSON.stringify(Object.values(window)[0]))"], capture_output=True, text=True, encoding='utf-8', check=True)
         return json.loads(out.stdout)
 
 what = set(sys.argv[1:]) or {'comps', 'finance', 'manual', 'stories'}

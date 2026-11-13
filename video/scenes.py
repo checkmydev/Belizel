@@ -105,3 +105,39 @@ VIDEOS = {
   'guest': dict(scenes=GUEST, voice='fr-BE-CharlineNeural', music_vol=0.17),
   'owner': dict(scenes=OWNER, voice='fr-BE-GerardNeural', music_vol=0.14),
 }
+
+# Version néerlandaise de la vidéo locataires : mêmes actions, application en néerlandais (?lang=nl)
+NL_TEXT = {
+  'accueil': ("Welkom in Belizel. Een Gaumais huis met okerkleurige muren, verscholen in het dorpje Izel, in het hart van de Semoisvallei.",
+              ["Welkom in Belizel.", "Een Gaumais huis met okerkleurige muren, verscholen in het dorpje Izel,", "in het hart van de Semoisvallei."]),
+  'maison': ("Drie ruime slaapkamers voor zes gasten, een gezellige leefruimte met houtkachel, en een tuin die uitkijkt op de weiden.",
+             ["Drie ruime slaapkamers voor zes gasten,", "een gezellige leefruimte met houtkachel,", "en een tuin die uitkijkt op de weiden."]),
+  'saisons': ("Doorheen de seizoenen verandert de Gaume van gezicht: een bloeiende lente, een vurige herfst, winters onder de sneeuw.",
+              ["Doorheen de seizoenen verandert de Gaume van gezicht:", "een bloeiende lente, een vurige herfst, winters onder de sneeuw."]),
+  'carte': ("Rond het huis staat alles op één interactieve kaart: wandelingen, activiteiten, goede restaurants, erfgoed en evenementen.",
+            ["Rond het huis staat alles op één interactieve kaart:", "wandelingen, activiteiten, goede restaurants, erfgoed en evenementen."]),
+  'balades': ("Meer dan honderdtwintig bewegwijzerde wandelingen, waarvan sommige te voet vanaf het huis vertrekken. Telkens met de route, het hoogteverschil, de duur en het hoogteprofiel.",
+              ["Meer dan honderdtwintig bewegwijzerde wandelingen,", "waarvan sommige te voet vanaf het huis vertrekken.", "Telkens met de route, het hoogteverschil, de duur en het hoogteprofiel."]),
+  'gpx': ("Download de route, of het volledige pakket voor de gratis app Organic Maps: zo wordt u stap voor stap begeleid, zelfs zonder bereik.",
+          ["Download de route, of het volledige pakket", "voor de gratis app Organic Maps:", "zo wordt u stap voor stap begeleid, zelfs zonder bereik."]),
+  'activites': ("Kajakken op de Semois, de abdij van Orval, de kastelen van Bouillon en Herbeumont, beschermde dorpen… En als het regent, toont één knop enkel overdekte activiteiten.",
+                ["Kajakken op de Semois, de abdij van Orval,", "de kastelen van Bouillon en Herbeumont, beschermde dorpen…", "En als het regent, toont één knop enkel overdekte activiteiten."]),
+  'agenda': ("Het festival van Chassepierre, Gaume Jazz, kerstmarkten: geef uw data in, en de agenda toont wat er tijdens uw verblijf te beleven valt.",
+             ["Het festival van Chassepierre, Gaume Jazz, kerstmarkten:", "geef uw data in, en de agenda toont", "wat er tijdens uw verblijf te beleven valt."]),
+  'terroir': ("Kaas en bier van Orval, Gaumse paté, Plate de Florenville: de specialiteiten, onze favoriete restaurants, en recepten om stap voor stap te koken.",
+              ["Kaas en bier van Orval, Gaumse paté, Plate de Florenville:", "de specialiteiten, onze favoriete restaurants,", "en recepten om stap voor stap te koken."]),
+  'histoire': ("Een tijdlijn vertelt het verhaal van Izel, van de Romeinse heirbaan tot de branden van augustus 1914, aangevuld met de verhalen van het huis.",
+               ["Een tijdlijn vertelt het verhaal van Izel,", "van de Romeinse heirbaan tot de branden van augustus 1914,", "aangevuld met de verhalen van het huis."]),
+  'sejour': ("Bewaar uw favorieten, plan uw dagen, en deel het programma met uw reisgenoten.",
+             ["Bewaar uw favorieten, plan uw dagen,", "en deel het programma met uw reisgenoten."]),
+  'infos': ("En ter plaatse beantwoordt de huisgids al uw vragen: wifi, houtkachel, aankomst en vertrek.",
+            ["En ter plaatse beantwoordt de huisgids al uw vragen:", "wifi, houtkachel, aankomst en vertrek."]),
+  'fin': ("Belizel, in het hart van de Gaume. Boek nu op Airbnb.", ["Belizel, in het hart van de Gaume.", "Boek nu op Airbnb."]),
+}
+GUEST_NL = []
+for sc in GUEST:
+    d = dict(sc); d['vo'], d['sub'] = NL_TEXT[sc['id']]
+    if sc['id'] == 'accueil': d['url'] = 'index.html?lang=nl'
+    if sc['id'] == 'fin': d['url'] = 'video/outro.html?v=guest&lang=nl'
+    GUEST_NL.append(d)
+VIDEOS['guest_nl'] = dict(scenes=GUEST_NL, voice='nl-BE-DenaNeural', music_vol=0.17)

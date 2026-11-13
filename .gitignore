@@ -1,0 +1,11 @@
+.env
+__pycache__/
+tools/research/raw/
+video/out/
+video/node_modules/
+node_modules/
+data/comps.js
+data/finance-demo.js
+tools/search.py
+tools/details.py
+*.log

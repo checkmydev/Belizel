@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Belizel · Gîte au cœur de la Gaume</title>
+<meta name="description" content="Belizel, maison de vacances pour 6 personnes à Izel (Chiny), au cœur de la Gaume et de la vallée de la Semois : balades à télécharger, activités, agenda, terroir et histoire.">
+<meta name="theme-color" content="#2f4a34">
+<meta property="og:title" content="Belizel · au cœur de la Gaume">
+<meta property="og:description" content="Une maison gaumaise pour 6, entre forêts, Semois et abbaye d'Orval.">
+<meta property="og:image" content="img/p01.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='19' fill='%23c4552c'/%3E%3Cpath d='M11 22 20 12l9 10' stroke='%23f6f0e3' stroke-width='3' fill='none'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="topnav" id="topnav">
+  <a class="brand" href="#top"><span id="logo"></span>Belizel</a>
+  <nav id="mainnav">
+    <a href="#maison">La maison</a><a href="#explorer">Carte</a><a href="#balades">Balades</a><a href="#activites">Activités</a>
+    <a href="#agenda">Agenda</a><a href="#terroir">Terroir</a><a href="#histoire">Histoire</a><a href="#infos">Mode d'emploi</a>
+  </nav>
+  <div class="tools">
+    <button class="iconbtn" id="btnPlan" title="Mon séjour"><span data-i="heart"></span><span class="badge" id="favCount" hidden>0</span></button>
+    <button class="iconbtn" id="btnHelp" title="Visite guidée"><span data-i="help"></span></button>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="slides" id="slides"></div>
+  <div class="wx" id="heroWx"></div>
+  <div class="hero-content">
+    <span class="hand">Bienvenue à Izel</span>
+    <h1>Belizel</h1>
+    <p class="lead">Une maison gaumaise aux murs ocre, entre forêts profondes, méandres de la Semois et abbaye d'Orval. Le feu de bois en plus.</p>
+    <div class="facts" id="heroFacts"></div>
+    <div class="ctas">
+      <a class="btn btn-primary" id="bookBtn" target="_blank" rel="noopener"><span data-i="cal"></span>Réserver sur Airbnb</a>
+      <a class="btn btn-ghost" href="#explorer"><span data-i="compass"></span>Explorer la région</a>
+    </div>
+  </div>
+  <div class="scroll-hint"><span data-i="chev"></span></div>
+</section>
+
+<div class="today wrap" id="today">
+  <div class="card">
+    <div><span class="muted" style="font-weight:700;font-size:.8rem;text-transform:uppercase;letter-spacing:.08em">Maintenant à Izel</span>
+      <div style="display:flex;align-items:center;gap:12px;margin-top:6px"><span class="big" id="wxNow">–</span><span id="wxNowTxt" class="muted"></span></div>
+      <div class="muted" style="font-size:.85rem;margin-top:6px" id="sunTimes"></div></div>
+    <div><div class="forecast" id="forecast"><span class="muted">Chargement de la météo…</span></div></div>
+    <div class="suggest" id="suggest"></div>
+  </div>
+</div>
+
+<main>
+<!-- ============ MAISON ============ -->
+<section class="block" id="maison">
+  <div class="wrap">
+    <div class="sec-head reveal"><div><span class="hand">La maison</span><h2>Une vraie maison de village</h2></div>
+      <p id="introTxt"></p></div>
+    <div class="grid g3" id="highlights"></div>
+  </div>
+</section>
+
+<section class="block alt" id="photos">
+  <div class="wrap">
+    <div class="sec-head reveal"><div><span class="hand">En images</span><h2>Au fil des saisons</h2></div>
+      <p>Cliquez sur une photo pour l'agrandir ; les flèches du clavier permettent de naviguer.</p></div>
+    <div class="filters" id="galFilters"></div>
+    <div class="masonry" id="gallery"></div>
+  </div>
+</section>
+
+<section class="block" id="chambres">
+  <div class="wrap">
+    <div class="sec-head reveal"><div><span class="hand">Pour bien dormir</span><h2>3 chambres, 6 couchages</h2></div><p>Chauffage central dans toutes les chambres, stores occultants, linge de lit fourni et lit bébé toujours disponible.</p></div>
+    <div class="grid g4" id="rooms"></div>
+    <h3 style="margin-top:40px">Tout ce qu'il faut sur place</h3>
+    <div class="amen" id="amen"></div>
+  </div>
+</section>
+
+<section class="block alt" id="avis">
+  <div class="wrap">
+    <div class="grid g2" style="align-items:center;gap:40px">
+      <div class="reveal">
+        <span class="hand">Ils sont venus</span><h2>Ce que disent les voyageurs</h2>
+        <div class="score"><span class="n" id="rating">4,83</span><div><div id="stars" style="color:var(--ochre)"></div><div class="muted" id="revCount"></div></div></div>
+        <div class="bars" id="catBars" style="margin-top:18px"></div>
+      </div>
+      <div class="reveal">
+        <h3>Les mots qui reviennent</h3>
+        <p class="muted">Thèmes repérés dans les commentaires, avec leur nombre de mentions.</p>
+        <div class="themes" id="themes"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider" style="transform:scaleY(-1)"></div>
+<!-- ============ CARTE ============ -->
+<section class="block" id="explorer">
+  <div class="wrap">
+    <div class="sec-head reveal"><div><span class="hand">Autour de la maison</span><h2>La carte de vos escapades</h2></div>
+      <p>Balades, activités, tables, producteurs, patrimoine et événements : tout est sur la carte, avec la maison au centre.</p></div>
+    <div class="mapbox"><div id="map"></div><div class="map-legend" id="mapLegend"></div></div>
+  </div>
+</section>
+
+<!-- ============ BALADES ============ -->
+<section class="block alt" id="balades">
+  <div class="wrap">
+    <div class="sec-head reveal"><div><span class="hand">À pied ou à vélo</span><h2>Balades balisées autour d'Izel</h2></div>
+      <p>Tracés officiels balisés, avec profil d'altitude, et fichier GPX à télécharger pour votre téléphone, votre montre ou votre GPS.</p></div>
+    <div class="hike-tools">
+      <div class="filters" id="hikeKind" style="margin:0"></div>
+      <select id="hikeDiff"><option value="">Toutes difficultés</option><option value="facile">Facile</option><option value="moyen">Moyen</option><option value="sportif">Sportif</option></select>
+      <select id="hikeLen"><option value="">Toutes distances</option><option value="0-6">Moins de 6 km</option><option value="6-12">6 à 12 km</option><option value="12-99">Plus de 12 km</option></select>
+      <select id="hikeSort"><option value="near">Les plus proches</option><option value="short">Les plus courtes</option><option value="long">Les plus longues</option><option value="flat">Les moins pentues</option></select>
+      <span class="muted" id="hikeCount" style="margin-left:auto;font-weight:700"></span>
+    </div>
+    <div class="grid g3" id="hikes"></div>
+    <div style="text-align:center;margin-top:24px"><button class="btn btn-soft" id="hikeMore">Voir plus de balades</button></div>
+
+    <div class="card appbox reveal" id="appBox">
+      <div class="appbox-l">
+        <span class="hand">Vos balades dans la poche</span>
+        <h3>Guidé pas à pas, même sans réseau</h3>
+        <p>En forêt d'Anlier ou dans la vallée de la Semois, le réseau mobile est capricieux. Nous conseillons <b>Organic Maps</b> : gratuite, sans publicité ni compte, elle fonctionne entièrement hors ligne et affiche votre position sur le tracé.</p>
+        <ol class="appsteps">
+          <li><b>Installez l'application</b> (gratuite) :
+            <div class="stores"><a class="btn btn-forest btn-sm" href="https://apps.apple.com/app/organic-maps/id1567437057" target="_blank" rel="noopener">App Store (iPhone)</a><a class="btn btn-forest btn-sm" href="https://play.google.com/store/apps/details?id=app.organicmaps" target="_blank" rel="noopener">Google Play (Android)</a></div></li>
+          <li><b>Téléchargez la carte « Belgique, Luxembourg »</b> dans l'application, de préférence en wifi à la maison (environ 60 Mo).</li>
+          <li><b>Importez les balades</b> : touchez un pack ci-dessous, puis « Ouvrir avec Organic Maps ». Toutes les balades apparaissent dans vos listes, prêtes à suivre.</li>
+        </ol>
+      </div>
+      <div class="appbox-r">
+        <button class="pack" data-pack="near"><span class="pk-e">🥾</span><b>Les 15 balades les plus proches</b><small>Au départ d'Izel ou à moins de 10 min</small></button>
+        <button class="pack" data-pack="pied"><span class="pk-e">🗺️</span><b>Toutes les balades à pied</b><small id="packCount"></small></button>
+        <button class="pack" data-pack="fav"><span class="pk-e">♥</span><b>Mes balades favorites</b><small>Celles que vous avez marquées</small></button>
+        <button class="pack" data-pack="velo"><span class="pk-e">🚲</span><b>Itinéraires vélo</b><small>RAVeL et voies vertes</small></button>
+        <p class="muted" style="font-size:.78rem;margin:6px 2px 0">Format GPX, compatible aussi avec OsmAnd, Komoot, Visorando, Garmin et Suunto.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ACTIVITES ============ -->
+<section class="block" id="activites">
+  <div class="wrap">
+    <div class="sec-head reveal"><div><span class="hand">Que faire ?</span><h2>Activités du coin</h2></div>
+      <p>Kayak sur la Semois, abbaye d'Orval, châteaux, villages classés, sorties en famille… avec le temps de route depuis la maison.</p></div>
+    <div class="hike-tools">
+      <div class="filters" id="actFilters" style="margin:0"></div>
+      <label class="toggle" style="margin-left:auto"><input type="checkbox" id="rainOnly"> Spécial jour de pluie</label>
+    </div>
+    <div class="grid g3" id="acts"></div>
+  </div>
+</section>
+
+<!-- ============ AGENDA ============ -->
+<section class="block dark" id="agenda">
+  <div class="wrap">
+    <div class="sec-head reveal"><div><span class="hand" style="color:var(--wheat)">Ça se passe en Gaume</span><h2>Agenda des événements</h2></div>
+      <p>Festivals, marchés, fêtes de village… Indiquez vos dates pour voir ce qui se passe pendant votre séjour.</p></div>
+    <div class="stay-box" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.25);color:#efe9da">
+      <span data-i="cal"></span><b>Mon séjour :</b>
+      <input type="date" class="field" id="stayIn"> <span>→</span> <input type="date" class="field" id="stayOut">
+      <button class="btn btn-primary btn-sm" id="stayApply">Voir mes événements</button>
+      <button class="btn btn-ghost btn-sm" id="stayClear">Tout l'agenda</button>
+    </div>
+    <div class="months" id="months"></div>
+    <div class="grid g2" id="events"></div>
+  </div>
+</section>
+
+<!-- ============ TERROIR ============ -->
+<section class="block" id="terroir">
+  <div class="wrap">
+    <div class="sec-head reveal"><div><span class="hand">À table !</span><h2>Saveurs de Gaume</h2></div>
+      <p>Orval, pâté gaumais, Plate de Florenville, saucisson IGP… Les spécialités à goûter, nos tables préférées, les producteurs et quelques recettes à cuisiner dans la maison.</p></div>
+    <div class="filters" id="foodTabs"></div>
+    <div id="foodBody"></div>
+  </div>
+</section>
+
+<!-- ============ HISTOIRE & CULTURE ============ -->
+<section class="block alt" id="histoire">
+  <div class="wrap">
+    <div class="sec-head reveal"><div><span class="hand">Mémoire du village</span><h2>Izel, une histoire de Gaume</h2></div>
+      <p>De la chaussée romaine aux incendies d'août 1914, de l'occupation à la Libération : ce que racontent les pierres du village, et ce que vous pouvez encore voir aujourd'hui.</p></div>
+    <div class="filters" id="histTabs"></div>
+    <div id="histBody"></div>
+  </div>
+</section>
+
+<section class="block" id="culture">
+  <div class="wrap">
+    <div class="sec-head reveal"><div><span class="hand">L'âme gaumaise</span><h2>Culture et traditions</h2></div>
+      <p>Une langue à part, des légendes, des festivals de renom et des villages aux façades colorées : bienvenue dans la « petite Provence belge ».</p></div>
+    <div class="grid g3" id="cultureGrid"></div>
+  </div>
+</section>
+
+<!-- ============ MON SEJOUR ============ -->
+<section class="block alt" id="sejour">
+  <div class="wrap">
+    <div class="sec-head reveal"><div><span class="hand">Votre carnet</span><h2>Mon séjour, jour par jour</h2></div>
+      <p>Ajoutez des balades, activités et restaurants à vos favoris (♥), puis glissez-les dans vos journées. Votre programme reste enregistré sur cet appareil.</p></div>
+    <div class="planner">
+      <div class="card pool"><h3 style="font-size:1.1rem">Mes favoris</h3><div id="pool"></div>
+        <div class="actions"><button class="btn btn-soft btn-sm" id="planIcs"><span data-i="cal"></span>Agenda (.ics)</button><button class="btn btn-soft btn-sm" id="planPrint"><span data-i="print"></span>Imprimer</button><button class="btn btn-soft btn-sm" id="planShare"><span data-i="share"></span>Partager</button></div>
+      </div>
+      <div><div class="stay-box"><span data-i="cal"></span><b>Durée :</b><select class="field" id="nDays"></select><span class="muted" id="planDates"></span></div><div class="days" id="days"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MODE D'EMPLOI ============ -->
+<section class="block" id="infos">
+  <div class="wrap">
+    <div class="sec-head reveal"><div><span class="hand">Comme à la maison</span><h2>Mode d'emploi de la maison</h2></div>
+      <p>Tout ce qu'il faut savoir pour profiter de Belizel : arrivée, poêle à bois, wifi, tri, départ et numéros utiles.</p></div>
+    <div class="grid" style="grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:20px" id="manualGrid">
+      <div>
+        <div class="card wifi" id="wifiCard"></div>
+        <div class="card" style="padding:16px;margin-top:16px"><input class="field" id="manSearch" placeholder="Rechercher (poêle, poubelles, clés…)" style="width:100%;border-radius:12px"></div>
+      </div>
+      <div class="card" id="manual"></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site">
+  <div class="wrap grid g3">
+    <div><div class="brand" style="color:#fff"><span id="logo2"></span>Belizel</div><p>Maison de vacances à Izel (Chiny), au cœur de la Gaume et de la vallée de la Semois.</p></div>
+    <div><b style="color:#fff">Sources</b><p style="font-size:.85rem">Tracés : © contributeurs OpenStreetMap (ODbL), balisage des syndicats d'initiative. Altitudes et météo : Open-Meteo. Fonds de carte : OpenStreetMap / OpenTopoMap. Informations touristiques vérifiées en novembre 2026 : confirmez les horaires auprès des sites officiels.</p></div>
+    <div><b style="color:#fff">Raccourcis</b><p><a href="#" id="tourLink">Revoir la visite guidée</a><br><a href="#" id="guideLink">Guide d'utilisation</a><br><a href="admin.html">Espace propriétaire</a></p></div>
+  </div>
+</footer>
+
+<nav class="bottomnav" id="bottomnav">
+  <a href="#maison"><span data-i="house"></span>Maison</a>
+  <a href="#explorer"><span data-i="map"></span>Carte</a>
+  <a href="#balades"><span data-i="compass"></span>Balades</a>
+  <a href="#agenda"><span data-i="cal"></span>Agenda</a>
+  <a href="#" id="moreBtn"><span data-i="sparkle"></span>Plus</a>
+</nav>
+
+<div class="lightbox" id="lightbox"><button class="close"><span data-i="close"></span></button><button class="prev"><span data-i="left"></span></button><img alt=""><button class="next"><span data-i="right"></span></button><div class="cap"></div></div>
+<div class="drawer-bg" id="drawerBg"></div>
+<aside class="drawer" id="drawer"><div class="dh"><div id="dTitle"></div><button class="closeb" id="dClose"><span data-i="close"></span></button></div><div class="db" id="dBody"></div></aside>
+
+<div class="modal-bg" id="welcome"><div class="modal">
+  <div class="hd" style="background-image:url(img/p20.jpg)"><h3>Bienvenue !</h3></div>
+  <div class="bd">
+    <p>Ce guide vous accompagne avant et pendant votre séjour à Belizel. En deux mots :</p>
+    <div class="steps">
+      <div><span class="n">1</span><span><b>Explorez</b> la carte, les balades balisées (GPX à télécharger), les activités et l'agenda.</span></div>
+      <div><span class="n">2</span><span><b>Ajoutez en favori ♥</b> ce qui vous tente, puis organisez vos journées dans « Mon séjour ».</span></div>
+      <div><span class="n">3</span><span><b>Sur place</b>, le mode d'emploi de la maison répond à toutes vos questions : wifi, poêle, tri, départ…</span></div>
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn btn-primary" id="wTour"><span data-i="sparkle"></span>Visite guidée (1 min)</button><button class="btn btn-soft" id="wSkip">Je découvre seul</button></div>
+  </div>
+</div></div>
+
+<div class="modal-bg" id="moreSheet"><div class="modal"><div class="bd">
+  <h3>Plus de rubriques</h3>
+  <div class="grid g2" style="gap:10px;margin-top:10px" id="moreLinks"></div>
+</div></div></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script src="js/config.js"></script>
+<script src="data/listing.js"></script>
+<script src="data/hikes.js"></script>
+<script src="data/content.js"></script>
+<script src="data/manual.js"></script>
+<script src="data/stories.js"></script>
+<script src="js/common.js"></script>
+<script src="js/guest.js"></script>
+</body>
+</html>

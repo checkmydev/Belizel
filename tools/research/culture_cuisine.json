@@ -1,0 +1,549 @@
+{
+  "_meta": {
+    "generated": "2026-11-13",
+    "scope": "Cuisine et culture de la Gaume / vallée de la Semois autour d'Izel (Chiny), 49.6913, 5.3794",
+    "coords_note": "Coordonnées approximatives (niveau village ou rue), à affiner sur une carte avant publication. Aucune n'a été relevée sur un GPS.",
+    "confirmed_note": "Les entrées sans champ confirmed ont été recoupées avec au moins une source fiable (site officiel, Michelin, presse belge, Commission européenne). confirmed: false = information partielle ou issue d'agrégateurs seulement."
+  },
+  "specialties": [
+    {
+      "name": "Bière trappiste d'Orval",
+      "text": "Brassée à l'abbaye d'Orval, fondée en 1132. L'Orval classique titre environ 6,2 %. Elle est houblonnée à cru pendant la maturation et refermentée avec la levure Brettanomyces : nez résineux, amertume franche, finale sèche un peu « funky ». Elle évolue en cave pendant des années (notes de cuir et de fruits mûrs après 1 à 2 ans). Une seule Orval est vendue dans le commerce.",
+      "where": "Boutique de l'abbaye d'Orval (ouverte tous les jours, limite de 2 caisses de 10 bouteilles par personne), cafés et épiceries de toute la région.",
+      "emoji": "🍺"
+    },
+    {
+      "name": "Orval Vert (« Petite Orval »)",
+      "text": "Version plus légère et plus rare de l'Orval, qu'on ne boit qu'à la taverne À l'Ange Gardien, face à l'abbaye. Le degré d'environ 4,5 % vient d'avis de clients et reste à confirmer sur place.",
+      "where": "À l'Ange Gardien, Route d'Orval 3, Villers-devant-Orval.",
+      "emoji": "🍻",
+      "confirmed": false
+    },
+    {
+      "name": "Fromage d'Orval",
+      "text": "Fromage trappiste à pâte pressée non cuite et croûte naturelle lavée à la main, fabriqué sur le site de l'abbaye depuis 1928. La recette vient des trappistes de Port-du-Salut (1816). Le lait de vache entier pasteurisé vient de fermes gaumaises. Pâte souple, fondante et onctueuse : c'est le compagnon classique d'une Orval à l'apéritif.",
+      "where": "Boutique de l'abbaye d'Orval et taverne À l'Ange Gardien. Aussi chez des fromagers et épiciers de la région.",
+      "emoji": "🧀"
+    },
+    {
+      "name": "Pâté gaumais IGP",
+      "text": "Malgré son nom, c'est une tourte : au moins 30 % de porc mariné au vin blanc (ou au vinaigre) avec oignons, thym et laurier, dans une pâte dorée. Il est protégé par une IGP européenne : seul celui fabriqué en Gaume selon un cahier des charges contrôlé porte ce nom. On le mange chaud ou froid, en entrée ou en plat, et on le réchauffe au four de préférence.",
+      "where": "Salaisons G. Blaise (Place Albert Ier 4, Florenville), boucheries-charcuteries de la région. Au menu du Chameleux (Florenville).",
+      "emoji": "🥧"
+    },
+    {
+      "name": "Saucisson gaumais IGP (et « pipe gaumaise »)",
+      "text": "Saucisson de porc fermenté, légèrement fumé et séché, devenu IGP européenne en juillet 2024. Il existe sous quatre formes, dont la « pipe » (saucisse sèche fine), le « collier » et la « baudruche ». Une quinzaine de boucheries et salaisons gaumaises le fabriquent. Parfait pour un apéritif ou un pique-nique au bord de la Semois.",
+      "where": "Salaisons G. Blaise à Florenville et boucheries de Gaume (par exemple la Boucherie Protin à Chiny, non vérifiée).",
+      "emoji": "🥓"
+    },
+    {
+      "name": "Plate de Florenville IGP",
+      "text": "Pomme de terre à chair ferme (variété Rosa), cultivée sur les sols sablo-calcaires de Florenville et des communes voisines, sous IGP depuis 2015. Chair fine et fondante, légère note de noisette. Tardive (environ 120 jours en terre), elle se savoure surtout de l'automne à l'hiver. La production est limitée.",
+      "where": "Chez les producteurs et épiciers de Florenville. La Fête de la pomme de terre de Florenville a lieu chaque année le 3e week-end d'octobre, avec vente directe par les producteurs.",
+      "emoji": "🥔"
+    },
+    {
+      "name": "Touffaye (étuvée gaumaise)",
+      "text": "Plat de ménage gaumais : pommes de terre et oignons longuement étuvés au saindoux, avec lard, côtes de porc et saucisses. On le sert avec son jus, une salade de pissenlits ou de frisée vinaigrée et des œufs pochés ou durs. C'est un plat d'hiver.",
+      "where": "Cartes de bistrots gaumais en saison froide, à demander. Facile à cuisiner au gîte (voir les recettes).",
+      "emoji": "🍲"
+    },
+    {
+      "name": "Jambon d'Ardenne IGP",
+      "text": "Jambon cru salé à sec ou en saumure, séché, souvent fumé et affiné, avec au moins 33 semaines pour le jambon avec os. Il est reconnu en Belgique depuis 1974 et en IGP européenne depuis 1996. C'est la grande salaison du sud de la Wallonie.",
+      "where": "Boucheries et salaisons de la région (dont Florenville), en tranches fines ou en assiette ardennaise au restaurant.",
+      "emoji": "🍖"
+    },
+    {
+      "name": "Truite de rivière",
+      "text": "La truite est l'emblème d'Orval : selon la légende, une truite rapporta son anneau à la comtesse Mathilde. On la mange meunière dans les auberges de la Semois. Attention : aucune pisciculture en vente directe n'a été trouvée sur la Semois près de Chiny, et la plupart des truites vendues en Belgique sont importées.",
+      "where": "Le Chameleux (Florenville), réputé pour sa truite meunière (environ 20 €), et d'autres auberges de la vallée.",
+      "emoji": "🐟",
+      "confirmed": false
+    },
+    {
+      "name": "Bières artisanales gaumaises (Gengoulf, La Clochette, Rulles)",
+      "text": "Autour d'Orval, plusieurs micro-brasseries brassent blondes, ambrées, brunes et triples. Gengoulf (Villers-devant-Orval, depuis 2013) a été médaillée d'or et fait aussi une ambrée aux cèpes. La Clochette est à Étalle, et La Rulles, la plus connue, est à Rulles (Habay).",
+      "where": "Épiceries et cafés de Gaume, vente à la brasserie sur contact (voir les producteurs).",
+      "emoji": "🍺"
+    },
+    {
+      "name": "Vin de Torgny (Le Poirier du Loup)",
+      "text": "Torgny, le village le plus au sud de la Belgique, a des vignes en terrasses grâce au climat plus doux de la Gaume. Le vignoble communal bio du Poirier du Loup (environ 1,6 ha, géré par une quarantaine de bénévoles) produit environ 5 000 bouteilles par an, surtout des mousseux blancs et un crémant rosé, plus des vins tranquilles et un ratafia.",
+      "where": "Office du tourisme près de l'église de Torgny, ou visite guidée du vignoble sur réservation.",
+      "emoji": "🍷"
+    },
+    {
+      "name": "Chocolat Deremiens (Jamoigne)",
+      "text": "Chocolatier-torréfacteur artisanal installé à Jamoigne, à quelques kilomètres d'Izel. François Deremiens travaille des grands crus et a créé l'Okabo, un chocolat blond aux notes de caramel et de biscuit. C'est un bon cadeau local à rapporter.",
+      "where": "Atelier Deremiens, Voie d'Orval 26, 6810 Jamoigne (horaires non vérifiés, appeler le +32 61 50 29 79).",
+      "emoji": "🍫",
+      "confirmed": false
+    },
+    {
+      "name": "Gibier d'automne",
+      "text": "Les forêts de Gaume et d'Herbeumont font de l'automne (octobre à décembre) la saison du gibier : chevreuil, sanglier, souvent avec airelles, poire et chicons. Info générique : aucune carte de restaurant 2026 n'a été vérifiée.",
+      "where": "Menus de saison des restaurants de la région (Au Cœur de Lacuisine, Le Florentin, L'Épisode, Coprin…), à vérifier à la réservation.",
+      "emoji": "🦌",
+      "confirmed": false
+    },
+    {
+      "name": "Tabac de la Semois (culture historique)",
+      "text": "Le tabac est cultivé dans la basse vallée de la Semois depuis les années 1850 (Joseph Pierret, Alle-sur-Semois), avec un apogée dans les années 1930. On voit encore des séchoirs en bois à Bohan, Laforêt et Corbion. Le savoir-faire est reconnu patrimoine culturel immatériel de la Fédération Wallonie-Bruxelles depuis fin 2024, mais il ne resterait que trois planteurs (2025).",
+      "where": "Route du Tabac (boucles balisées autour de Vresse-sur-Semois et de Bouillon), à 35-45 km d'Izel. Ce n'est pas une spécialité de la Gaume proprement dite.",
+      "emoji": "🍂"
+    }
+  ],
+  "recipes": [
+    {
+      "name": "Touffaye gaumaise (étuvée de pommes de terre au lard)",
+      "serves": "4 personnes",
+      "time": "30 min de préparation et 3 h de cuisson douce",
+      "ingredients": [
+        "1 kg de pommes de terre à chair ferme (idéalement Plate de Florenville)",
+        "4 gros oignons émincés",
+        "300 g de lard fumé en tranches épaisses (ou chutes de jambon et de lard)",
+        "4 côtes de porc (type spierling)",
+        "4 saucisses",
+        "2 c. à soupe de saindoux (ou de beurre)",
+        "1 branche de thym, 2 feuilles de laurier, 2 gousses d'ail, 2 clous de girofle",
+        "Sel, poivre",
+        "Pour servir : salade de pissenlits ou frisée vinaigrée, 4 œufs pochés ou durs"
+      ],
+      "steps": [
+        "Faire fondre le saindoux à feu doux dans une cocotte. Dorer le lard et les côtes de porc, puis les retirer.",
+        "Dans la graisse, faire revenir les oignons jusqu'à ce qu'ils brunissent bien, en grattant les sucs.",
+        "Ajouter les pommes de terre en morceaux, l'ail, le thym, le laurier et les clous de girofle. Couvrir d'eau à hauteur, saler légèrement et poivrer.",
+        "Laisser cuire à feu doux, couvercle entrouvert, 2 h 30 à 3 h, jusqu'à ce que les pommes de terre s'écrasent à la fourchette.",
+        "Remettre le lard et les côtes 20 min avant de servir, puis les saucisses 10 min avant.",
+        "Servir dans des assiettes creuses avec le jus, la salade vinaigrée et les œufs. Boire une bière de la région ou un rouge léger."
+      ],
+      "story": "La touffaye, ou « touffâye », est le nom gaumais de l'étuvée, le plat qui mijotait toute l'après-midi sur le coin du poêle.",
+      "source": "RTBF (Vivacité), recette de Claude Peignois, bistrot Au Cœur de la Gaume (Ethe) : https://www.rtbf.be/article/la-recette-de-la-touffaye-au-coeur-de-la-gaume-10035235. La source ne donne pas de quantités : celles-ci sont une proposition."
+    },
+    {
+      "name": "Tarte rustique à la Plate de Florenville",
+      "serves": "4 personnes",
+      "time": "20 min de préparation, 1 h de repos et 40 min de cuisson",
+      "ingredients": [
+        "175 g de farine",
+        "115 g de beurre (Beurre d'Ardenne AOP) à température ambiante",
+        "4 c. à café d'eau froide",
+        "1 c. à café de sel",
+        "2 à 3 pommes de terre Plate de Florenville",
+        "100 g de fromage (Herve AOP dans la recette ; le fromage d'Orval convient aussi)",
+        "1 oignon et 1 oignon nouveau",
+        "1 c. à soupe d'huile d'olive",
+        "Romarin frais, sel, poivre"
+      ],
+      "steps": [
+        "Mélanger le beurre, la farine, l'eau et le sel jusqu'à obtenir une boule. Filmer et laisser reposer au moins 1 h au frigo.",
+        "Préchauffer le four à 180 °C. Étaler la pâte en un disque d'environ 30 cm sur du papier cuisson.",
+        "Trancher les pommes de terre finement (3 mm) et les disposer sur la pâte en laissant 5 cm de bord. Saler, poivrer, ajouter les rondelles d'oignon et le fromage en morceaux.",
+        "Replier les bords sur la garniture, arroser d'un filet d'huile d'olive et enfourner 30 à 40 min, jusqu'à ce que la tarte soit bien dorée.",
+        "Parsemer d'oignon nouveau et de romarin, puis servir aussitôt."
+      ],
+      "story": "La Plate de Florenville est la pomme de terre IGP de la Gaume, fêtée chaque automne à Florenville.",
+      "source": "Elle Belgique, en collaboration avec l'Apaq-W : https://www.elle.be/fr/?p=346248. Remplacer le Herve par de l'Orval est notre suggestion."
+    },
+    {
+      "name": "Croûtes au fromage d'Orval",
+      "serves": "4 personnes (entrée ou repas léger)",
+      "time": "15 min",
+      "ingredients": [
+        "8 tranches de pain de campagne",
+        "250 g de fromage d'Orval en tranches",
+        "4 tranches de jambon d'Ardenne (facultatif)",
+        "Quelques cuillères d'Orval (bière) ou de lait",
+        "Poivre, salade verte pour servir"
+      ],
+      "steps": [
+        "Préchauffer le four en position gril.",
+        "Poser les tranches de pain sur une plaque et les humecter de quelques gouttes de bière.",
+        "Ajouter le jambon si on l'utilise, puis couvrir généreusement de fromage d'Orval.",
+        "Passer sous le gril 5 à 8 min, jusqu'à ce que le fromage fonde et dore.",
+        "Poivrer et servir avec une salade verte et une Orval."
+      ],
+      "story": "Les deux produits de l'abbaye, la bière et le fromage, réunis dans une recette simple pour le premier soir au gîte.",
+      "source": "Recette générique de croûte au fromage, adaptée aux produits locaux. Non tirée d'une source gaumaise.",
+      "confirmed": false
+    },
+    {
+      "name": "Truite meunière",
+      "serves": "2 personnes",
+      "time": "20 min",
+      "ingredients": [
+        "2 truites vidées (d'environ 300 g)",
+        "Farine",
+        "60 g de beurre",
+        "1 citron",
+        "Persil haché, sel, poivre",
+        "Pommes de terre vapeur (idéalement Plate de Florenville)"
+      ],
+      "steps": [
+        "Saler et poivrer les truites à l'intérieur et à l'extérieur, puis les fariner légèrement en tapotant pour retirer l'excédent.",
+        "Faire mousser la moitié du beurre dans une grande poêle et cuire les truites 5 à 6 min par face à feu moyen.",
+        "Les réserver sur un plat chaud. Ajouter le reste du beurre dans la poêle et le laisser devenir noisette.",
+        "Arroser les truites de beurre noisette et d'un jus de citron, parsemer de persil.",
+        "Servir avec des pommes de terre vapeur."
+      ],
+      "story": "La truite meunière est le plat classique des auberges de la Semois, comme au Chameleux, et la truite à l'anneau est l'emblème d'Orval.",
+      "source": "Recette classique de la cuisine française. Le lien avec la région vient de la carte du Chameleux (Le Fooding, 2024).",
+      "confirmed": false
+    }
+  ],
+  "producers": [
+    {
+      "name": "Abbaye d'Orval : boutique (bière, fromage, pain)",
+      "type": "brasserie",
+      "town": "Villers-devant-Orval (Florenville)",
+      "lat": 49.6396,
+      "lng": 5.3486,
+      "text": "Abbaye cistercienne avec des ruines du XIIe siècle, des musées et un jardin de plantes médicinales. La boutique vend la bière d'Orval (2 caisses de 10 bouteilles au maximum par personne), le fromage d'Orval et d'autres produits. La brasserie ne se visite que lors des portes ouvertes de septembre, sur inscription.",
+      "url": "https://www.orval.be",
+      "hours": "Boutique et partie historique ouvertes tous les jours de l'année (heures exactes sur orval.be). Tél. +32 61 31 10 60."
+    },
+    {
+      "name": "Brasserie Gengoulf",
+      "type": "brasserie",
+      "town": "Villers-devant-Orval (Florenville)",
+      "lat": 49.6305,
+      "lng": 5.3205,
+      "text": "Micro-brasserie fondée en 2013, à 2 km d'Orval, qui porte le nom du saint patron du village. Elle brasse une blonde, une ambrée, une brune et une triple, et a reçu une médaille d'or. Adresse : rue des Hawys 24.",
+      "url": "https://gengoulf.be",
+      "hours": "Pas d'horaires fixes : contacter la brasserie au +32 494 18 14 45 (contact@gengoulf.be)."
+    },
+    {
+      "name": "Brasserie de la Clochette",
+      "type": "brasserie",
+      "town": "Étalle",
+      "lat": 49.672,
+      "lng": 5.6,
+      "text": "Brasserie artisanale gaumaise qui brasse une blonde, une ambrée, une triple et des bières de saison. Adresse : rue de Virton 50. Le site est accessible (label Access-i).",
+      "url": "https://brasseriedelaclochette.be",
+      "hours": "Non trouvés : appeler le +32 470 06 95 27.",
+      "confirmed": false
+    },
+    {
+      "name": "Brasserie artisanale de Rulles",
+      "type": "brasserie",
+      "town": "Rulles (Habay)",
+      "lat": 49.717,
+      "lng": 5.56,
+      "text": "La micro-brasserie gaumaise la plus connue, dont les bières sont exportées. Adresse : rue Maurice Grévisse 36. Elle organise des visites guidées avec dégustation à certaines dates, et des visites de groupe sur réservation.",
+      "url": "https://www.larulles.be",
+      "hours": "Pas d'horaires réguliers trouvés : appeler le +32 63 41 18 38.",
+      "confirmed": false
+    },
+    {
+      "name": "Salaisons G. Blaise",
+      "type": "épicerie",
+      "town": "Florenville",
+      "lat": 49.6993,
+      "lng": 5.3102,
+      "text": "Charcuterie familiale fondée en 1910, reconnaissable à sa façade au lettrage gothique rouge. Spécialités : pâté gaumais IGP (environ 17 €/kg), pipe gaumaise, saucissons, pâté à la bière et fromages régionaux. Adresse : Place Albert Ier 4.",
+      "url": "https://lefooding.com/commerces/salaisons-g-blaise",
+      "hours": "9 h-12 h et 14 h-18 h, dimanche à partir de 10 h, fermé le lundi (selon Le Fooding, à revérifier)."
+    },
+    {
+      "name": "Deremiens, chocolatier",
+      "type": "épicerie",
+      "town": "Jamoigne (Chiny)",
+      "lat": 49.696,
+      "lng": 5.412,
+      "text": "Atelier de chocolat artisanal à environ 3 km d'Izel, connu pour ses grands crus et son chocolat blond Okabo. Adresse : Voie d'Orval 26.",
+      "url": "https://www.parismatch.be/i-like-belgium/2023/04/22/excellence-belge-deremiens-lalchimiste-des-grands-crus-de-chocolat-CZXCUFNTP5HVHMCN2IKQZXLQ2U/",
+      "hours": "Non vérifiés : tél. +32 61 50 29 79.",
+      "confirmed": false
+    },
+    {
+      "name": "Vignoble du Poirier du Loup",
+      "type": "vin",
+      "town": "Torgny (Rouvroy)",
+      "lat": 49.509,
+      "lng": 5.474,
+      "text": "Vignoble communal bio d'environ 1,6 ha, entretenu par une quarantaine de bénévoles dans le village le plus au sud de Belgique. Il produit des mousseux, un crémant rosé, des vins tranquilles et un ratafia. La cave est rue l'Ermitage. Il est à environ 25 km d'Izel.",
+      "url": "https://visitwallonia.com/en-gb/content/poirier-du-loup-vineyard",
+      "hours": "Vente à l'office du tourisme près de l'église de Torgny. Visites guidées sur réservation."
+    },
+    {
+      "name": "Boucherie Protin",
+      "type": "épicerie",
+      "town": "Chiny",
+      "lat": 49.7389,
+      "lng": 5.3417,
+      "text": "Boucherie de Chiny, citée par info-lux parmi les producteurs de terroir de la Gaume. Son adresse, ses produits et ses horaires n'ont pas été vérifiés.",
+      "url": "https://www.info-lux.com/terroir-producteurs-province-luxembourg/",
+      "confirmed": false
+    }
+  ],
+  "restaurants": [
+    {
+      "name": "Au Cœur de Lacuisine",
+      "town": "Lacuisine (Florenville)",
+      "lat": 49.7141,
+      "lng": 5.3238,
+      "style": "Cuisine régionale de bistrot, produits gaumais, au bord de la Semois",
+      "price": "€€",
+      "text": "Le meilleur rapport qualité-prix du secteur : Bib Gourmand Michelin en 2024 et 2025 (une entrée 2026 est signalée), et 1 Radish We're Smart en 2025. Cuisine de saison, une large place au végétal, ambiance chaleureuse. Réservation conseillée. Adresse : rue du Fond-des-Naux 7.",
+      "url": "https://www.aucoeurdelacuisine.be/"
+    },
+    {
+      "name": "L'Épisode",
+      "town": "Saint-Médard (Herbeumont)",
+      "lat": 49.795,
+      "lng": 5.33,
+      "style": "Cuisine française moderne, menu surprise",
+      "price": "€€€",
+      "text": "Table gastronomique du chef Jordan Boreux, qui met en avant les produits de la région. Michelin Plate 2024-2025, 13,5/20 au Gault&Millau 2025, environ 4,8/5 sur Google. Adresse : Waillimont 2. Réservation par téléphone au +32 61 86 08 04.",
+      "url": "https://lepisode.be"
+    },
+    {
+      "name": "Coprin",
+      "town": "Straimont (Herbeumont)",
+      "lat": 49.787,
+      "lng": 5.387,
+      "style": "Cuisine de saison « de la ferme à l'assiette », chalet en bois en forêt",
+      "price": "€€€",
+      "text": "Restaurant installé dans un chalet en bois en forêt. Michelin Plate 2024-2025, cité par le Gault&Millau, environ 5/5 sur Google (près de 280 avis). Menus de 3 à 5 services (environ 55 à 85 €, à vérifier), le même pour toute la table. Voiture indispensable. Adresse : rue du Mont 5.",
+      "url": "https://guide.michelin.com/en/be-luxembourg/straimont_1065991/restaurant/coprin"
+    },
+    {
+      "name": "Le Florentin",
+      "town": "Florenville",
+      "lat": 49.6995,
+      "lng": 5.3095,
+      "style": "Hôtel-restaurant, cuisine belge traditionnelle et bistronomique",
+      "price": "€€",
+      "text": "Hôtel de la sélection Michelin, Place Albert Ier 58. Le restaurant est passé de 12 à 12,5/20 au Gault&Millau 2025. Tél. +32 61 31 11 23.",
+      "url": "https://guide.michelin.com/fr/fr/hotels-stays/florenville/le-florentin-hotel-restaurant-10659"
+    },
+    {
+      "name": "Hostellerie Sainte-Cécile",
+      "town": "Sainte-Cécile (Florenville)",
+      "lat": 49.727,
+      "lng": 5.245,
+      "style": "Cuisine française de produits frais, hostellerie familiale",
+      "price": "€€€",
+      "text": "Hostellerie familiale (Relais du Silence) citée par le Gault&Millau. Le chef serait Frédéric Garnier (source : annuaire). Adresse : rue Neuve 1. Tél. +32 61 31 31 67. Le statut du restaurant en 2025-2026 n'a pas été confirmé.",
+      "url": "https://www.info-lux.com/ou-manger-province-luxembourg/pays/belgique/wallonie/province-de-luxembourg/",
+      "confirmed": false
+    },
+    {
+      "name": "À l'Ange Gardien",
+      "town": "Orval (Villers-devant-Orval)",
+      "lat": 49.6405,
+      "lng": 5.347,
+      "style": "Taverne-restaurant de l'abbaye",
+      "price": "€€",
+      "text": "Le seul endroit où boire l'Orval Vert. On y sert aussi le fromage, le pain et la bière d'Orval : c'est l'étape obligée après la visite des ruines. Hors saison : 10 h 30-18 h 30, fermé le mercredi. Adresse : Route d'Orval 3. Tél. +32 61 31 18 86.",
+      "url": "https://www.orval.be/en/page/457-a-l-ange-gardien"
+    },
+    {
+      "name": "Le Chameleux",
+      "town": "Chamleux (Florenville)",
+      "lat": 49.668,
+      "lng": 5.33,
+      "style": "Auberge de bord de route, cuisine traditionnelle",
+      "price": "€",
+      "text": "Institution depuis les années 1960, avec sa salle lambrissée façon refuge de montagne. Le Fooding y recommande la truite meunière, l'omelette, le pâté gaumais, la quiche au fromage d'Orval et la dame blanche. Menus de 16 à 35 €. Ouvert 11 h-20 h 30, fermé le mercredi (et le mardi du 15/5 au 15/9) : horaires 2024.",
+      "url": "https://lefooding.com/restaurants/le-chameleux"
+    },
+    {
+      "name": "Le Moulin Cambier",
+      "town": "Chiny",
+      "lat": 49.7395,
+      "lng": 5.3365,
+      "style": "Bistrot-brasserie dans un ancien moulin au bord de la Semois",
+      "price": "€€",
+      "text": "Ancien moulin sur la Semois, à Chiny. La cuisine est décrite comme bistronomique et de saison (carbonnade, boulettes bière-fromage), et le lieu est noté environ 4,3/5 sur Google (plus de 400 avis). Les descriptions viennent d'agrégateurs et se contredisent (Petit Futé parle de cuisine savoyarde) : à vérifier.",
+      "url": "https://rankeat.fr/restaurants/le-moulin-cambier-chiny",
+      "confirmed": false
+    },
+    {
+      "name": "Le Tandem",
+      "town": "Chiny",
+      "lat": 49.7385,
+      "lng": 5.341,
+      "style": "Restaurant de village, cuisine soignée et cave à vins",
+      "price": "€€",
+      "text": "Premier des classements d'agrégateurs pour Chiny, avec environ 4,5 à 4,7/5 (150 à 300 avis). Les clients parlent d'une salle chaleureuse, de bons vins et d'un accueil aimable. L'adresse et les horaires n'ont pas été vérifiés.",
+      "url": "https://rankeat.fr/restaurants/le-tandem-chiny",
+      "confirmed": false
+    },
+    {
+      "name": "Hostellerie Les Comtes de Chiny",
+      "town": "Chiny",
+      "lat": 49.7392,
+      "lng": 5.342,
+      "style": "Hôtel-restaurant Logis, cuisine traditionnelle",
+      "price": "€€",
+      "text": "Hôtel-restaurant Logis au centre de Chiny, noté 9,7/10 par Logis. Déjeuner 12 h-13 h 30, dîner 18 h 30-20 h 30.",
+      "url": "https://www.logishotels.com/en/restaurant/logis-hostellerie-comtes-de-chiny-254418"
+    },
+    {
+      "name": "Le Relais de Chassepierre",
+      "town": "Chassepierre (Florenville)",
+      "lat": 49.7088,
+      "lng": 5.265,
+      "style": "Brasserie-restaurant familiale avec terrasse",
+      "price": "€€",
+      "text": "Brasserie familiale avec terrasse au cœur de Chassepierre, l'un des Plus Beaux Villages de Wallonie. Elle reste ouverte pendant le festival des arts de la rue (réservation conseillée). Adresse : rue Warlomont 7. Aucune note d'avis vérifiée.",
+      "url": "https://rankeat.fr/restaurants/le-relais-de-chassepierre-florenville",
+      "confirmed": false
+    },
+    {
+      "name": "Frank Bar@Burgers",
+      "town": "Sainte-Marie-sur-Semois (Étalle)",
+      "lat": 49.67,
+      "lng": 5.545,
+      "style": "Burgers maison (ancienne friterie de village)",
+      "price": "€",
+      "text": "Une friterie de village devenue restaurant de burgers, avec 53 burgers à la carte. Il figure au Gault&Millau (catégorie « Pop ») depuis 2021 et c'est un coup de cœur d'info-lux. Bonne option décontractée pour une famille. Il est à environ 12 km d'Izel.",
+      "url": "https://www.info-lux.com/meilleurs-hamburgers-gaume-frank-etalle/"
+    }
+  ],
+  "culture": [
+    {
+      "title": "Le gaumais, un patois lorrain",
+      "category": "langue",
+      "text": "En Gaume, on ne parle pas wallon : le patois local, le gaumais, est une variété du lorrain roman, une langue d'oïl proche du français. Il est reconnu comme langue régionale endogène en Fédération Wallonie-Bruxelles, mais l'UNESCO le classe « sérieusement en danger » (2010). Quelques auteurs locaux essaient de le faire revivre.",
+      "url": "https://en.wikipedia.org/wiki/Lorrain_language"
+    },
+    {
+      "title": "La « petite Provence belge »",
+      "category": "nature",
+      "text": "La Gaume (Lorraine belge) est surnommée la « petite Provence belge » parce que son climat est plus doux que celui de l'Ardenne voisine. C'est ce qui permet la vigne à Torgny et la culture de la Plate de Florenville sur des sols sablo-calcaires. On parle aussi de « petit Midi de la Belgique », mais aucune source chiffrée sur le microclimat n'a été trouvée.",
+      "url": "https://www.info-lux.com/que-visiter-en-gaume-lieux-incontournables/pays/belgique/wallonie/province-de-luxembourg/gaume/",
+      "confirmed": false
+    },
+    {
+      "title": "Parc naturel de Gaume",
+      "category": "nature",
+      "text": "Parc naturel créé par arrêté du Gouvernement wallon du 18 décembre 2014, sur environ 58 100 ha. Il protège la biodiversité et le patrimoine gaumais : paysages, architecture, petit patrimoine, culture. Ses communes sont Étalle, Florenville, Meix-devant-Virton, Musson, Rouvroy, Saint-Léger, Tintigny, Virton et une partie d'Aubange. Chiny n'apparaît pas dans les listes consultées.",
+      "lat": 49.64,
+      "lng": 5.5,
+      "url": "https://parc-naturel-gaume.be"
+    },
+    {
+      "title": "La maison gaumaise et son usoir",
+      "category": "traditions",
+      "text": "Les villages gaumais ont un plan, une architecture et des couleurs homogènes : maisons rurales du XIXe siècle accolées, dont les portes et fenêtres disent l'usage de chaque partie (logis, grange, étable). Devant la façade s'étend l'usoir, un espace ouvert typique de la Lorraine que le Parc naturel recommande de ne pas clôturer. Les détails sur l'usage historique de l'usoir n'ont pas été vérifiés.",
+      "url": "https://parc-naturel-gaume.be/wp-content/uploads/Brochure-PNDG.pdf"
+    },
+    {
+      "title": "Chiny, Cité des contes",
+      "category": "légende",
+      "text": "Chiny, ancienne capitale du puissant comté de Chiny (né vers 980), s'est donné le titre de « Cité des contes ». Chaque année, le deuxième week-end de juillet, le Festival interculturel du conte rend la petite ville piétonne et réunit une soixantaine de conteurs, avec des balades contées, une Nuit du conte et des ateliers. Le nombre d'éditions varie selon les sources.",
+      "lat": 49.7389,
+      "lng": 5.3417,
+      "url": "https://www.conte.be"
+    },
+    {
+      "title": "Les passeurs de la Semois et les légendes des rochers",
+      "category": "légende",
+      "text": "Depuis un siècle, des barques à fond plat descendent la Semois de Chiny à Lacuisine (environ 8 km, une heure) dans la gorge du Hât. Le passeur raconte les légendes des rochers et des berges, comme le Trou du Diable et la Roche aux Fées. Un guide récent laisse penser que le service a été réduit : appeler les Passeurs réunis (+32 61 31 17 43) avant de compter dessus. Les kayaks, eux, fonctionnent bien.",
+      "lat": 49.735,
+      "lng": 5.335,
+      "url": "https://www.belvicci.com/sight/belgium/chiny/descente-en-barques",
+      "confirmed": false
+    },
+    {
+      "title": "Rocher du Hat",
+      "category": "nature",
+      "text": "Point de vue sur un méandre de la Semois, présenté comme le point culminant de la Semois (365 m) entre Chiny et Lacuisine. C'est un but de promenade classique au départ de Chiny.",
+      "lat": 49.728,
+      "lng": 5.333,
+      "url": "https://www.info-lux.com/que-visiter-en-gaume-lieux-incontournables/pays/belgique/wallonie/province-de-luxembourg/gaume/"
+    },
+    {
+      "title": "Orval, l'abbaye et la légende de la truite",
+      "category": "légende",
+      "text": "Selon la légende, la comtesse Mathilde, veuve, perdit son anneau de mariage dans une source du vallon. Une truite le lui rapporta et elle s'écria : « Voici vraiment un Val d'Or ! », puis promit d'y fonder un monastère. Devenue cistercienne en 1132, l'abbaye fut incendiée en 1637 puis reconstruite au XXe siècle ; des moines y vivent toujours. On visite les ruines médiévales, le musée dans les caves du XVIIIe siècle, le jardin de plantes médicinales et la pharmacie ancienne (compter 1 h 30 à 2 h). La truite à l'anneau orne la bière et le fromage.",
+      "lat": 49.6396,
+      "lng": 5.3486,
+      "url": "https://www.orval.be"
+    },
+    {
+      "title": "Chassepierre et son festival des arts de la rue",
+      "category": "art",
+      "text": "Chassepierre, village perché dans une boucle de la Semois avec son église sur le rocher, son lavoir et son moulin, compte parmi les Plus Beaux Villages de Wallonie. Il accueille chaque mi-août le Festival international des arts de la rue, l'un des précurseurs du genre en Europe : première édition en 1974, 52e en 2026.",
+      "lat": 49.7086,
+      "lng": 5.265,
+      "url": "https://www.chassepierre.be"
+    },
+    {
+      "title": "Gaume Jazz Festival",
+      "category": "musique",
+      "text": "Festival créé en 1985 par les Jeunesses musicales du Luxembourg belge. Il a lieu chaque deuxième week-end d'août dans le parc du Centre culturel de Rossignol-Tintigny (chapiteaux, amphithéâtre, église), avec une vingtaine de concerts. Il y a aussi des éditions « Gaume Jazz » de printemps, d'automne et d'hiver, et un stage pour les jeunes musiciens. Rossignol est à environ 8 km d'Izel.",
+      "lat": 49.721,
+      "lng": 5.487,
+      "url": "https://www.europejazz.net/festivals/gaume-jazz-festival"
+    },
+    {
+      "title": "Musée gaumais (Virton)",
+      "category": "musée",
+      "text": "Installé depuis 1939 dans l'ancien couvent des Récollets de Virton, il raconte deux mille ans d'histoire de la Gaume : archéologie, ferronnerie (plaques de cheminée), arts et traditions populaires. Il gère aussi le Musée de la vie rurale de Montquintin (ferme de la dîme de 1765, salle de classe d'autrefois) et le musée lapidaire de Montauban.",
+      "lat": 49.5672,
+      "lng": 5.5318,
+      "url": "https://www.info-lux.com/musee-gaumais-virton/pays/belgique/wallonie/province-de-luxembourg/gaume/virton/"
+    },
+    {
+      "title": "Montauban-Buzenol : la moissonneuse des Trévires et l'art contemporain",
+      "category": "musée",
+      "text": "Ce site fortifié, occupé à l'âge du Fer, à l'époque gallo-romaine et au Moyen Âge, a livré des bas-reliefs gallo-romains, dont la célèbre « Moissonneuse des Trévires » (le vallus, la moissonneuse des Gaulois décrite par Pline). Ils sont exposés dans un musée lapidaire enterré, signé par l'architecte Constantin Brodzki. Depuis 2007, le Centre d'art contemporain du Luxembourg belge (CACLB) expose sur le site. Une boucle de 6 km en fait le tour. On ne sait pas si l'original de la moissonneuse est à Montauban ou à Virton.",
+      "lat": 49.644,
+      "lng": 5.588,
+      "url": "https://www.cirkwi.com/fr/point-interet/209744-le-parc-archeologique-et-le-musee-lapidaire-de-montauban"
+    },
+    {
+      "title": "Site gallo-romain de Chameleux",
+      "category": "musée",
+      "text": "Vestiges d'un relais routier romain sur la chaussée Reims-Trèves, occupé du Ier au Ve siècle, à quelques kilomètres de Florenville.",
+      "lat": 49.666,
+      "lng": 5.329,
+      "url": "https://www.info-lux.com/que-visiter-en-gaume-lieux-incontournables/pays/belgique/wallonie/province-de-luxembourg/gaume/"
+    },
+    {
+      "title": "Jean-Claude Servais, la Gaume en bande dessinée",
+      "category": "littérature",
+      "text": "L'auteur de BD Jean-Claude Servais (né en 1956) vit à Jamoigne, à côté d'Izel. Ses albums puisent dans les paysages, la sorcellerie et les légendes de Gaume et d'Ardenne : La Tchalette (1982), Tendre Violette, et Orval en deux tomes chez Dupuis, sur l'histoire de l'abbaye. Ses planches ont été exposées à Bastogne en 2025.",
+      "url": "https://www.bedetheque.com/auteur-616-BD-.html"
+    },
+    {
+      "title": "Les ardoisières d'Herbeumont",
+      "category": "traditions",
+      "text": "Les moines d'Orval et de Saint-Hubert exploitaient déjà l'ardoise des forêts d'Herbeumont au XIIIe siècle. L'activité a explosé dans les années 1830, avec environ 8 millions d'ardoises par an vers 1838. Les toits gris-bleu de la vallée en viennent. On peut prolonger la découverte au musée Au cœur de l'Ardoise à Bertrix, ouvert en 1996 dans l'ancienne ardoisière de la Morépire.",
+      "lat": 49.781,
+      "lng": 5.237,
+      "url": "https://gsb.naturalsciences.be/wp-content/uploads/2024/09/13_Herbeumont_Les-Ardoisieres_web.pdf"
+    },
+    {
+      "title": "Le Prieuré de Conques",
+      "category": "traditions",
+      "text": "Ancienne maison d'études de l'abbaye d'Orval, au bord de la Semois à environ 2 km au sud d'Herbeumont. C'est une hostellerie depuis 1963.",
+      "lat": 49.765,
+      "lng": 5.25,
+      "url": "https://www.info-lux.com/?p=1588792",
+      "confirmed": false
+    },
+    {
+      "title": "Le tabac de la Semois, patrimoine immatériel",
+      "category": "traditions",
+      "text": "Dans la basse Semois (Vresse, Bohan, Laforêt, Corbion), on cultive le tabac depuis les années 1850. On y voit encore des séchoirs en bois, et deux boucles balisées forment la Route du tabac. Le savoir-faire a été reconnu patrimoine culturel immatériel de la Fédération Wallonie-Bruxelles fin 2024, mais il ne reste qu'une poignée de planteurs. Ces villages sont à environ 40 km d'Izel, en aval.",
+      "lat": 49.865,
+      "lng": 4.935,
+      "url": "https://qvw.be/fr|route-du-tabac-de-la-semois.html"
+    },
+    {
+      "title": "Torgny, village le plus au sud de Belgique",
+      "category": "traditions",
+      "text": "Village de pierre blonde, classé parmi les Plus Beaux Villages de Wallonie, avec ses vignes en terrasses, l'église Saint-Martin, la chapelle Notre-Dame et son ermitage. C'est l'image même de la « petite Provence » gaumaise.",
+      "lat": 49.509,
+      "lng": 5.474,
+      "url": "https://www.info-lux.com/plus-beaux-villages-province-luxembourg/"
+    }
+  ],
+  "notes": "ÉCARTÉS ou NON CONFIRMÉS : (1) « Tôtché gaumais » : aucune source ne relie le tôtché (toétché) à la Gaume ; c'est une spécialité du Jura suisse et de Franche-Comté, donc retiré. (2) « Matoufèt » : c'est une spécialité liégeoise, pas gaumaise, donc retiré. Le plat gaumais attesté le plus proche est la touffaye (étuvée). (3) Escavèche : IGP de Chimay et de l'Entre-Sambre-et-Meuse, pas de la Gaume, donc retirée. (4) Galette à la crème et tarte au sucre : desserts wallons courants (les boulangeries de Florenville vendent des tartes au sucre), mais aucune source n'en fait une spécialité spécifiquement gaumaise. La « tarte au goumeau » est franc-comtoise. Non retenus comme spécialités. (5) Brasserie Saint-Monon : elle est à Ambly (Nassogne), hors de la Gaume et à plus de 50 km, donc retirée. (6) Zigomar, « apéritif gaumais » cité par une source info-lux : impossible de le confirmer, donc non retenu. (7) Truite de la Semois : aucune pisciculture en vente directe trouvée près de Chiny. La truite servie dans les auberges peut venir d'ailleurs. (8) Orval Vert à environ 4,5 % : chiffre issu d'avis clients. (9) Moissonneuse des Trévires : on ne sait pas si l'original est à Montauban ou au Musée gaumais de Virton. (10) Barques de Chiny à Lacuisine : le service existe peut-être encore sous une forme réduite, il faut appeler. (11) Le Parc naturel de Gaume ne semble pas inclure Chiny ; Izel est en Gaume au sens culturel, à vérifier. (12) Restaurants trouvés uniquement via des agrégateurs (Moulin Cambier, Le Tandem, Relais de Chassepierre) ou sans confirmation 2025-2026 (Hostellerie Sainte-Cécile) : marqués confirmed: false. Le Prieuré de Conques a été écarté des restaurants parce que les sources disent qu'il n'a pas de restaurant. Les Plats Canailles (Habay, Michelin Plate) et l'Hôtel des Ardennes (Corbion, Bib Gourmand) sont de très bonnes tables mais à plus de 20 km, donc non retenus. La Grappe d'Or (Torgny) n'a pas été vérifiée. (13) Toutes les coordonnées sont approximatives (centre du village ou de la rue). (14) Horaires : seules ceux de l'Ange Gardien (hors saison), de Blaise, du Chameleux (2024) et des Comtes de Chiny ont été trouvés ; tous sont à revérifier. (15) Jambon d'Ardenne IGP : zone de production ardennaise au sens large, pas spécifiquement gaumaise."
+}

@@ -388,3 +388,19 @@ footer.site a{color:#fff}
 body.admin .pwa-banner{bottom:12px}
 .lang-btn{font-weight:800;font-size:.85rem;letter-spacing:.04em}
 .lang-btn{font-weight:800;font-size:.85rem;letter-spacing:.04em}
+
+/* Paysage des balades */
+.lchips{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+.lc{font-size:.75rem;font-weight:700;background:var(--paper-2);border-radius:99px;padding:2px 9px;color:var(--ink-2);white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis}
+.lc-f{background:#e3ebdc;color:#2f4a34}.lc-w{background:#dfecef;color:#2b5866}.lc-v{background:#f3e7d3;color:#7a5520}
+.hdesc{font-size:1rem;line-height:1.6;background:var(--card);border-left:4px solid var(--moss);padding:12px 14px;border-radius:0 12px 12px 0}
+.landbar{display:flex;height:10px;border-radius:99px;overflow:hidden;background:var(--paper-2);margin:12px 0 6px}
+.landbar span{display:block;height:100%}
+.s1{background:#76863f}.s2{background:#d8b46a}.s3{background:#8a8473}
+.landleg{display:flex;gap:14px;flex-wrap:wrap;font-size:.8rem;color:var(--ink-2)}
+.landleg i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+.appmini{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:var(--forest);color:#fff;border-radius:14px;padding:12px 14px;margin:14px 0}
+.appmini small{display:block;color:#cfd8c6;font-size:.8rem}
+.appmini .btn-forest{background:#fff;color:var(--forest)}
+
+.actions .fav{position:static;width:auto;height:auto;border-radius:999px;box-shadow:none}

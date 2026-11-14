@@ -170,7 +170,7 @@ new IntersectionObserver((es,o) => es.forEach(e => { if(e.isIntersecting){ initM
 let hKind = 'pied', hShown = 9;
 $('#hikeKind').innerHTML = `<button class="fchip on" data-k="pied">${icon('compass')}À pied</button><button class="fchip" data-k="velo">${icon('bike')}À vélo</button><button class="fchip" data-k="fav">${icon('heart')}Mes favoris</button>`;
 $('#hikeKind').onclick = e => { const b = e.target.closest('button'); if(!b) return; hKind = b.dataset.k; $$('#hikeKind .fchip').forEach(x => x.classList.toggle('on', x===b)); hShown = 9; renderHikes(); };
-['hikeDiff','hikeLen','hikeSort'].forEach(id => $('#'+id).onchange = () => { hShown = 9; renderHikes(); });
+['hikeDiff','hikeLen','hikeSort','hikeLand'].forEach(id => $('#'+id).onchange = () => { hShown = 9; renderHikes(); });
 $('#hikeMore').onclick = () => { hShown += 9; renderHikes(); };
 function miniSvg(h){
   const xs = h.coords.map(c=>c[1]), ys = h.coords.map(c=>c[0]); const x0=Math.min(...xs),x1=Math.max(...xs),y0=Math.min(...ys),y1=Math.max(...ys);
@@ -182,11 +182,24 @@ function miniSvg(h){
   <rect width="300" height="150" fill="url(#g${h.id})"/><path d="${d}" fill="none" stroke="${h.color}" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round" class="draw"/>
   <circle cx="${(ox+(st[1]-x0)*k*s).toFixed(1)}" cy="${(oy+(y1-st[0])*s).toFixed(1)}" r="5" fill="#fff" stroke="${h.color}" stroke-width="2.5"/></svg>`;
 }
+const landChips = (h, max=4) => { const l = h.land; if(!l) return ''; const c = [];
+  c.push(`<span class="lc lc-f" title="${T('Part en forêt')}">🌲 ${l.forest} %</span>`);
+  if(l.rivers.length && l.rivers[0][1] >= .5) c.push(`<span class="lc lc-w">💧 ${esc(l.rivers[0][0])}</span>`);
+  if(l.villages.length) c.push(`<span class="lc lc-v">🏘️ ${esc(l.villages.slice(0,2).join(', '))}${l.villages.length>2?' +'+(l.villages.length-2):''}</span>`);
+  if(l.views) c.push(`<span class="lc">👁️ ${l.views}</span>`);
+  return `<div class="lchips">${c.slice(0,max).join('')}</div>`; };
+const hikeDesc = h => h.desc ? (NLD ? h.desc.nl : h.desc.fr) : '';
 function filteredHikes(){
   let list = H.filter(h => hKind==='fav' ? isFav('h:'+h.id) : h.kind===hKind);
   const d = $('#hikeDiff').value, len = $('#hikeLen').value;
   if(d) list = list.filter(h => h.diff===d);
   if(len){ const [a,b] = len.split('-').map(Number); list = list.filter(h => h.km>=a && h.km<b); }
+  const land = $('#hikeLand').value;
+  if(land==='foret') list = list.filter(h => h.land && h.land.forest >= 60);
+  if(land==='eau') list = list.filter(h => h.land && h.land.rivers.some(r => r[1] >= .8 && /^(Semois|Vierre|Rulles|Chiers|Ton|Marche|Antrogne|Aisne)$/i.test(r[0])));
+  if(land==='villages') list = list.filter(h => h.land && h.land.villages.length >= 2);
+  if(land==='calme') list = list.filter(h => h.land && !h.land.villages.length);
+  if(land==='sentiers') list = list.filter(h => h.land && h.land.sentier >= 40);
   const s = $('#hikeSort').value;
   list.sort(s==='short'?(a,b)=>a.km-b.km : s==='long'?(a,b)=>b.km-a.km : s==='flat'?(a,b)=>(a.up/a.km)-(b.up/b.km) : (a,b)=>a.nearest-b.nearest);
   return list;
@@ -197,6 +210,7 @@ function renderHikes(){
   $('#hikes').innerHTML = list.slice(0,hShown).map(h => `<article class="card hike" data-h="${h.id}">
     <div class="mini">${miniSvg(h)}<span class="diff ${h.diff}">${h.diff}</span>${favBtn('h:'+h.id)}</div>
     <div class="b"><h4>${esc(h.name)}</h4><span class="muted" style="font-size:.84rem">${h.ref?`<span class="marker-sym" style="background:${h.color}"></span> ${esc(h.ref)} · `:''}${esc(h.operator||'Itinéraire balisé')}</span>
+    ${landChips(h, 3)}
     <div class="meta"><span>${icon('ruler')}${fmtKm(h.km)}</span><span>${icon('up')}${h.up} m</span><span>${icon('clock')}${fmtDur(h.minutes)}</span><span>${h.nearest<1.2?icon('house')+'à pied depuis la maison':icon('car')+fmtKm(h.nearest)}</span></div></div></article>`).join('')
     || '<p class="muted">Aucune balade ne correspond. Ajoutez des favoris avec ♥ ou élargissez les filtres.</p>';
   $('#hikeMore').style.display = list.length > hShown ? '' : 'none';
@@ -226,8 +240,15 @@ function openHike(id){
      ${favBtn('h:'+h.id).replace('class="fav','class="btn btn-soft fav').replace('</button>','Favori</button>')}
      <a class="btn btn-soft" target="_blank" rel="noopener" href="${h.osm}">${icon('map')}OpenStreetMap</a>
    </div>
+   ${hikeDesc(h)?`<p class="hdesc" data-noi18n>${esc(hikeDesc(h))}</p>`:''}
+   ${h.land?`<div class="landbar" title="${T('Types de chemins')}"><span style="width:${h.land.sentier}%" class="s1"></span><span style="width:${h.land.chemin}%" class="s2"></span><span style="width:${h.land.route}%" class="s3"></span></div>
+   <div class="landleg"><span><i class="s1"></i>${T('Sentiers')} ${h.land.sentier} %</span><span><i class="s2"></i>${T('Chemins')} ${h.land.chemin} %</span><span><i class="s3"></i>${T('Routes')} ${h.land.route} %</span></div>${landChips(h, 5)}`:''}
    <p>${h.nearest<1.2?`<b>Départ à pied depuis la maison</b> : le tracé passe à ${fmtKm(h.nearest)} de Belizel.`:`Le tracé passe à ${fmtKm(h.nearest)} de la maison, soit environ ${driveMin(h.nearest)} min en voiture.`}
    ${h.kind==='pied'?' Suivez le balisage '+(h.ref?`« ${esc(h.ref)} » `:'')+'peint sur les arbres et les poteaux.':' Itinéraire vélo balisé.'}</p>
+   <div class="appmini">
+     <div><b>${T('Suivez-la sur votre téléphone')}</b><small>${T("Gratuit et hors ligne : installez Organic Maps, puis ouvrez le GPX avec l'application.")}</small></div>
+     <div class="stores"><a class="btn btn-forest btn-sm" href="https://apps.apple.com/app/organic-maps/id1567437057" target="_blank" rel="noopener">App Store</a><a class="btn btn-forest btn-sm" href="https://play.google.com/store/apps/details?id=app.organicmaps" target="_blank" rel="noopener">Google Play</a></div>
+   </div>
    ${near.length?`<h4>En chemin</h4><div class="amen">${near.map(p=>`<span>${p.e} ${esc(p.n)}</span>`).join('')}</div>`:''}
    <p class="muted" style="font-size:.8rem;margin-top:16px">Tracé © contributeurs OpenStreetMap (ODbL). Durée estimée à 4,2 km/h, plus 1 h par 450 m de montée. Altitudes EU-DEM 25 m. Prévoyez de bonnes chaussures : les sentiers gaumais sont souvent humides.</p>`);
   hydrate($('#drawer'));

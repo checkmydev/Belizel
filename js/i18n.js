@@ -145,7 +145,7 @@ const NL = {
 "Touchez le bouton":"Tik op de knop","en bas de Safari.":"onderaan in Safari.","Choisissez":"Kies","« Sur l'écran d'accueil »":"« Zet op beginscherm »","Touchez":"Tik op","Ajouter":"Voeg toe",
 ": l'icône apparaît avec vos applications.":": het icoon verschijnt bij uw apps.","Compris":"Begrepen","Installer":"Installeren",
 "Accès en un geste depuis votre écran d'accueil, même hors ligne.":"Met één tik bereikbaar vanaf uw beginscherm, zelfs offline.","Application installée ✓":"App geïnstalleerd ✓",
-"Installer Belizel":"Belizel installeren","Poêle à bois":"Houtkachel","Jardin":"Tuin"
+"Tous paysages":"Alle landschappen","Surtout en forêt":"Vooral door het bos","Au bord de l'eau":"Langs het water","Par les villages":"Door de dorpen","Sans village, au calme":"Zonder dorpen, rustig","Sur sentiers":"Over smalle paadjes","Part en forêt":"Aandeel bos","Types de chemins":"Soorten wegen","Sentiers":"Paadjes","Chemins":"Bos- en veldwegen","Routes":"Wegen","Suivez-la sur votre téléphone":"Volg ze op uw smartphone","Gratuit et hors ligne : installez Organic Maps, puis ouvrez le GPX avec l'application.":"Gratis en offline: installeer Organic Maps en open de GPX met de app.","Installer Belizel":"Belizel installeren","Poêle à bois":"Houtkachel","Jardin":"Tuin"
 };
 // Fragments avec nombres ou noms (appliqués dans les textes du DOM en néerlandais)
 const RULES = [

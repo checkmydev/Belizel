@@ -11,7 +11,8 @@ Le site est statique et hébergé sur GitHub Pages. Les données privées (finan
 
 ```
 python tools/build_hikes.py tools/osm_routes.json   # balades (OpenStreetMap + altitudes EU-DEM)
-python tools/build_content.py                       # événements, activités, histoire, terroir
+python tools/describe_hikes.py                      # descriptions FR/NL (forêt, villages, rivières, chemins) — requiert tools/osm_area.json et osm_context.json (requêtes Overpass)
+python tools/build_content.py                       # événements, activités, histoire, terroir (FR + NL)
 ```
 
 Crédits : tracés © contributeurs OpenStreetMap (ODbL) ; altitudes OpenTopoData (EU-DEM) ; météo Open-Meteo ; fonds de carte OpenStreetMap, OpenTopoMap et Esri.

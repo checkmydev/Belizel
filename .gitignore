@@ -10,3 +10,7 @@ tools/search.py
 tools/details.py
 *.log
 acces-admin.txt
+tools/osm_area.json
+tools/osm_context.json
+tools/q_*.txt
+tools/hike_ids.txt

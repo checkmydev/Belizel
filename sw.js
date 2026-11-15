@@ -1,6 +1,6 @@
 /* Belizel — service worker : l'interface et les données publiques restent disponibles hors connexion.
    Réseau d'abord pour les pages (contenu frais), cache d'abord pour les images et bibliothèques. Jamais de cache pour Supabase ni la météo. */
-const V = 'belizel-v5';
+const V = 'belizel-v6';
 const SHELL = ['./', 'index.html', 'admin.html', 'css/style.css', 'css/admin.css', 'js/common.js', 'js/guest.js', 'js/admin.js', 'js/config.js', 'js/i18n.js', 'data/content.nl.js',
   'data/listing.js', 'data/hikes.js', 'data/content.js', 'data/manual.js', 'data/stories.js', 'manifest.webmanifest', 'admin.webmanifest',
   'icons/guest-192.png', 'icons/admin-192.png', 'img/p01.jpg', 'img/p04.jpg', 'img/p20.jpg'];
@@ -13,6 +13,6 @@ self.addEventListener('fetch', e => {
   if (isAsset) {
     e.respondWith(caches.match(e.request).then(r => r || fetch(e.request).then(res => { if (res.ok || res.type === 'opaque') { const cl = res.clone(); caches.open(V).then(c => c.put(e.request, cl)); } return res; })));
   } else if (u.origin === location.origin) {
-    e.respondWith(fetch(e.request).then(res => { const cl = res.clone(); caches.open(V).then(c => c.put(e.request, cl)); return res; }).catch(() => caches.match(e.request, {ignoreSearch: true})));
+    e.respondWith(fetch(e.request, {cache: 'no-cache'}).then(res => { const cl = res.clone(); caches.open(V).then(c => c.put(e.request, cl)); return res; }).catch(() => caches.match(e.request, {ignoreSearch: true})));
   }
 });

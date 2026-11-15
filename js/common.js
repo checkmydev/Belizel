@@ -151,7 +151,14 @@ window.Tour = function(steps, key){
 
 /* Application installable (PWA) : bouton + bannière discrète sur mobile, consignes sur iPhone */
 window.PWA = (appName) => {
-  if('serviceWorker' in navigator && location.protocol !== 'file:') navigator.serviceWorker.register('sw.js').catch(()=>{});
+  if('serviceWorker' in navigator && location.protocol !== 'file:'){
+    // nouvelle version publiée : on recharge la page (sauf au tout premier chargement), et on vérifie à chaque retour dans l'appli
+    const hadCtrl = !!navigator.serviceWorker.controller; let reloaded = false;
+    navigator.serviceWorker.addEventListener('controllerchange', () => { if(hadCtrl && !reloaded){ reloaded = true; location.reload(); } });
+    navigator.serviceWorker.register('sw.js', {updateViaCache: 'none'}).then(reg => {
+      document.addEventListener('visibilitychange', () => { if(document.visibilityState === 'visible') reg.update().catch(()=>{}); });
+    }).catch(()=>{});
+  }
   const standalone = matchMedia('(display-mode: standalone)').matches || navigator.standalone;
   if(standalone) return;
   const ios = /iphone|ipad|ipod/i.test(navigator.userAgent) && !/crios|fxios/i.test(navigator.userAgent);

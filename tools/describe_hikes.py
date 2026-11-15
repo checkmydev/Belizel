@@ -1,5 +1,5 @@
 """Décrit chaque balade à partir d'OpenStreetMap : part en forêt, villages traversés, rivières longées,
-types de chemins, curiosités. Ajoute à data/hikes.js les champs `land` (chiffres) et `desc` {fr, nl}.
+types de chemins, curiosités. Ajoute à data/hikes.js les champs `land` (chiffres) et `desc` {fr, nl, en}.
 Entrée : tools/osm_context.json (requête Overpass : relations, ways membres, forêts, lieux, cours d'eau, POI).
 Usage : python tools/describe_hikes.py
 """
@@ -124,28 +124,35 @@ for h in hikes:
     # ---------- textes
     kind_fr = 'Boucle' if h['loop'] else 'Itinéraire'
     kind_nl = 'Lus' if h['loop'] else 'Route'
+    kind_en = 'Loop' if h['loop'] else 'Route'
     f = land['forest']
-    if f >= 70: pf, pn = 'essentiellement forestière', 'grotendeels door het bos'
-    elif f >= 45: pf, pn = 'partagée entre forêt et campagne', 'afwisselend door bos en open landschap'
-    elif f >= 20: pf, pn = 'plutôt à découvert, avec quelques passages en sous-bois', 'eerder open, met enkele stukken door het bos'
-    else: pf, pn = 'à découvert, entre prés et champs', 'door open landschap, tussen weiden en velden'
+    if f >= 70: pf, pn, pe = 'essentiellement forestière', 'grotendeels door het bos', 'mostly through woodland'
+    elif f >= 45: pf, pn, pe = 'partagée entre forêt et campagne', 'afwisselend door bos en open landschap', 'shared between forest and countryside'
+    elif f >= 20: pf, pn, pe = 'plutôt à découvert, avec quelques passages en sous-bois', 'eerder open, met enkele stukken door het bos', 'fairly open, with a few woodland stretches'
+    else: pf, pn, pe = 'à découvert, entre prés et champs', 'door open landschap, tussen weiden en velden', 'through open country, between meadows and fields'
+    fe = lambda n: str(round(n, 1))
     if h['kind'] == 'velo': pf, pn = pf.replace('forestière', 'forestière'), pn
     fr = [f"{kind_fr} de {fmt(h['km'])} km {pf} ({f} % en forêt)."]
     nl = [f"{kind_nl} van {fmt(h['km'])} km, {pn} ({f} % bos)."]
+    en = [f"{fe(h['km'])} km {kind_en.lower()} {pe} ({f}% forest)."]
+    en[0] = en[0][0].upper() + en[0][1:]
     top = sorted([('sentier', land['sentier']), ('chemin', land['chemin']), ('route', land['route'])], key=lambda x: -x[1])
     SF = {'sentier': 'sentiers', 'chemin': 'chemins forestiers et agricoles', 'route': 'petites routes'}
     SN = {'sentier': 'smalle paadjes', 'chemin': 'bos- en veldwegen', 'route': 'rustige wegen'}
+    SE = {'sentier': 'footpaths', 'chemin': 'forest and farm tracks', 'route': 'quiet lanes'}
     if top[0][1] >= 60:
-        fr.append(f"On marche surtout sur des {SF[top[0][0]]} ({top[0][1]} %)."); nl.append(f"U wandelt vooral over {SN[top[0][0]]} ({top[0][1]} %).")
+        fr.append(f"On marche surtout sur des {SF[top[0][0]]} ({top[0][1]} %)."); nl.append(f"U wandelt vooral over {SN[top[0][0]]} ({top[0][1]} %)."); en.append(f"Mostly on {SE[top[0][0]]} ({top[0][1]}%).")
     else:
         fr.append(f"Le parcours alterne {SF[top[0][0]]} ({top[0][1]} %) et {SF[top[1][0]]} ({top[1][1]} %).")
         nl.append(f"Het parcours wisselt {SN[top[0][0]]} ({top[0][1]} %) af met {SN[top[1][0]]} ({top[1][1]} %).")
+        en.append(f"A mix of {SE[top[0][0]]} ({top[0][1]}%) and {SE[top[1][0]]} ({top[1][1]}%).")
     if villages:
         v = villages[:4]
         fr.append(("Le parcours passe par " if len(v) == 1 else "Le parcours traverse ") + join(v, 'et') + ('.' if len(villages) <= 4 else ', entre autres.'))
         nl.append(("Onderweg komt u door " + join(v, 'en')) + ('.' if len(villages) <= 4 else ', onder meer.'))
+        en.append(("The route passes through " + join(v, 'and')) + ('.' if len(villages) <= 4 else ', among others.'))
     else:
-        fr.append("Aucun village sur le trajet : calme et nature garantis."); nl.append("Geen dorpen onderweg: rust en natuur gegarandeerd.")
+        fr.append("Aucun village sur le trajet : calme et nature garantis."); nl.append("Geen dorpen onderweg: rust en natuur gegarandeerd."); en.append("No villages on the way: peace and nature guaranteed.")
     art = lambda x: ('la ' + x) if x in ('Semois', 'Vierre', 'Rulles', 'Chiers', 'Marche', 'Breuvanne') else (('le ' + x[0].lower() + x[1:]) if x.lower().startswith(('ruisseau', 'rau')) else ('le ' + x))
     long_r = [(nm, km) for nm, km in riv if km >= 0.4]
     short_r = [nm for nm, km in riv if km < 0.4]
@@ -153,21 +160,24 @@ for h in hikes:
         nm, km = long_r[0]
         fr.append(f"On longe {art(nm)} sur environ {fmt(km)} km" + (f", puis {join([art(x) for x, _ in long_r[1:3]], 'et')}" if len(long_r) > 1 else '') + '.')
         nl.append(f"De route volgt de {nm} over ongeveer {fmt(km)} km" + (f", en ook de {join([x for x, _ in long_r[1:3]], 'en')}" if len(long_r) > 1 else '') + '.')
+        en.append(f"It follows the {nm} for about {fe(km)} km" + (f", then the {join([x for x, _ in long_r[1:3]], 'and the')}" if len(long_r) > 1 else '') + '.')
     elif short_r:
-        fr.append(f"On franchit {join([art(x) for x in short_r[:2]], 'et')}."); nl.append(f"De route steekt de {join(short_r[:2], 'en')} over.")
+        fr.append(f"On franchit {join([art(x) for x in short_r[:2]], 'et')}."); nl.append(f"De route steekt de {join(short_r[:2], 'en')} over."); en.append(f"It crosses the {join(short_r[:2], 'and the')}.")
     up = h['up']; ratio = up / max(h['km'], .1)
-    if ratio < 12: fr.append(f"Peu de dénivelé (+{up} m) : idéal en famille."); nl.append(f"Weinig hoogteverschil (+{up} m): ideaal voor gezinnen.")
-    elif ratio < 25: fr.append(f"Quelques montées (+{up} m au total)."); nl.append(f"Enkele hellingen (+{up} m in totaal).")
-    else: fr.append(f"Des côtes soutenues (+{up} m) : prévoir de bonnes jambes."); nl.append(f"Stevige klimmen (+{up} m): goede conditie aanbevolen.")
+    if ratio < 12: fr.append(f"Peu de dénivelé (+{up} m) : idéal en famille."); nl.append(f"Weinig hoogteverschil (+{up} m): ideaal voor gezinnen."); en.append(f"Little climbing (+{up} m): ideal for families.")
+    elif ratio < 25: fr.append(f"Quelques montées (+{up} m au total)."); nl.append(f"Enkele hellingen (+{up} m in totaal)."); en.append(f"A few climbs (+{up} m in total).")
+    else: fr.append(f"Des côtes soutenues (+{up} m) : prévoir de bonnes jambes."); nl.append(f"Stevige klimmen (+{up} m): goede conditie aanbevolen."); en.append(f"Some stiff climbs (+{up} m): good legs needed.")
     PF = {'view': 'point de vue', 'chapel': 'chapelle', 'ruins': 'ruines', 'heritage': 'patrimoine', 'rock': 'rocher', 'cave': 'grotte', 'spring': 'source', 'tower': 'tour', 'castle': 'château'}
+    PE = {'view': 'viewpoint', 'chapel': 'chapel', 'ruins': 'ruins', 'heritage': 'heritage', 'rock': 'rock', 'cave': 'cave', 'spring': 'spring', 'tower': 'tower', 'castle': 'castle'}
     PN = {'view': 'uitzichtpunt', 'chapel': 'kapel', 'ruins': 'ruïnes', 'heritage': 'erfgoed', 'rock': 'rots', 'cave': 'grot', 'spring': 'bron', 'tower': 'toren', 'castle': 'kasteel'}
     nm_pois = [(k, nm) for k, nm in named if k in ('view', 'ruins', 'castle', 'rock', 'cave', 'chapel', 'tower', 'spring')][:3]
     if nm_pois:
         fr.append("À voir en chemin : " + join([nm if re.match(r'(?i)(église|chapelle|château|tour|grotte|rocher|source|point de vue|ruines)', nm) else f"{nm} ({PF[k]})" for k, nm in nm_pois], 'et') + '.')
         nl.append("Onderweg te zien: " + join([nm if re.match(r'(?i)(église|chapelle|château|tour|grotte|rocher|source|point de vue|ruines)', nm) else f"{nm} ({PN[k]})" for k, nm in nm_pois], 'en') + '.')
+        en.append("Worth seeing on the way: " + join([nm if re.match(r'(?i)(église|chapelle|château|tour|grotte|rocher|source|point de vue|ruines)', nm) else f"{nm} ({PE[k]})" for k, nm in nm_pois], 'and') + '.')
     elif cnt['view']:
-        fr.append(f"{cnt['view']} point{'s' if cnt['view'] > 1 else ''} de vue en chemin."); nl.append(f"{cnt['view']} uitzichtpunt{'en' if cnt['view'] > 1 else ''} onderweg.")
-    h['desc'] = {'fr': ' '.join(fr), 'nl': ' '.join(nl)}
+        fr.append(f"{cnt['view']} point{'s' if cnt['view'] > 1 else ''} de vue en chemin."); nl.append(f"{cnt['view']} uitzichtpunt{'en' if cnt['view'] > 1 else ''} onderweg."); en.append(f"{cnt['view']} viewpoint{'s' if cnt['view'] > 1 else ''} along the way.")
+    h['desc'] = {'fr': ' '.join(fr), 'nl': ' '.join(nl), 'en': ' '.join(en)}
 
 open(HJS, 'w', encoding='utf-8').write(head + 'window.HIKES = ' + json.dumps(hikes, ensure_ascii=False, separators=(',', ':')) + ';\n')
 for h in hikes[:6]: print('-', h['name'], ':', h['desc']['fr'])

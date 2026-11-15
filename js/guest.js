@@ -1,20 +1,21 @@
 /* Belizel — page locataire */
 (function(){
 const slug = s => String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
-const NLD = window.LANG === 'nl', LOCALE = window.LOCALE || 'fr-BE';
-const CF = window.CONTENT, C = (NLD && window.CONTENT_NL) ? window.CONTENT_NL : CF;
-const L = (() => { const b = window.LISTING; if(!NLD || !b.nl) return b; const n = b.nl;
+const LG = window.LANG || 'fr', NLD = LG !== 'fr', LU = LG.toUpperCase(), LOCALE = window.LOCALE || 'fr-BE';   // NLD : autre langue que le français
+const CF = window.CONTENT, C = (NLD && window['CONTENT_'+LU]) ? window['CONTENT_'+LU] : CF;
+const L = (() => { const b = window.LISTING; if(!NLD || !b[LG]) return b; const n = b[LG];
   return {...b, intro:n.intro, tagline:n.tagline, highlights:b.highlights.map((h,i)=>({...h, ...(n.highlights[i]||{})})), rooms:b.rooms.map((r,i)=>({...r, ...(n.rooms[i]||{})})),
     amenities:n.amenities||b.amenities, gallery:b.gallery.map((g,i)=>({...g, cap:n.gallery[i]||g.cap, tag:T(g.tag)})), tags:Object.fromEntries(Object.entries(b.tags).map(([k,v])=>[T(k),v]))}; })();
 const H = (window.HIKES||[]), M = window.MANUAL;
-if(NLD && M && M.nl) M.sections = M.nl.sections;
-const S = (NLD && window.STORIES_NL) ? window.STORIES_NL.map((x,i) => ({...(window.STORIES[i]||{}), ...x})) : (window.STORIES||[]);
+if(NLD && M && M[LG]) M.sections = M[LG].sections;
+const S = (NLD && window['STORIES_'+LU]) ? window['STORIES_'+LU].map((x,i) => ({...(window.STORIES[i]||{}), ...x})) : (window.STORIES||[]);
 // identifiants stables (calculés sur la version française) pour que favoris et programme survivent au changement de langue
 const ID = new Map();
 [['p:','places'],['r:','restaurants'],['d:','producers'],['e:','events']].forEach(([pre,k]) => C[k].forEach((o,i) => ID.set(o, pre + slug(CF[k][i].name))));
 C.history.sites.forEach((o,i) => ID.set(o, 's:' + slug(CF.history.sites[i].name)));
 const HOUSE = [L.lat, L.lng];
-const fmtKm = k => k < 1 ? Math.round(k*1000)+' m' : (Math.round(k*10)/10).toString().replace('.',',')+' km';
+const DEC = LG === 'en' ? '.' : ',';
+const fmtKm = k => k < 1 ? Math.round(k*1000)+' m' : (Math.round(k*10)/10).toString().replace('.',DEC)+' km';
 const fmtDur = m => m < 60 ? m+' min' : Math.floor(m/60)+' h'+(m%60? String(m%60).padStart(2,'0'):'');
 const MONTHS = window.MONTHS_UI;
 const MONTHS_L = ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
@@ -65,7 +66,7 @@ $('#moreSheet').onclick = e => { if(e.target.id==='moreSheet' || e.target.closes
 const heroImgs = ['img/p01.jpg','img/p20.jpg','img/p04.jpg','img/p23.jpg','img/p02.jpg','img/p26.jpg'];
 $('#slides').innerHTML = heroImgs.map((s,i) => `<div class="slide ${i===0?'on':''}" style="background-image:url(${s})"></div>`).join('');
 let si = 0; setInterval(() => { const sl = $$('.slide'); sl[si].classList.remove('on'); si = (si+1)%sl.length; sl[si].classList.add('on'); }, 6000);
-$('#heroFacts').innerHTML = [`${L.guests} voyageurs`,`${L.bedrooms} chambres`,`${L.baths} salles de bain`,`★ ${String(L.rating).replace('.',',')} · ${L.reviews} avis`,'Poêle à bois','Jardin']
+$('#heroFacts').innerHTML = [`${L.guests} voyageurs`,`${L.bedrooms} chambres`,`${L.baths} salles de bain`,`★ ${String(L.rating).replace('.',DEC)} · ${L.reviews} avis`,'Poêle à bois','Jardin']
   .map(t => `<span class="chip">${t}</span>`).join('');
 
 /* ---------- Météo (Open-Meteo, sans clé) ---------- */
@@ -114,11 +115,11 @@ lb.addEventListener('touchend', e => { if(tx0==null) return; const dx = e.change
 renderGallery();
 $('#rooms').innerHTML = L.rooms.map(r => `<div class="card room reveal"><img src="${r.photo}" alt="${esc(r.name)}" loading="lazy"><div class="b"><h4>${r.name}</h4><span class="muted" style="font-size:.9rem">${r.beds}</span></div></div>`).join('');
 $('#amen').innerHTML = L.amenities.map(a => `<span>${icon('check')}${a}</span>`).join('');
-$('#rating').textContent = String(L.rating).replace('.',',');
+$('#rating').textContent = String(L.rating).replace('.',DEC);
 $('#stars').innerHTML = icon('star').repeat(5).replaceAll('class="icon "','class="icon" style="fill:currentColor"');
 $('#revCount').textContent = `${L.reviews} avis vérifiés sur Airbnb`;
 const CATN = {cleanliness:'Propreté',accuracy:'Exactitude',checkin:'Arrivée',communication:'Communication',location:'Emplacement',value:'Qualité-prix'};
-$('#catBars').innerHTML = Object.entries(L.cats).map(([k,v]) => `<div class="row"><span>${CATN[k]}</span><div class="track"><div class="fill" data-w="${(v-3.5)/1.5*100}"></div></div><b>${v.toFixed(1).replace('.',',')}</b></div>`).join('');
+$('#catBars').innerHTML = Object.entries(L.cats).map(([k,v]) => `<div class="row"><span>${CATN[k]}</span><div class="track"><div class="fill" data-w="${(v-3.5)/1.5*100}"></div></div><b>${v.toFixed(1).replace('.',DEC)}</b></div>`).join('');
 new IntersectionObserver((es,o) => es.forEach(e => { if(e.isIntersecting){ $$('#catBars .fill').forEach(f => f.style.width = f.dataset.w+'%'); o.disconnect(); } })).observe($('#catBars'));
 const tmax = Math.max(...Object.values(L.tags));
 $('#themes').innerHTML = Object.entries(L.tags).sort((a,b)=>b[1]-a[1]).map(([t,n]) => `<span class="theme" style="font-size:${.85+n/tmax*.55}rem">${t}<b>${n}</b></span>`).join('');
@@ -188,7 +189,7 @@ const landChips = (h, max=4) => { const l = h.land; if(!l) return ''; const c = 
   if(l.villages.length) c.push(`<span class="lc lc-v">🏘️ ${esc(l.villages.slice(0,2).join(', '))}${l.villages.length>2?' +'+(l.villages.length-2):''}</span>`);
   if(l.views) c.push(`<span class="lc">👁️ ${l.views}</span>`);
   return `<div class="lchips">${c.slice(0,max).join('')}</div>`; };
-const hikeDesc = h => h.desc ? (NLD ? h.desc.nl : h.desc.fr) : '';
+const hikeDesc = h => h.desc ? (h.desc[LG] || h.desc.fr) : '';
 function filteredHikes(){
   let list = H.filter(h => hKind==='fav' ? isFav('h:'+h.id) : h.kind===hKind);
   const d = $('#hikeDiff').value, len = $('#hikeLen').value;
@@ -276,7 +277,7 @@ function drawProfile(h, cursor){
   const pl = $('#pl');
   const move = ev => { const r = svg.getBoundingClientRect(); const cx = ((ev.touches?ev.touches[0].clientX:ev.clientX) - r.left)/r.width; const i = Math.max(0,Math.min(n-1,Math.round(cx*(n-1))));
     pl.setAttribute('x1',X(i)); pl.setAttribute('x2',X(i)); pl.setAttribute('opacity',.6); cursor.setLatLng(h.samples[i]).addTo(dMap)
-      .bindTooltip(`${Math.round(e[i])} m · km ${(h.km*i/(n-1)).toFixed(1).replace('.',',')}`,{permanent:true,direction:'top',offset:[0,-8]}).openTooltip(); };
+      .bindTooltip(`${Math.round(e[i])} m · km ${(h.km*i/(n-1)).toFixed(1).replace('.',DEC)}`,{permanent:true,direction:'top',offset:[0,-8]}).openTooltip(); };
   svg.addEventListener('mousemove', move); svg.addEventListener('touchmove', move, {passive:true});
   svg.addEventListener('mouseleave', () => { pl.setAttribute('opacity',0); cursor.remove(); });
 }
@@ -285,7 +286,7 @@ $('#packCount').textContent = `${H.filter(h=>h.kind==='pied').length} itinérair
 $('#appBox').onclick = e => { const b = e.target.closest('[data-pack]'); if(!b) return; const k = b.dataset.pack;
   let list = k==='near' ? H.filter(h=>h.kind==='pied').sort((a,b)=>a.nearest-b.nearest).slice(0,15) : k==='fav' ? H.filter(h=>isFav('h:'+h.id)) : H.filter(h=>h.kind===k);
   if(!list.length) return toast(k==='fav' ? 'Ajoutez d\'abord des balades en favori ♥' : 'Aucun itinéraire');
-  const tracks = list.map(h => { const hi = h.samples.length > h.coords.length; return {name:`${h.ref?h.ref+' · ':''}${h.name} (${String(h.km).replace('.',',')} km)`, desc:`${h.km} km, +${h.up} m, ${h.diff}`, coords: hi?h.samples:h.coords, ele: hi?h.ele:null}; });
+  const tracks = list.map(h => { const hi = h.samples.length > h.coords.length; return {name:`${h.ref?h.ref+' · ':''}${h.name} (${String(h.km).replace('.',DEC)} km)`, desc:`${h.km} km, +${h.up} m, ${h.diff}`, coords: hi?h.samples:h.coords, ele: hi?h.ele:null}; });
   download(`belizel-balades-${k}.gpx`, gpxMulti(`Belizel · ${b.querySelector('b').textContent}`, tracks), 'application/gpx+xml');
   toast(`${list.length} balade${list.length>1?'s':''} prête${list.length>1?'s':''} : ouvrez le fichier avec Organic Maps`); };
 
@@ -461,7 +462,7 @@ function lockScreen(){
   $('#wifiCard').innerHTML = `<div style="text-align:center;width:100%">${icon('wifi')}<p class="muted" style="margin:6px 0 0">Le wifi s'affiche ici une fois le code saisi.</p></div>`;
   $('#codeForm').onsubmit = async e => { e.preventDefault(); if(!(await unlockManual($('#gcode').value))) toast('Code incorrect'); };
 }
-function showManual(){ M.wifi = MAN.wifi; M.sections = (NLD && MAN.nl) ? MAN.nl.sections : MAN.sections; renderManual(); renderWifi(); }
+function showManual(){ M.wifi = MAN.wifi; M.sections = (NLD && MAN[LG]) ? MAN[LG].sections : MAN.sections; renderManual(); renderWifi(); }
 function renderManual(q=''){
   if(!MAN) return lockScreen();
   q = q.trim().toLowerCase();
@@ -480,7 +481,7 @@ function renderWifi(){
 renderManual(); if(MAN) renderWifi();
 if(SB.on){ const qc = new URLSearchParams(location.search).get('code') || store.get('gcode', null); if(qc) unlockManual(qc); }
 // Contenus éditables depuis l'admin (histoires de la maison…)
-if(SB.on) SB.select('content','select=key,data').then(rows => { if(NLD){ const fr = rows.find(r=>r.key==='stories'); rows.forEach(r => { if(r.key==='stories_nl' && fr) r.data = r.data.map((x,i)=>({...(fr.data[i]||{}), ...x})); }); } return rows; }).then(rows => { rows.forEach(r => { if(r.key===(NLD?'stories_nl':'stories') && Array.isArray(r.data)){ S.length = 0; S.push(...r.data); if(ht==='famille'||ht==='frise') renderHist(); } }); }).catch(()=>{});
+if(SB.on) SB.select('content','select=key,data').then(rows => { if(NLD){ const fr = rows.find(r=>r.key==='stories'); rows.forEach(r => { if(r.key==='stories_'+LG && fr) r.data = r.data.map((x,i)=>({...(fr.data[i]||{}), ...x})); }); } return rows; }).then(rows => { rows.forEach(r => { if(r.key===(NLD?'stories_'+LG:'stories') && Array.isArray(r.data)){ S.length = 0; S.push(...r.data); if(ht==='famille'||ht==='frise') renderHist(); } }); }).catch(()=>{});
 
 /* ---------- Bienvenue, visite guidée, guide ---------- */
 function startTour(){
@@ -511,7 +512,18 @@ if(!store.get('toured', false)) setTimeout(() => $('#welcome').classList.add('on
 if(location.hash === '#tour') setTimeout(startTour, 800);
 
 PWA('Belizel');
-$$('.lang-btn').forEach(b => { b.textContent = NLD ? 'FR' : 'NL'; b.title = NLD ? 'Version française' : 'Nederlandse versie'; b.onclick = () => setLang(NLD ? 'fr' : 'nl'); });
+// Choix de la langue : FR / NL / EN
+const LANGS = [['fr','FR','Français'],['nl','NL','Nederlands'],['en','EN','English']];
+const closeLang = () => { const m = $('#langMenu'); if(m) m.parentNode.removeChild(m); };
+$$('.lang-btn').forEach(b => { b.textContent = LU; b.title = 'Langue · Taal · Language'; b.setAttribute('data-noi18n','');
+  b.onclick = e => { e.stopPropagation(); if($('#langMenu')){ closeLang(); return; }
+    const m = document.createElement('div'); m.id = 'langMenu'; m.className = 'lang-menu'; m.setAttribute('data-noi18n','');
+    m.innerHTML = LANGS.map(([c,k,n]) => `<button data-l="${c}" class="${c===LG?'on':''}"><b>${k}</b>${n}</button>`).join('');
+    const r = b.getBoundingClientRect(); m.style.top = (r.bottom + 8) + 'px'; m.style.right = Math.max(8, innerWidth - r.right) + 'px';
+    m.onclick = ev => { const x = ev.target.closest('[data-l]'); if(x && x.dataset.l !== LG) setLang(x.dataset.l); };
+    document.body.appendChild(m); }; });
+document.addEventListener('click', closeLang);
+addEventListener('scroll', closeLang, {passive:true});
 revealAll();
 addEventListener('scroll', () => { const tl = $('.timeline'), pr = $('.tl-progress'); if(!tl || !pr) return; const r = tl.getBoundingClientRect(); const p = Math.max(0, Math.min(1, (innerHeight*0.6 - r.top) / r.height)); pr.style.height = (p*100)+'%'; }, {passive:true});
 })();

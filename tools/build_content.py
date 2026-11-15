@@ -20,3 +20,14 @@ if os.path.exists(os.path.join(I, 'nl_a.json')):
     js = '// Généré par tools/build_content.py (traduction NL de tools/i18n/nl_*.json)\nwindow.CONTENT_NL = ' + json.dumps(nl, ensure_ascii=False) + ';\n'
     open(os.path.join(D, '..', 'data', 'content.nl.js'), 'w', encoding='utf-8').write(js)
     print('NL ok')
+
+# Version anglaise (tools/i18n/en_*.json, même alignement)
+if os.path.exists(os.path.join(I, 'en_a.json')):
+    a, b, c = (json.load(open(os.path.join(I, f), encoding='utf-8')) for f in ('en_a.json', 'en_b.json', 'en_c.json'))
+    en = {'events': a['events'], 'places': a['places'], 'history': b['history'], 'culture': b['culture'],
+          'specialties': c['specialties'], 'recipes': c['recipes'], 'producers': c['producers'], 'restaurants': c['restaurants']}
+    for k in ('events', 'places', 'culture', 'specialties', 'recipes', 'producers', 'restaurants'):
+        assert len(en[k]) == len(out[k]), k
+    js = '// Généré par tools/build_content.py (traduction EN de tools/i18n/en_*.json)\nwindow.CONTENT_EN = ' + json.dumps(en, ensure_ascii=False) + ';\n'
+    open(os.path.join(D, '..', 'data', 'content.en.js'), 'w', encoding='utf-8').write(js)
+    print('EN ok')

@@ -92,3 +92,178 @@ window.MANUAL.nl = { sections: [
     { q: "Dokter en ziekenhuis", a: "Medisch centrum in Florenville (10 min). Ziekenhuis: Vivalia, Clinique Sud-Luxembourg in Aarlen (35 min) of CH de l'Ardenne in Libramont (40 min)." },
     { q: "Winkels", a: "Bakker en buurtwinkel in Jamoigne (5 min). Supermarkten in Florenville (10 min)." } ]}
 ]};
+
+// EN-BEGIN — version anglaise (générée par tools/build_i18n_en.py, alignée par index sur le français)
+window.MANUAL.en = {
+ "sections": [
+  {
+   "id": "arrivee",
+   "icon": "key",
+   "title": "Arrival",
+   "items": [
+    {
+     "q": "Check-in time",
+     "a": "From 4 pm. Earlier arrival is often possible: just ask us the day before."
+    },
+    {
+     "q": "Collecting the keys",
+     "a": "Key box to the left of the front door, on the street side. The code is sent to you by Airbnb message on the day of arrival."
+    },
+    {
+     "q": "Parking",
+     "a": "Free parking in front of the house (2 cars), plus free parking on the street."
+    },
+    {
+     "q": "Directions",
+     "a": "From the N83, follow signs for Izel centre. The house is the ochre façade, a stone's throw from the church."
+    }
+   ]
+  },
+  {
+   "id": "chauffage",
+   "icon": "flame",
+   "title": "Heating and wood stove",
+   "items": [
+    {
+     "q": "Central heating",
+     "a": "Thermostat in the living room, next to the kitchen door. Recommended setting: 20 °C by day, 17 °C at night. Each bedroom has its own thermostatic valve."
+    },
+    {
+     "q": "Lighting the stove",
+     "a": "1. Fully open the air slide under the door. 2. Two pieces of kindling crossed, a firelighter in the middle, two small logs on top. 3. Light it, leave the door ajar for 5 minutes, then close it. 4. Once the fire is going well, reduce the air supply by half."
+    },
+    {
+     "q": "Firewood",
+     "a": "A basket of dry wood is ready when you arrive. The stock is in the shelter at the far end of the terrace: please help yourself in moderation."
+    },
+    {
+     "q": "Safety",
+     "a": "Smoke and carbon monoxide alarms are fitted. Never leave the stove unattended with the door open, and only empty the ashes when cold, into the metal bucket."
+    }
+   ]
+  },
+  {
+   "id": "cuisine",
+   "icon": "chef",
+   "title": "Kitchen and appliances",
+   "items": [
+    {
+     "q": "Dishwasher",
+     "a": "Tablets under the sink. “Eco 50°” programme recommended (3 h 30)."
+    },
+    {
+     "q": "Washing machine",
+     "a": "In the ground-floor shower room. Detergent provided for one load. Clothes airer in the cupboard under the stairs."
+    },
+    {
+     "q": "Coffee maker",
+     "a": "Filter coffee maker and kettle. A first packet of coffee and a few tea bags are waiting for you."
+    },
+    {
+     "q": "Barbecue",
+     "a": "Charcoal barbecue on the terrace. Charcoal and firelighters in the shelter. Let it cool before covering it."
+    }
+   ]
+  },
+  {
+   "id": "multimedia",
+   "icon": "music",
+   "title": "Wifi and media",
+   "items": [
+    {
+     "q": "Wifi",
+     "a": "Scan the QR code above to connect automatically. Fibre broadband covers the whole house, attic included."
+    },
+    {
+     "q": "JBL Bluetooth speaker",
+     "a": "On the small bar in the living room. Switch it on, then select “JBL Charge” in your phone's Bluetooth settings."
+    },
+    {
+     "q": "Workspace",
+     "a": "Desk under the eaves, with a lamp and a socket nearby: ideal for working remotely in peace."
+    }
+   ]
+  },
+  {
+   "id": "dechets",
+   "icon": "recycle",
+   "title": "Rubbish and recycling",
+   "items": [
+    {
+     "q": "Bins",
+     "a": "Chipped bins (grey: general waste, green: food waste) along the rear façade. Collection on Tuesday morning: put them out on Monday evening if your stay includes that day."
+    },
+    {
+     "q": "Recycling",
+     "a": "PMD (plastic, metal, drink cartons) in the blue bags (under the sink). Glass and paper/cardboard: in the crates in the shelter. We take them to the recycling centre."
+    }
+   ]
+  },
+  {
+   "id": "regles",
+   "icon": "house",
+   "title": "House rules",
+   "items": [
+    {
+     "q": "Pets",
+     "a": "Pets are not allowed."
+    },
+    {
+     "q": "Smoking",
+     "a": "Non-smoking house. An ashtray is available on the terrace."
+    },
+    {
+     "q": "Quiet",
+     "a": "Izel is a peaceful village: please be considerate of the neighbours after 10 pm, especially in the garden."
+    },
+    {
+     "q": "Baby",
+     "a": "A cot is always available in the large bedroom. Please bring your own baby bedding."
+    }
+   ]
+  },
+  {
+   "id": "depart",
+   "icon": "door",
+   "title": "Departure",
+   "items": [
+    {
+     "q": "Check-out time",
+     "a": "Before 11 am. A late check-out is sometimes possible: just ask us."
+    },
+    {
+     "q": "Before you leave",
+     "a": "Start the dishwasher, gather the used sheets at the foot of the beds, put the bins out, check the stove is out, close the windows and put the key back in the key box. Cleaning is included!"
+    }
+   ]
+  },
+  {
+   "id": "urgences",
+   "icon": "phone",
+   "title": "Contacts and emergencies",
+   "items": [
+    {
+     "q": "Emergencies",
+     "a": "112 (ambulance, fire brigade) · 101 (police) · Poison Centre: 070 245 245"
+    },
+    {
+     "q": "Host",
+     "a": "Via Airbnb messaging (reply within an hour). In an emergency: the phone number is on the board by the entrance."
+    },
+    {
+     "q": "Duty pharmacy",
+     "a": "pharmacie.be, or 0903 99 000"
+    },
+    {
+     "q": "Doctor and hospital",
+     "a": "Medical centre in Florenville (10 min). Hospital: Vivalia, Clinique Sud-Luxembourg in Arlon (35 min) or CH de l'Ardenne in Libramont (40 min)."
+    },
+    {
+     "q": "Shops",
+     "a": "Bakery and convenience store in Jamoigne (5 min). Supermarkets in Florenville (10 min)."
+    }
+   ]
+  }
+ ]
+};
+// EN-END

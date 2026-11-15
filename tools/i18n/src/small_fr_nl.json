@@ -1,0 +1,744 @@
+{
+ "listing_fr": {
+  "id": "844929788475952833",
+  "name": "Belizel",
+  "tagline": "Au cœur de la Gaume",
+  "airbnbUrl": "https://www.airbnb.be/rooms/844929788475952833",
+  "village": "Izel",
+  "commune": "Chiny",
+  "region": "Gaume · Province de Luxembourg · Belgique",
+  "lat": 49.6913,
+  "lng": 5.3794,
+  "guests": 6,
+  "bedrooms": 3,
+  "beds": 6,
+  "baths": 2,
+  "rating": 4.83,
+  "reviews": 48,
+  "cats": {
+   "cleanliness": 4.63,
+   "accuracy": 4.85,
+   "checkin": 4.98,
+   "communication": 4.96,
+   "location": 4.79,
+   "value": 4.85
+  },
+  "tags": {
+   "Hospitalité": 28,
+   "Espaces intérieurs": 16,
+   "Espaces extérieurs": 15,
+   "Emplacement": 15,
+   "À proximité": 14,
+   "Famille": 12,
+   "Équipements": 10,
+   "Cuisine": 9,
+   "Qualité du sommeil": 9,
+   "Randonnée": 5
+  },
+  "host": {
+   "since": 2022,
+   "responseRate": "100 %",
+   "responseTime": "moins d'une heure",
+   "superhost": false
+  },
+  "price2027": {
+   "hiver_semaine": 207.5,
+   "printemps_we": 207.5
+  },
+  "intro": "Une maison gaumaise aux murs ocre, nichée dans le petit village d'Izel. Ici, on vit au rythme de la Semois : forêts à perte de vue, rivière qui serpente, abbaye d'Orval à quelques minutes et feu de bois le soir venu.",
+  "highlights": [
+   {
+    "icon": "flame",
+    "title": "Poêle à bois",
+    "text": "Living chaleureux, parquet en chêne et pierres du pays apparentes."
+   },
+   {
+    "icon": "leaf",
+    "title": "Jardin & terrasse",
+    "text": "Transats, parasols, table de jardin et barbecue face au vert."
+   },
+   {
+    "icon": "bed",
+    "title": "3 grandes chambres",
+    "text": "Dont une chambre tout en bois sous les combles, lit king size."
+   },
+   {
+    "icon": "baby",
+    "title": "Familles bienvenues",
+    "text": "Lit bébé, livres et jouets d'enfants, jeux de société."
+   },
+   {
+    "icon": "laptop",
+    "title": "Télétravail possible",
+    "text": "Wifi et espace de travail dédié sous les toits."
+   },
+   {
+    "icon": "map",
+    "title": "Au cœur de la Gaume",
+    "text": "Orval, Chiny, Chassepierre et Florenville à moins de 10 km."
+   }
+  ],
+  "rooms": [
+   {
+    "name": "Grande chambre sous les combles",
+    "beds": "1 lit king size · 1 lit simple · lit bébé",
+    "photo": "img/p08.jpg"
+   },
+   {
+    "name": "Chambre du 1er étage",
+    "beds": "1 lit queen size",
+    "photo": "img/p10.jpg"
+   },
+   {
+    "name": "Chambre verte",
+    "beds": "1 lit queen size · 1 lit simple",
+    "photo": "img/p09.jpg"
+   },
+   {
+    "name": "Living",
+    "beds": "1 canapé convertible",
+    "photo": "img/p04.jpg"
+   }
+  ],
+  "amenities": [
+   "Wifi",
+   "Espace de travail",
+   "Poêle à bois",
+   "Chauffage central",
+   "Cuisine équipée",
+   "Lave-vaisselle",
+   "Lave-linge",
+   "Four",
+   "Micro-ondes",
+   "Congélateur",
+   "Cafetière",
+   "Bouilloire",
+   "Barbecue",
+   "Mobilier d'extérieur",
+   "Chaises longues",
+   "Vue sur le jardin",
+   "Baignoire",
+   "Lit bébé",
+   "Livres et jouets enfants",
+   "Jeux de société",
+   "Enceinte Bluetooth JBL",
+   "Climatiseur portable",
+   "Parking gratuit sur place",
+   "Stores occultants",
+   "Linge de lit",
+   "Oreillers et couvertures en plus",
+   "Trousse de secours",
+   "Détecteurs fumée & CO",
+   "Extincteur",
+   "Séjours longue durée"
+  ],
+  "amenitiesMissing": [
+   "Télévision",
+   "Sèche-linge",
+   "Produits de base",
+   "Arrivée autonome",
+   "Animaux acceptés",
+   "Chaise haute"
+  ],
+  "gallery": [
+   {
+    "src": "img/p01.jpg",
+    "cap": "La maison côté jardin",
+    "tag": "Extérieur"
+   },
+   {
+    "src": "img/p02.jpg",
+    "cap": "Le jardin au printemps",
+    "tag": "Extérieur"
+   },
+   {
+    "src": "img/p03.jpg",
+    "cap": "La terrasse en pierre",
+    "tag": "Extérieur"
+   },
+   {
+    "src": "img/p04.jpg",
+    "cap": "Le living et ses pierres du pays",
+    "tag": "Intérieur"
+   },
+   {
+    "src": "img/p06.jpg",
+    "cap": "La grande table en chêne",
+    "tag": "Intérieur"
+   },
+   {
+    "src": "img/p16.jpg",
+    "cap": "La cuisine équipée",
+    "tag": "Intérieur"
+   },
+   {
+    "src": "img/p08.jpg",
+    "cap": "La chambre sous les combles",
+    "tag": "Chambres"
+   },
+   {
+    "src": "img/p09.jpg",
+    "cap": "La chambre verte",
+    "tag": "Chambres"
+   },
+   {
+    "src": "img/p10.jpg",
+    "cap": "La chambre du 1er étage",
+    "tag": "Chambres"
+   },
+   {
+    "src": "img/p11.jpg",
+    "cap": "Lumière du matin",
+    "tag": "Chambres"
+   },
+   {
+    "src": "img/p12.jpg",
+    "cap": "L'espace de travail sous les toits",
+    "tag": "Intérieur"
+   },
+   {
+    "src": "img/p13.jpg",
+    "cap": "La salle de bain",
+    "tag": "Intérieur"
+   },
+   {
+    "src": "img/p14.jpg",
+    "cap": "La salle de douche",
+    "tag": "Intérieur"
+   },
+   {
+    "src": "img/p17.jpg",
+    "cap": "Façade arrière et terrasse",
+    "tag": "Extérieur"
+   },
+   {
+    "src": "img/p18.jpg",
+    "cap": "La façade ocre, côté rue",
+    "tag": "Extérieur"
+   },
+   {
+    "src": "img/p07.jpg",
+    "cap": "Noël à Belizel",
+    "tag": "Saisons"
+   },
+   {
+    "src": "img/p20.jpg",
+    "cap": "Les méandres de la Semois",
+    "tag": "Saisons"
+   },
+   {
+    "src": "img/p22.jpg",
+    "cap": "La Semois au printemps",
+    "tag": "Saisons"
+   },
+   {
+    "src": "img/p23.jpg",
+    "cap": "Couleurs d'automne",
+    "tag": "Saisons"
+   },
+   {
+    "src": "img/p24.jpg",
+    "cap": "Lumière d'hiver sur la rivière",
+    "tag": "Saisons"
+   },
+   {
+    "src": "img/p26.jpg",
+    "cap": "La vallée sous la neige",
+    "tag": "Saisons"
+   }
+  ]
+ },
+ "listing_nl": {
+  "tagline": "In het hart van de Gaume",
+  "intro": "Een Gaumais huis met okerkleurige muren, verscholen in het dorpje Izel. Hier leeft u op het ritme van de Semois: bossen zover het oog reikt, een kronkelende rivier, de abdij van Orval op enkele minuten en 's avonds een knapperend houtvuur.",
+  "highlights": [
+   {
+    "title": "Houtkachel",
+    "text": "Gezellige leefruimte met eiken parket en zichtbare streekstenen."
+   },
+   {
+    "title": "Tuin & terras",
+    "text": "Ligstoelen, parasols, tuintafel en barbecue met zicht op het groen."
+   },
+   {
+    "title": "3 ruime slaapkamers",
+    "text": "Waaronder een volledig houten kamer onder het dak, met kingsize bed."
+   },
+   {
+    "title": "Gezinnen welkom",
+    "text": "Babybedje, kinderboeken en speelgoed, gezelschapsspellen."
+   },
+   {
+    "title": "Telewerken kan",
+    "text": "Wifi en een aparte werkplek onder het dak."
+   },
+   {
+    "title": "In het hart van de Gaume",
+    "text": "Orval, Chiny, Chassepierre en Florenville op minder dan 10 km."
+   }
+  ],
+  "rooms": [
+   {
+    "name": "Grote kamer onder het dak",
+    "beds": "1 kingsize bed · 1 eenpersoonsbed · babybedje"
+   },
+   {
+    "name": "Kamer op de eerste verdieping",
+    "beds": "1 queensize bed"
+   },
+   {
+    "name": "Groene kamer",
+    "beds": "1 queensize bed · 1 eenpersoonsbed"
+   },
+   {
+    "name": "Leefruimte",
+    "beds": "1 slaapbank"
+   }
+  ],
+  "amenities": [
+   "Wifi",
+   "Werkplek",
+   "Houtkachel",
+   "Centrale verwarming",
+   "Uitgeruste keuken",
+   "Vaatwasser",
+   "Wasmachine",
+   "Oven",
+   "Microgolfoven",
+   "Diepvriezer",
+   "Koffiezetapparaat",
+   "Waterkoker",
+   "Barbecue",
+   "Tuinmeubilair",
+   "Ligstoelen",
+   "Zicht op de tuin",
+   "Bad",
+   "Babybedje",
+   "Kinderboeken en speelgoed",
+   "Gezelschapsspellen",
+   "Bluetooth-luidspreker JBL",
+   "Mobiele airco",
+   "Gratis parking ter plaatse",
+   "Verduisterende gordijnen",
+   "Bedlinnen",
+   "Extra kussens en dekens",
+   "EHBO-kit",
+   "Rook- en CO-melders",
+   "Brandblusser",
+   "Lange verblijven"
+  ],
+  "gallery": [
+   "Het huis aan de tuinkant",
+   "De tuin in de lente",
+   "Het stenen terras",
+   "De leefruimte met streekstenen",
+   "De grote eiken tafel",
+   "De uitgeruste keuken",
+   "De kamer onder het dak",
+   "De groene kamer",
+   "De kamer op de eerste verdieping",
+   "Ochtendlicht",
+   "De werkplek onder het dak",
+   "De badkamer",
+   "De douchekamer",
+   "Achtergevel en terras",
+   "De okerkleurige gevel, straatkant",
+   "Kerstmis in Belizel",
+   "De meanders van de Semois",
+   "De Semois in de lente",
+   "Herfstkleuren",
+   "Winterlicht op de rivier",
+   "De vallei onder de sneeuw"
+  ]
+ },
+ "manual_fr": {
+  "demo": true,
+  "updated": "2026-11-13",
+  "wifi": {
+   "ssid": "Belizel-Invites",
+   "password": "Semois-2027"
+  },
+  "sections": [
+   {
+    "id": "arrivee",
+    "icon": "key",
+    "title": "Arrivée",
+    "items": [
+     {
+      "q": "Heure d'arrivée",
+      "a": "À partir de 16 h. Une arrivée plus tôt est souvent possible : demandez-nous la veille."
+     },
+     {
+      "q": "Récupérer les clés",
+      "a": "Boîte à clés à gauche de la porte d'entrée, côté rue. Le code vous est envoyé par message Airbnb le jour de l'arrivée."
+     },
+     {
+      "q": "Stationnement",
+      "a": "Parking gratuit devant la maison (2 voitures), et stationnement gratuit dans la rue."
+     },
+     {
+      "q": "Itinéraire",
+      "a": "Depuis la N83, prenez la direction Izel centre. La maison est la façade ocre, à deux pas de l'église."
+     }
+    ]
+   },
+   {
+    "id": "chauffage",
+    "icon": "flame",
+    "title": "Chauffage et poêle à bois",
+    "items": [
+     {
+      "q": "Chauffage central",
+      "a": "Thermostat dans le living, à côté de la porte de la cuisine. Réglage conseillé : 20 °C le jour, 17 °C la nuit. Chaque chambre a sa vanne thermostatique."
+     },
+     {
+      "q": "Allumer le poêle",
+      "a": "1. Ouvrez à fond la tirette d'air sous la porte. 2. Deux bûchettes en croix, un allume-feu au centre, deux petites bûches par-dessus. 3. Allumez, laissez la porte entrouverte 5 minutes, puis refermez. 4. Quand le feu est bien pris, réduisez l'arrivée d'air de moitié."
+     },
+     {
+      "q": "Bois de chauffage",
+      "a": "Un panier de bois sec est prêt à votre arrivée. Le stock se trouve sous l'abri, au fond de la terrasse : servez-vous raisonnablement."
+     },
+     {
+      "q": "Sécurité",
+      "a": "Détecteurs de fumée et de monoxyde de carbone présents. Ne laissez jamais le poêle sans surveillance avec la porte ouverte, et videz les cendres uniquement à froid, dans le seau métallique."
+     }
+    ]
+   },
+   {
+    "id": "cuisine",
+    "icon": "chef",
+    "title": "Cuisine et électroménager",
+    "items": [
+     {
+      "q": "Lave-vaisselle",
+      "a": "Pastilles sous l'évier. Programme « Eco 50° » conseillé (3 h 30)."
+     },
+     {
+      "q": "Lave-linge",
+      "a": "Dans la salle de douche du rez-de-chaussée. Lessive fournie pour une machine. Étendoir dans le placard sous l'escalier."
+     },
+     {
+      "q": "Cafetière",
+      "a": "Cafetière filtre et bouilloire. Un premier paquet de café et quelques sachets de thé vous attendent."
+     },
+     {
+      "q": "Barbecue",
+      "a": "Barbecue au charbon de bois sur la terrasse. Charbon et allume-feu dans l'abri. Laissez refroidir avant de le couvrir."
+     }
+    ]
+   },
+   {
+    "id": "multimedia",
+    "icon": "music",
+    "title": "Wifi et multimédia",
+    "items": [
+     {
+      "q": "Wifi",
+      "a": "Scannez le QR code ci-dessus pour vous connecter automatiquement. La fibre couvre toute la maison, combles compris."
+     },
+     {
+      "q": "Enceinte Bluetooth JBL",
+      "a": "Sur le petit bar du living. Allumez-la, puis sélectionnez « JBL Charge » dans le Bluetooth de votre téléphone."
+     },
+     {
+      "q": "Espace de travail",
+      "a": "Bureau sous les toits, avec lampe et prise à proximité : idéal pour télétravailler au calme."
+     }
+    ]
+   },
+   {
+    "id": "dechets",
+    "icon": "recycle",
+    "title": "Déchets et tri",
+    "items": [
+     {
+      "q": "Poubelles",
+      "a": "Conteneurs à puce (gris : résiduel, vert : organique) le long de la façade arrière. Collecte le mardi matin : sortez-les le lundi soir si votre séjour couvre ce jour-là."
+     },
+     {
+      "q": "Tri sélectif",
+      "a": "PMC dans les sacs bleus (sous l'évier). Verre et papier-carton : dans les caisses de l'abri. Nous nous chargeons du dépôt au recyparc."
+     }
+    ]
+   },
+   {
+    "id": "regles",
+    "icon": "house",
+    "title": "Règles de la maison",
+    "items": [
+     {
+      "q": "Animaux",
+      "a": "Les animaux ne sont pas admis."
+     },
+     {
+      "q": "Tabac",
+      "a": "Maison non-fumeur. Un cendrier est à disposition sur la terrasse."
+     },
+     {
+      "q": "Calme",
+      "a": "Izel est un village paisible : merci de respecter le voisinage après 22 h, surtout au jardin."
+     },
+     {
+      "q": "Bébé",
+      "a": "Un lit bébé est toujours disponible dans la grande chambre. Pensez à apporter votre propre linge pour bébé."
+     }
+    ]
+   },
+   {
+    "id": "depart",
+    "icon": "door",
+    "title": "Départ",
+    "items": [
+     {
+      "q": "Heure de départ",
+      "a": "Avant 11 h. Un départ tardif est parfois possible : demandez-le-nous."
+     },
+     {
+      "q": "Avant de partir",
+      "a": "Lancez le lave-vaisselle, rassemblez les draps utilisés au pied des lits, sortez les poubelles, vérifiez que le poêle est éteint, fermez les fenêtres et remettez la clé dans la boîte à clés. Le ménage est compris !"
+     }
+    ]
+   },
+   {
+    "id": "urgences",
+    "icon": "phone",
+    "title": "Contacts et urgences",
+    "items": [
+     {
+      "q": "Urgences",
+      "a": "112 (ambulance, pompiers) · 101 (police) · Centre antipoisons : 070 245 245"
+     },
+     {
+      "q": "Hôte",
+      "a": "Via la messagerie Airbnb (réponse en moins d'une heure). En cas d'urgence : le numéro de téléphone figure sur le panneau de l'entrée."
+     },
+     {
+      "q": "Pharmacie de garde",
+      "a": "pharmacie.be, ou 0903 99 000"
+     },
+     {
+      "q": "Médecin et hôpital",
+      "a": "Maison médicale à Florenville (10 min). Hôpital : Vivalia, Clinique Sud-Luxembourg à Arlon (35 min) ou CH de l'Ardenne à Libramont (40 min)."
+     },
+     {
+      "q": "Commerces",
+      "a": "Boulangerie et supérette à Jamoigne (5 min). Supermarchés à Florenville (10 min)."
+     }
+    ]
+   }
+  ]
+ },
+ "manual_nl": {
+  "sections": [
+   {
+    "id": "arrivee",
+    "icon": "key",
+    "title": "Aankomst",
+    "items": [
+     {
+      "q": "Aankomstuur",
+      "a": "Vanaf 16 uur. Vroeger aankomen kan vaak: vraag het ons de dag voordien."
+     },
+     {
+      "q": "Sleutels ophalen",
+      "a": "Sleutelkastje links van de voordeur, aan de straatkant. De code krijgt u via Airbnb op de dag van aankomst."
+     },
+     {
+      "q": "Parkeren",
+      "a": "Gratis parking voor het huis (2 wagens) en gratis parkeren in de straat."
+     },
+     {
+      "q": "Route",
+      "a": "Neem vanaf de N83 de richting Izel centrum. Het huis is de okerkleurige gevel, vlak bij de kerk."
+     }
+    ]
+   },
+   {
+    "id": "chauffage",
+    "icon": "flame",
+    "title": "Verwarming en houtkachel",
+    "items": [
+     {
+      "q": "Centrale verwarming",
+      "a": "Thermostaat in de leefruimte, naast de keukendeur. Aanbevolen: 20 °C overdag, 17 °C 's nachts. Elke kamer heeft een thermostatische kraan."
+     },
+     {
+      "q": "De kachel aansteken",
+      "a": "1. Zet de luchttoevoer onder de deur volledig open. 2. Twee aanmaakhoutjes kruiselings, een aanmaakblokje in het midden, twee kleine blokken erbovenop. 3. Aansteken, de deur 5 minuten op een kier laten en dan sluiten. 4. Brandt het vuur goed, zet de luchttoevoer half dicht."
+     },
+     {
+      "q": "Brandhout",
+      "a": "Bij aankomst staat een mand droog hout klaar. De voorraad ligt onder het afdak achteraan het terras: bedien u met mate."
+     },
+     {
+      "q": "Veiligheid",
+      "a": "Rook- en CO-melders aanwezig. Laat de kachel nooit onbewaakt met open deur, en haal de as enkel koud weg, in de metalen emmer."
+     }
+    ]
+   },
+   {
+    "id": "cuisine",
+    "icon": "chef",
+    "title": "Keuken en toestellen",
+    "items": [
+     {
+      "q": "Vaatwasser",
+      "a": "Tabletten onder de gootsteen. Programma « Eco 50° » aanbevolen (3,5 uur)."
+     },
+     {
+      "q": "Wasmachine",
+      "a": "In de douchekamer op het gelijkvloers. Waspoeder voor één wasbeurt voorzien. Droogrek in de kast onder de trap."
+     },
+     {
+      "q": "Koffiezetapparaat",
+      "a": "Filterkoffiezetapparaat en waterkoker. Een eerste pak koffie en wat theezakjes staan klaar."
+     },
+     {
+      "q": "Barbecue",
+      "a": "Houtskoolbarbecue op het terras. Houtskool en aanmaakblokjes onder het afdak. Laat afkoelen voor u hem afdekt."
+     }
+    ]
+   },
+   {
+    "id": "multimedia",
+    "icon": "music",
+    "title": "Wifi en multimedia",
+    "items": [
+     {
+      "q": "Wifi",
+      "a": "Scan de QR-code hierboven om automatisch verbinding te maken. De glasvezel dekt het hele huis, zolder inbegrepen."
+     },
+     {
+      "q": "Bluetooth-luidspreker JBL",
+      "a": "Op de kleine bar in de leefruimte. Zet hem aan en kies « JBL Charge » in de Bluetooth van uw smartphone."
+     },
+     {
+      "q": "Werkplek",
+      "a": "Bureau onder het dak, met lamp en stopcontact: ideaal om rustig te telewerken."
+     }
+    ]
+   },
+   {
+    "id": "dechets",
+    "icon": "recycle",
+    "title": "Afval en sorteren",
+    "items": [
+     {
+      "q": "Vuilnisbakken",
+      "a": "Containers met chip (grijs: restafval, groen: gft) langs de achtergevel. Ophaling op dinsdagochtend: zet ze maandagavond buiten als uw verblijf die dag omvat."
+     },
+     {
+      "q": "Sorteren",
+      "a": "PMD in de blauwe zakken (onder de gootsteen). Glas en papier-karton: in de bakken onder het afdak. Wij brengen ze naar het containerpark."
+     }
+    ]
+   },
+   {
+    "id": "regles",
+    "icon": "house",
+    "title": "Huisregels",
+    "items": [
+     {
+      "q": "Huisdieren",
+      "a": "Huisdieren zijn niet toegelaten."
+     },
+     {
+      "q": "Roken",
+      "a": "Rookvrij huis. Op het terras staat een asbak."
+     },
+     {
+      "q": "Rust",
+      "a": "Izel is een rustig dorp: respecteer de buren na 22 uur, zeker in de tuin."
+     },
+     {
+      "q": "Baby",
+      "a": "In de grote kamer staat altijd een babybedje. Breng zelf linnen voor de baby mee."
+     }
+    ]
+   },
+   {
+    "id": "depart",
+    "icon": "door",
+    "title": "Vertrek",
+    "items": [
+     {
+      "q": "Vertrekuur",
+      "a": "Vóór 11 uur. Later vertrekken kan soms: vraag het ons."
+     },
+     {
+      "q": "Voor u vertrekt",
+      "a": "Start de vaatwasser, leg het gebruikte beddengoed aan het voeteneind, zet het afval buiten, controleer of de kachel uit is, sluit de ramen en leg de sleutel terug in het sleutelkastje. De schoonmaak is inbegrepen!"
+     }
+    ]
+   },
+   {
+    "id": "urgences",
+    "icon": "phone",
+    "title": "Contacten en noodgevallen",
+    "items": [
+     {
+      "q": "Noodgevallen",
+      "a": "112 (ambulance, brandweer) · 101 (politie) · Antigifcentrum: 070 245 245"
+     },
+     {
+      "q": "Gastheer",
+      "a": "Via de Airbnb-berichten (antwoord binnen het uur). In noodgevallen: het telefoonnummer hangt aan het bord bij de ingang."
+     },
+     {
+      "q": "Apotheek van wacht",
+      "a": "apotheek.be, of 0903 99 000"
+     },
+     {
+      "q": "Dokter en ziekenhuis",
+      "a": "Medisch centrum in Florenville (10 min). Ziekenhuis: Vivalia, Clinique Sud-Luxembourg in Aarlen (35 min) of CH de l'Ardenne in Libramont (40 min)."
+     },
+     {
+      "q": "Winkels",
+      "a": "Bakker en buurtwinkel in Jamoigne (5 min). Supermarkten in Florenville (10 min)."
+     }
+    ]
+   }
+  ]
+ },
+ "stories_fr": [
+  {
+   "demo": true,
+   "year": "2022",
+   "title": "Le coup de cœur",
+   "photo": "img/p18.jpg",
+   "text": "Exemple — Une façade ocre qui détonne dans la rue, des murs en pierre du pays et un jardin qui descend vers les prés : il a suffi d'une visite un matin de printemps pour savoir que ce serait elle."
+  },
+  {
+   "demo": true,
+   "year": "2023",
+   "title": "Un an de travaux",
+   "photo": "img/p04.jpg",
+   "text": "Exemple — Parquet en chêne poncé à la main, pierres remises à nu dans le living, chambre des combles entièrement habillée de bois… Chaque pièce raconte un week-end de chantier en famille."
+  },
+  {
+   "demo": true,
+   "year": "Chaque hiver",
+   "title": "Noël à Belizel",
+   "photo": "img/p07.jpg",
+   "text": "Exemple — La guirlande lumineuse sur la façade, le poêle qui ronronne et la balade du 26 décembre jusqu'au Rocher du Hât : une tradition que nous aimons partager avec nos hôtes."
+  }
+ ],
+ "stories_nl": [
+  {
+   "year": "2022",
+   "title": "Liefde op het eerste gezicht",
+   "text": "Voorbeeld — Een okerkleurige gevel die opvalt in de straat, muren van streeksteen en een tuin die afloopt naar de weiden: één bezoek op een lenteochtend volstond om te weten dat zij het zou worden."
+  },
+  {
+   "year": "2023",
+   "title": "Een jaar verbouwen",
+   "text": "Voorbeeld — Eiken parket met de hand geschuurd, stenen blootgelegd in de leefruimte, de zolderkamer volledig met hout bekleed… Elke kamer vertelt over een werfweekend met de familie."
+  },
+  {
+   "year": "Elke winter",
+   "title": "Kerstmis in Belizel",
+   "text": "Voorbeeld — De lichtslinger op de gevel, de kachel die zachtjes snort en de wandeling op 26 december naar de Rocher du Hât: een traditie die we graag met onze gasten delen."
+  }
+ ]
+}

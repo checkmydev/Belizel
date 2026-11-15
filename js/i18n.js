@@ -1,13 +1,14 @@
-/* Belizel — bilinguisme FR / NL du guide voyageurs.
-   Langue : ?lang=fr|nl, sinon choix mémorisé, sinon langue du navigateur.
+/* Belizel — guide voyageurs en FR / NL / EN.
+   Langue : ?lang=fr|nl|en, sinon choix mémorisé, sinon langue du navigateur.
    L'interface est traduite à la volée (dictionnaire FR→NL appliqué aux textes du DOM, y compris rendus dynamiquement) ;
    les contenus (événements, histoire, terroir…) ont leur propre version néerlandaise (data/content.nl.js). */
 (function(){
 const q = new URLSearchParams(location.search).get('lang');
 let saved = null; try{ saved = localStorage.getItem('belizel.lang'); }catch(e){}
-const LANG = (q === 'nl' || q === 'fr') ? q : (saved || ((navigator.language||'').toLowerCase().startsWith('nl') ? 'nl' : 'fr'));
+const OK = ['fr','nl','en'], nav = (navigator.language||'').toLowerCase().slice(0,2);
+const LANG = OK.includes(q) ? q : (OK.includes(saved) ? saved : (nav === 'nl' ? 'nl' : nav === 'fr' ? 'fr' : 'en'));
 try{ if(q) localStorage.setItem('belizel.lang', q); }catch(e){}
-window.LANG = LANG; window.LOCALE = LANG === 'nl' ? 'nl-BE' : 'fr-BE';
+window.LANG = LANG; window.LOCALE = {nl:'nl-BE', en:'en-GB'}[LANG] || 'fr-BE';
 document.documentElement.lang = LANG;
 
 const NL = {
@@ -155,26 +156,32 @@ const RULES = [
   [/^Où \? /,'Waar? '],[/Balisage /g,'Bewegwijzering '],[/^du (.+) au (.+)$/,'van $1 tot $2'],[/Le tracé passe à (.+) de la maison, soit environ (\d+) min en voiture\./,'De route ligt op $1 van het huis, ongeveer $2 min met de auto.'],
   [/^: le tracé passe à (.+) de Belizel\./,': de route komt op $1 van Belizel.'],[/ Suivez le balisage /,' Volg de bewegwijzering '],[/ · départ à /g,' · vertrek op '],
   [/(\d+) balades? prêtes? : ouvrez le fichier avec Organic Maps/,'$1 wandeling(en) klaar: open het bestand met Organic Maps'],[/^Installer (.+)$/,'$1 installeren'],
+  [/(\d+) itinéraires balisés/g,'$1 bewegwijzerde routes'],[/peint sur les arbres et les poteaux\./,'op de bomen en palen geschilderd.'],
   [/(\d+) km de montée/g,'$1 km stijging'],[/ à l'abri/g,' onder dak']
 ];
-const T = window.T = s => LANG === 'nl' && NL[s] != null ? NL[s] : s;
-window.MONTHS_UI = LANG === 'nl' ? ['jan.','feb.','maart','apr.','mei','juni','juli','aug.','sep.','okt.','nov.','dec.'] : ['janv.','févr.','mars','avr.','mai','juin','juil.','août','sept.','oct.','nov.','déc.'];
+// Anglais : dictionnaire et règles dans js/i18n.en.js (généré par tools/build_i18n_en.py)
+const EN = window.I18N_EN || {dict:{}, rules:[]};
+const D = LANG === 'nl' ? NL : LANG === 'en' ? EN.dict : null;
+const R = LANG === 'nl' ? RULES : LANG === 'en' ? EN.rules.map(([src, fl, rep]) => [new RegExp(src, fl), rep]) : [];
+R.sort((x, y) => y[0].source.length - x[0].source.length);   // les règles les plus précises d'abord
+const T = window.T = s => D && D[s] != null ? D[s] : s;
+window.MONTHS_UI = {nl:['jan.','feb.','maart','apr.','mei','juni','juli','aug.','sep.','okt.','nov.','dec.'], en:['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']}[LANG] || ['janv.','févr.','mars','avr.','mai','juin','juil.','août','sept.','oct.','nov.','déc.'];
 
 function tr(text){
   const t = text.trim(); if(!t) return text;
-  if(NL[t] != null) return text.replace(t, NL[t]);
-  let out = text; for(const [re, rep] of RULES) out = out.replace(re, rep); return out;
+  if(D[t] != null) return text.replace(t, D[t]);
+  let out = text; for(const [re, rep] of R) out = out.replace(re, rep); return out;
 }
 const SKIP = new Set(['SCRIPT','STYLE','TEXTAREA','CODE']);
 function walk(root){
-  if(LANG !== 'nl') return;
+  if(!D) return;
   const w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {acceptNode: n => (n.parentElement && !SKIP.has(n.parentElement.tagName) && !n.parentElement.closest('[data-noi18n]')) ? 1 : 2});
   const nodes = []; while(w.nextNode()) nodes.push(w.currentNode);
   nodes.forEach(n => { const v = tr(n.nodeValue); if(v !== n.nodeValue) n.nodeValue = v; });
-  (root.querySelectorAll ? root.querySelectorAll('[placeholder],[title],[aria-label]') : []).forEach(el => ['placeholder','title','aria-label'].forEach(a => { const v = el.getAttribute(a); if(v && NL[v]) el.setAttribute(a, NL[v]); }));
+  (root.querySelectorAll ? root.querySelectorAll('[placeholder],[title],[aria-label]') : []).forEach(el => ['placeholder','title','aria-label'].forEach(a => { const v = el.getAttribute(a); if(v && D[v]) el.setAttribute(a, D[v]); }));
 }
 window.i18nApply = walk;
-if(LANG === 'nl'){
+if(D){
   const go = () => { document.title = T(document.title); walk(document.body);
     new MutationObserver(ms => ms.forEach(m => { m.addedNodes.forEach(n => { if(n.nodeType === 3){ const v = tr(n.nodeValue); if(v !== n.nodeValue) n.nodeValue = v; } else if(n.nodeType === 1) walk(n); }); if(m.type === 'characterData'){ const v = tr(m.target.nodeValue); if(v !== m.target.nodeValue) m.target.nodeValue = v; } }))
       .observe(document.body, {childList:true, subtree:true, characterData:true}); };

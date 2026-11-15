@@ -1,0 +1,294 @@
+{
+ "listing_en": {
+  "tagline": "In the heart of Gaume",
+  "intro": "A Gaume house with ochre walls, tucked away in the little village of Izel. Here, life follows the rhythm of the Semois: forests as far as the eye can see, a winding river, Orval Abbey a few minutes away and a wood fire once evening falls.",
+  "highlights": [
+   {
+    "title": "Wood stove",
+    "text": "Cosy living room with oak parquet and exposed local stone."
+   },
+   {
+    "title": "Garden & terrace",
+    "text": "Sun loungers, parasols, garden table and barbecue overlooking the greenery."
+   },
+   {
+    "title": "3 large bedrooms",
+    "text": "Including an all-wood attic bedroom with a king-size bed."
+   },
+   {
+    "title": "Families welcome",
+    "text": "Cot, children's books and toys, board games."
+   },
+   {
+    "title": "Remote working possible",
+    "text": "Wifi and a dedicated workspace under the eaves."
+   },
+   {
+    "title": "In the heart of Gaume",
+    "text": "Orval, Chiny, Chassepierre and Florenville less than 10 km away."
+   }
+  ],
+  "rooms": [
+   {
+    "name": "Large attic bedroom",
+    "beds": "1 king-size bed · 1 single bed · cot"
+   },
+   {
+    "name": "First-floor bedroom",
+    "beds": "1 queen-size bed"
+   },
+   {
+    "name": "Green bedroom",
+    "beds": "1 queen-size bed · 1 single bed"
+   },
+   {
+    "name": "Living room",
+    "beds": "1 sofa bed"
+   }
+  ],
+  "amenities": [
+   "Wifi",
+   "Workspace",
+   "Wood stove",
+   "Central heating",
+   "Equipped kitchen",
+   "Dishwasher",
+   "Washing machine",
+   "Oven",
+   "Microwave",
+   "Freezer",
+   "Coffee maker",
+   "Kettle",
+   "Barbecue",
+   "Outdoor furniture",
+   "Sun loungers",
+   "Garden view",
+   "Bath",
+   "Cot",
+   "Children's books and toys",
+   "Board games",
+   "JBL Bluetooth speaker",
+   "Portable air conditioner",
+   "Free parking on site",
+   "Blackout blinds",
+   "Bed linen",
+   "Extra pillows and blankets",
+   "First aid kit",
+   "Smoke & CO alarms",
+   "Fire extinguisher",
+   "Long stays"
+  ],
+  "gallery": [
+   "The house from the garden",
+   "The garden in spring",
+   "The stone terrace",
+   "The living room and its local stone",
+   "The large oak table",
+   "The equipped kitchen",
+   "The attic bedroom",
+   "The green bedroom",
+   "The first-floor bedroom",
+   "Morning light",
+   "The workspace under the eaves",
+   "The bathroom",
+   "The shower room",
+   "Rear façade and terrace",
+   "The ochre façade, street side",
+   "Christmas at Belizel",
+   "The meanders of the Semois",
+   "The Semois in spring",
+   "Autumn colours",
+   "Winter light on the river",
+   "The valley under snow"
+  ]
+ },
+ "manual_en": {
+  "sections": [
+   {
+    "id": "arrivee",
+    "icon": "key",
+    "title": "Arrival",
+    "items": [
+     {
+      "q": "Check-in time",
+      "a": "From 4 pm. Earlier arrival is often possible: just ask us the day before."
+     },
+     {
+      "q": "Collecting the keys",
+      "a": "Key box to the left of the front door, on the street side. The code is sent to you by Airbnb message on the day of arrival."
+     },
+     {
+      "q": "Parking",
+      "a": "Free parking in front of the house (2 cars), plus free parking on the street."
+     },
+     {
+      "q": "Directions",
+      "a": "From the N83, follow signs for Izel centre. The house is the ochre façade, a stone's throw from the church."
+     }
+    ]
+   },
+   {
+    "id": "chauffage",
+    "icon": "flame",
+    "title": "Heating and wood stove",
+    "items": [
+     {
+      "q": "Central heating",
+      "a": "Thermostat in the living room, next to the kitchen door. Recommended setting: 20 °C by day, 17 °C at night. Each bedroom has its own thermostatic valve."
+     },
+     {
+      "q": "Lighting the stove",
+      "a": "1. Fully open the air slide under the door. 2. Two pieces of kindling crossed, a firelighter in the middle, two small logs on top. 3. Light it, leave the door ajar for 5 minutes, then close it. 4. Once the fire is going well, reduce the air supply by half."
+     },
+     {
+      "q": "Firewood",
+      "a": "A basket of dry wood is ready when you arrive. The stock is in the shelter at the far end of the terrace: please help yourself in moderation."
+     },
+     {
+      "q": "Safety",
+      "a": "Smoke and carbon monoxide alarms are fitted. Never leave the stove unattended with the door open, and only empty the ashes when cold, into the metal bucket."
+     }
+    ]
+   },
+   {
+    "id": "cuisine",
+    "icon": "chef",
+    "title": "Kitchen and appliances",
+    "items": [
+     {
+      "q": "Dishwasher",
+      "a": "Tablets under the sink. “Eco 50°” programme recommended (3 h 30)."
+     },
+     {
+      "q": "Washing machine",
+      "a": "In the ground-floor shower room. Detergent provided for one load. Clothes airer in the cupboard under the stairs."
+     },
+     {
+      "q": "Coffee maker",
+      "a": "Filter coffee maker and kettle. A first packet of coffee and a few tea bags are waiting for you."
+     },
+     {
+      "q": "Barbecue",
+      "a": "Charcoal barbecue on the terrace. Charcoal and firelighters in the shelter. Let it cool before covering it."
+     }
+    ]
+   },
+   {
+    "id": "multimedia",
+    "icon": "music",
+    "title": "Wifi and media",
+    "items": [
+     {
+      "q": "Wifi",
+      "a": "Scan the QR code above to connect automatically. Fibre broadband covers the whole house, attic included."
+     },
+     {
+      "q": "JBL Bluetooth speaker",
+      "a": "On the small bar in the living room. Switch it on, then select “JBL Charge” in your phone's Bluetooth settings."
+     },
+     {
+      "q": "Workspace",
+      "a": "Desk under the eaves, with a lamp and a socket nearby: ideal for working remotely in peace."
+     }
+    ]
+   },
+   {
+    "id": "dechets",
+    "icon": "recycle",
+    "title": "Rubbish and recycling",
+    "items": [
+     {
+      "q": "Bins",
+      "a": "Chipped bins (grey: general waste, green: food waste) along the rear façade. Collection on Tuesday morning: put them out on Monday evening if your stay includes that day."
+     },
+     {
+      "q": "Recycling",
+      "a": "PMD (plastic, metal, drink cartons) in the blue bags (under the sink). Glass and paper/cardboard: in the crates in the shelter. We take them to the recycling centre."
+     }
+    ]
+   },
+   {
+    "id": "regles",
+    "icon": "house",
+    "title": "House rules",
+    "items": [
+     {
+      "q": "Pets",
+      "a": "Pets are not allowed."
+     },
+     {
+      "q": "Smoking",
+      "a": "Non-smoking house. An ashtray is available on the terrace."
+     },
+     {
+      "q": "Quiet",
+      "a": "Izel is a peaceful village: please be considerate of the neighbours after 10 pm, especially in the garden."
+     },
+     {
+      "q": "Baby",
+      "a": "A cot is always available in the large bedroom. Please bring your own baby bedding."
+     }
+    ]
+   },
+   {
+    "id": "depart",
+    "icon": "door",
+    "title": "Departure",
+    "items": [
+     {
+      "q": "Check-out time",
+      "a": "Before 11 am. A late check-out is sometimes possible: just ask us."
+     },
+     {
+      "q": "Before you leave",
+      "a": "Start the dishwasher, gather the used sheets at the foot of the beds, put the bins out, check the stove is out, close the windows and put the key back in the key box. Cleaning is included!"
+     }
+    ]
+   },
+   {
+    "id": "urgences",
+    "icon": "phone",
+    "title": "Contacts and emergencies",
+    "items": [
+     {
+      "q": "Emergencies",
+      "a": "112 (ambulance, fire brigade) · 101 (police) · Poison Centre: 070 245 245"
+     },
+     {
+      "q": "Host",
+      "a": "Via Airbnb messaging (reply within an hour). In an emergency: the phone number is on the board by the entrance."
+     },
+     {
+      "q": "Duty pharmacy",
+      "a": "pharmacie.be, or 0903 99 000"
+     },
+     {
+      "q": "Doctor and hospital",
+      "a": "Medical centre in Florenville (10 min). Hospital: Vivalia, Clinique Sud-Luxembourg in Arlon (35 min) or CH de l'Ardenne in Libramont (40 min)."
+     },
+     {
+      "q": "Shops",
+      "a": "Bakery and convenience store in Jamoigne (5 min). Supermarkets in Florenville (10 min)."
+     }
+    ]
+   }
+  ]
+ },
+ "stories_en": [
+  {
+   "year": "2022",
+   "title": "Love at first sight",
+   "text": "Example — An ochre façade that stands out in the street, walls of local stone and a garden sloping down to the meadows: one visit on a spring morning was enough to know she was the one."
+  },
+  {
+   "year": "2023",
+   "title": "A year of renovation",
+   "text": "Example — Oak parquet sanded by hand, stonework uncovered in the living room, the attic bedroom clad entirely in wood… Every room tells of a family weekend of DIY."
+  },
+  {
+   "year": "Every winter",
+   "title": "Christmas at Belizel",
+   "text": "Example — Fairy lights on the façade, the stove purring away and the Boxing Day walk up to the Rocher du Hât: a tradition we love to share with our guests."
+  }
+ ]
+}

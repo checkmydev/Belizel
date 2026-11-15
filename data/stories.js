@@ -14,3 +14,23 @@ window.STORIES_NL = [
   { year: "2023", title: "Een jaar verbouwen", text: "Voorbeeld — Eiken parket met de hand geschuurd, stenen blootgelegd in de leefruimte, de zolderkamer volledig met hout bekleed… Elke kamer vertelt over een werfweekend met de familie." },
   { year: "Elke winter", title: "Kerstmis in Belizel", text: "Voorbeeld — De lichtslinger op de gevel, de kachel die zachtjes snort en de wandeling op 26 december naar de Rocher du Hât: een traditie die we graag met onze gasten delen." }
 ];
+
+// EN-BEGIN — version anglaise (générée par tools/build_i18n_en.py, alignée par index sur le français)
+window.STORIES_EN = [
+ {
+  "year": "2022",
+  "title": "Love at first sight",
+  "text": "Example — An ochre façade that stands out in the street, walls of local stone and a garden sloping down to the meadows: one visit on a spring morning was enough to know she was the one."
+ },
+ {
+  "year": "2023",
+  "title": "A year of renovation",
+  "text": "Example — Oak parquet sanded by hand, stonework uncovered in the living room, the attic bedroom clad entirely in wood… Every room tells of a family weekend of DIY."
+ },
+ {
+  "year": "Every winter",
+  "title": "Christmas at Belizel",
+  "text": "Example — Fairy lights on the façade, the stove purring away and the Boxing Day walk up to the Rocher du Hât: a tradition we love to share with our guests."
+ }
+];
+// EN-END

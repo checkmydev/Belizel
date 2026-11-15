@@ -1,0 +1,142 @@
+[
+ [
+  "(\\d+) voyageurs",
+  "g",
+  "$1 guests"
+ ],
+ [
+  "(\\d+) chambres",
+  "g",
+  "$1 bedrooms"
+ ],
+ [
+  "(\\d+) salles de bain",
+  "g",
+  "$1 bathrooms"
+ ],
+ [
+  "(\\d+) avis vérifiés sur Airbnb",
+  "g",
+  "$1 verified reviews on Airbnb"
+ ],
+ [
+  " · (\\d+) avis",
+  "g",
+  " · $1 reviews"
+ ],
+ [
+  "(\\d+) itinéraires?\\b",
+  "g",
+  "$1 routes"
+ ],
+ [
+  " min en voiture",
+  "g",
+  " min by car"
+ ],
+ [
+  "départ à ",
+  "g",
+  "start: "
+ ],
+ [
+  "vent (\\d+) km\\/h",
+  "g",
+  "wind $1 km/h"
+ ],
+ [
+  "° à Izel",
+  "g",
+  "° in Izel"
+ ],
+ [
+  "(\\d+) évén\\.",
+  "g",
+  "$1 events"
+ ],
+ [
+  "^Étape (\\d+) \\/ (\\d+)$",
+  "",
+  "Step $1 / $2"
+ ],
+ [
+  "^Jour (\\d+)$",
+  "",
+  "Day $1"
+ ],
+ [
+  "^(\\d+) jours?$",
+  "",
+  "$1 day(s)"
+ ],
+ [
+  "^Ingrédients \\((\\d+)\\)$",
+  "",
+  "Ingredients ($1)"
+ ],
+ [
+  "^Où \\? ",
+  "",
+  "Where? "
+ ],
+ [
+  "Balisage ",
+  "g",
+  "Waymarks "
+ ],
+ [
+  "^du (.+) au (.+)$",
+  "",
+  "from $1 to $2"
+ ],
+ [
+  "Le tracé passe à (.+) de la maison, soit environ (\\d+) min en voiture\\.",
+  "",
+  "The trail passes $1 from the house, about $2 min by car."
+ ],
+ [
+  "^: le tracé passe à (.+) de Belizel\\.",
+  "",
+  ": the trail passes $1 from Belizel."
+ ],
+ [
+  " Suivez le balisage ",
+  "",
+  " Follow the waymarks "
+ ],
+ [
+  " · départ à ",
+  "g",
+  " · start: "
+ ],
+ [
+  "(\\d+) balades? prêtes? : ouvrez le fichier avec Organic Maps",
+  "",
+  "$1 walk(s) ready: open the file with Organic Maps"
+ ],
+ [
+  "^Installer (.+)$",
+  "",
+  "Install $1"
+ ],
+ [
+  "(\\d+) km de montée",
+  "g",
+  "$1 km of climbing"
+ ],
+ [
+  " à l'abri",
+  "g",
+  " indoors"
+ ],
+ [
+  "(\\d+) itinéraires balisés",
+  "g",
+  "$1 waymarked routes"
+ ],
+ [
+  "peint sur les arbres et les poteaux\\.",
+  "",
+  "painted on trees and posts."
+ ]
+]

@@ -1,0 +1,401 @@
+{
+ "specialties": [
+  {
+   "name": "Orval Trappist beer",
+   "text": "Brewed at Orval Abbey, founded in 1132. Classic Orval is around 6.2% ABV. It is dry-hopped during maturation and bottle-conditioned with Brettanomyces yeast: a resinous nose, a firm bitterness and a dry, slightly “funky” finish. It keeps evolving in the cellar for years (notes of leather and ripe fruit after 1 to 2 years). Only one Orval is sold commercially.",
+   "where": "Orval Abbey shop (open daily, limit of 2 crates of 10 bottles per person), plus cafés and grocers throughout the region.",
+   "emoji": "🍺"
+  },
+  {
+   "name": "Orval Vert (« Petite Orval »)",
+   "text": "A lighter, rarer version of Orval that you can only drink at the À l'Ange Gardien tavern, opposite the abbey. The strength of around 4.5% comes from customer reviews and is still to be confirmed on site.",
+   "where": "À l'Ange Gardien, Route d'Orval 3, Villers-devant-Orval.",
+   "emoji": "🍻",
+   "confirmed": false
+  },
+  {
+   "name": "Orval cheese (fromage d'Orval)",
+   "text": "A Trappist cheese with a pressed, uncooked paste and a natural rind washed by hand, made on the abbey site since 1928. The recipe comes from the Trappist monks of Port-du-Salut (1816). The pasteurised whole cow's milk comes from farms in the Gaume. Supple, melting and creamy: the classic partner for an Orval as an aperitif.",
+   "where": "Orval Abbey shop and the À l'Ange Gardien tavern. Also at cheesemongers and grocers in the region.",
+   "emoji": "🧀"
+  },
+  {
+   "name": "Gaume pie (pâté gaumais) PGI",
+   "text": "Despite its name, it is a pie: at least 30% pork marinated in white wine (or vinegar) with onions, thyme and bay, in golden pastry. It is protected as a European PGI (Protected Geographical Indication): only pie made in the Gaume to a controlled specification may bear the name. It is eaten hot or cold, as a starter or a main course, and is best reheated in the oven.",
+   "where": "Salaisons G. Blaise (Place Albert Ier 4, Florenville) and butchers and delicatessens in the region. On the menu at Le Chameleux (Florenville).",
+   "emoji": "🥧"
+  },
+  {
+   "name": "Gaume sausage (saucisson gaumais) PGI (and “pipe gaumaise”)",
+   "text": "A fermented pork sausage, lightly smoked and dried, which became a European PGI in July 2024. It comes in four forms, including the “pipe” (a thin dry sausage), the “collier” and the “baudruche”. Some fifteen butchers and charcuteries in the Gaume make it. Perfect for an aperitif or a picnic on the banks of the Semois.",
+   "where": "Salaisons G. Blaise in Florenville and butchers in the Gaume (for example Boucherie Protin in Chiny, not verified).",
+   "emoji": "🥓"
+  },
+  {
+   "name": "Plate de Florenville PGI",
+   "text": "A waxy potato (Rosa variety) grown on the sandy, chalky soils of Florenville and neighbouring municipalities, with PGI status since 2015. Fine, melting flesh with a light nutty note. A late variety (about 120 days in the ground), it is best enjoyed from autumn into winter. Production is limited.",
+   "where": "From growers and grocers in Florenville. The Florenville Potato Festival (Fête de la pomme de terre) takes place every year on the 3rd weekend of October, with direct sales by the growers.",
+   "emoji": "🥔"
+  },
+  {
+   "name": "Touffaye (Gaume stew)",
+   "text": "A homely Gaume dish (the local name “touffaye” means roughly “stew”): potatoes and onions slowly braised in lard, with bacon, pork chops and sausages. It is served with its juices, a dandelion or frisée salad with vinaigrette, and poached or hard-boiled eggs. A proper winter dish.",
+   "where": "On the menus of Gaume bistros in the cold season, just ask. Easy to cook yourself at the holiday home (see the recipes).",
+   "emoji": "🍲"
+  },
+  {
+   "name": "Ardennes ham (jambon d'Ardenne) PGI",
+   "text": "Raw ham, dry-salted or brined, dried, often smoked and matured, for at least 33 weeks for bone-in ham. It has been recognised in Belgium since 1974 and as a European PGI since 1996. It is the great cured-meat speciality of southern Wallonia.",
+   "where": "Butchers and charcuteries in the region (including Florenville), thinly sliced, or as an Ardennes platter in restaurants.",
+   "emoji": "🍖"
+  },
+  {
+   "name": "River trout",
+   "text": "The trout is the emblem of Orval: according to legend, a trout brought back Countess Matilda's ring. In the inns of the Semois valley it is eaten à la meunière, pan-fried in butter. Note: no trout farm selling direct to the public was found on the Semois near Chiny, and most trout sold in Belgium is imported.",
+   "where": "Le Chameleux (Florenville), known for its trout meunière (about €20), and other inns in the valley.",
+   "emoji": "🐟",
+   "confirmed": false
+  },
+  {
+   "name": "Gaume craft beers (Gengoulf, La Clochette, Rulles)",
+   "text": "Around Orval, several microbreweries brew blond, amber, brown and tripel beers. Gengoulf (Villers-devant-Orval, since 2013) has won a gold medal and also makes an amber beer brewed with porcini (cep) mushrooms. La Clochette is in Étalle, and La Rulles, the best known, is in Rulles (Habay).",
+   "where": "Grocers and cafés in the Gaume, and sales at the brewery by arrangement (see the producers).",
+   "emoji": "🍺"
+  },
+  {
+   "name": "Torgny wine (Le Poirier du Loup)",
+   "text": "Torgny, the southernmost village in Belgium, has terraced vineyards thanks to the milder climate of the Gaume. The organic community vineyard of Le Poirier du Loup (about 1.6 ha, tended by some forty volunteers) produces around 5,000 bottles a year, mainly white sparkling wines and a rosé crémant, plus still wines and a ratafia.",
+   "where": "Tourist office near Torgny church, or a guided tour of the vineyard by appointment.",
+   "emoji": "🍷"
+  },
+  {
+   "name": "Deremiens chocolate (Jamoigne)",
+   "text": "An artisan chocolate maker and bean roaster based in Jamoigne, a few kilometres from Izel. François Deremiens works with grand cru cocoa and created Okabo, a blond chocolate with notes of caramel and biscuit. A lovely local gift to take home.",
+   "where": "Atelier Deremiens, Voie d'Orval 26, 6810 Jamoigne (opening hours not verified, call +32 61 50 29 79).",
+   "emoji": "🍫",
+   "confirmed": false
+  },
+  {
+   "name": "Autumn game",
+   "text": "Thanks to the forests of the Gaume and Herbeumont, autumn (October to December) is game season: venison and wild boar, often served with cranberries, pear and chicory. General information: no 2026 restaurant menu has been verified.",
+   "where": "Seasonal menus at restaurants in the region (Au Cœur de Lacuisine, Le Florentin, L'Épisode, Coprin…), to be checked when booking.",
+   "emoji": "🦌",
+   "confirmed": false
+  },
+  {
+   "name": "Semois tobacco (historic crop)",
+   "text": "Tobacco has been grown in the lower Semois valley since the 1850s (Joseph Pierret, Alle-sur-Semois), peaking in the 1930s. Wooden drying sheds can still be seen in Bohan, Laforêt and Corbion. The know-how has been recognised as intangible cultural heritage of the Wallonia-Brussels Federation since late 2024, but only three growers are thought to remain (2025).",
+   "where": "Tobacco Route (Route du Tabac, waymarked loops around Vresse-sur-Semois and Bouillon), 35-45 km from Izel. Strictly speaking, not a Gaume speciality.",
+   "emoji": "🍂"
+  }
+ ],
+ "recipes": [
+  {
+   "name": "Gaume touffaye (potato and bacon stew)",
+   "serves": "Serves 4",
+   "time": "30 min preparation and 3 hrs gentle cooking",
+   "ingredients": [
+    "1 kg waxy potatoes (ideally Plate de Florenville)",
+    "4 large onions, sliced",
+    "300 g smoked bacon in thick slices (or ham and bacon offcuts)",
+    "4 pork chops (spierling type, a Belgian pork shoulder chop)",
+    "4 sausages",
+    "2 tbsp lard (or butter)",
+    "1 sprig of thyme, 2 bay leaves, 2 garlic cloves, 2 cloves",
+    "Salt, pepper",
+    "To serve: dandelion or frisée salad with vinaigrette, 4 poached or hard-boiled eggs"
+   ],
+   "steps": [
+    "Melt the lard over a low heat in a casserole dish. Brown the bacon and the pork chops, then remove them.",
+    "Fry the onions in the fat until well browned, scraping up the sticky bits from the bottom.",
+    "Add the potatoes in chunks, the garlic, thyme, bay leaves and cloves. Add water to just cover, season lightly with salt and add pepper.",
+    "Simmer gently with the lid ajar for 2½ to 3 hours, until the potatoes can be crushed with a fork.",
+    "Return the bacon and chops to the pot 20 min before serving, then the sausages 10 min before.",
+    "Serve in shallow bowls with the juices, the dressed salad and the eggs. Drink a local beer or a light red wine with it."
+   ],
+   "story": "Touffaye, or “touffâye”, is the Gaume name for a stew: the dish that simmered all afternoon on the corner of the stove.",
+   "source": "RTBF (Vivacité), recette de Claude Peignois, bistrot Au Cœur de la Gaume (Ethe) : https://www.rtbf.be/article/la-recette-de-la-touffaye-au-coeur-de-la-gaume-10035235. La source ne donne pas de quantités : celles-ci sont une proposition."
+  },
+  {
+   "name": "Rustic Plate de Florenville potato tart",
+   "serves": "Serves 4",
+   "time": "20 min preparation, 1 hr resting and 40 min baking",
+   "ingredients": [
+    "175 g plain flour",
+    "115 g butter (Ardennes butter, Beurre d'Ardenne PDO) at room temperature",
+    "4 tsp cold water",
+    "1 tsp salt",
+    "2 to 3 Plate de Florenville potatoes",
+    "100 g cheese (Herve PDO in the recipe; Orval cheese works well too)",
+    "1 onion and 1 spring onion",
+    "1 tbsp olive oil",
+    "Fresh rosemary, salt, pepper"
+   ],
+   "steps": [
+    "Mix the butter, flour, water and salt into a ball. Wrap in cling film and chill for at least 1 hr.",
+    "Preheat the oven to 180 °C. Roll the pastry out into a disc of about 30 cm on baking paper.",
+    "Slice the potatoes thinly (3 mm) and arrange them on the pastry, leaving a 5 cm border. Season with salt and pepper, then add the onion rings and the cheese in pieces.",
+    "Fold the edges over the filling, drizzle with a little olive oil and bake for 30 to 40 min, until the tart is nicely golden.",
+    "Scatter over the spring onion and rosemary and serve straight away."
+   ],
+   "story": "Plate de Florenville is the Gaume's PGI potato, celebrated every autumn in Florenville.",
+   "source": "Elle Belgique, en collaboration avec l'Apaq-W : https://www.elle.be/fr/?p=346248. Remplacer le Herve par de l'Orval est notre suggestion."
+  },
+  {
+   "name": "Orval cheese toasts",
+   "serves": "Serves 4 (starter or light meal)",
+   "time": "15 min",
+   "ingredients": [
+    "8 slices of farmhouse bread",
+    "250 g Orval cheese, sliced",
+    "4 slices of Ardennes ham (optional)",
+    "A few spoonfuls of Orval (the beer) or milk",
+    "Pepper, green salad to serve"
+   ],
+   "steps": [
+    "Preheat the grill.",
+    "Lay the slices of bread on a baking tray and moisten them with a few drops of beer.",
+    "Add the ham if using, then cover generously with Orval cheese.",
+    "Put under the grill for 5 to 8 min, until the cheese melts and turns golden.",
+    "Season with pepper and serve with a green salad and an Orval."
+   ],
+   "story": "The abbey's two products, beer and cheese, brought together in a simple recipe for your first evening at the holiday home.",
+   "source": "Recette générique de croûte au fromage, adaptée aux produits locaux. Non tirée d'une source gaumaise.",
+   "confirmed": false
+  },
+  {
+   "name": "Trout meunière",
+   "serves": "Serves 2",
+   "time": "20 min",
+   "ingredients": [
+    "2 gutted trout (about 300 g each)",
+    "Flour",
+    "60 g butter",
+    "1 lemon",
+    "Chopped parsley, salt, pepper",
+    "Steamed potatoes (ideally Plate de Florenville)"
+   ],
+   "steps": [
+    "Season the trout inside and out with salt and pepper, then dust lightly with flour, tapping off the excess.",
+    "Heat half the butter in a large frying pan until foaming and cook the trout for 5 to 6 min on each side over a medium heat.",
+    "Keep them warm on a heated dish. Add the rest of the butter to the pan and let it turn nut-brown.",
+    "Pour the brown butter and a squeeze of lemon juice over the trout and sprinkle with parsley.",
+    "Serve with steamed potatoes."
+   ],
+   "story": "Trout meunière is the classic dish of the Semois inns, such as Le Chameleux, and the trout with the ring is the emblem of Orval.",
+   "source": "Recette classique de la cuisine française. Le lien avec la région vient de la carte du Chameleux (Le Fooding, 2024).",
+   "confirmed": false
+  }
+ ],
+ "producers": [
+  {
+   "name": "Orval Abbey: shop (beer, cheese, bread)",
+   "type": "brewery",
+   "town": "Villers-devant-Orval (Florenville)",
+   "lat": 49.6396,
+   "lng": 5.3486,
+   "text": "A Cistercian abbey with 12th-century ruins, museums and a medicinal herb garden. The shop sells Orval beer (maximum 2 crates of 10 bottles per person), Orval cheese and other products. The brewery can only be visited during the September open days, by registration.",
+   "url": "https://www.orval.be",
+   "hours": "Shop and historic site open every day of the year (exact times on orval.be). Tel. +32 61 31 10 60."
+  },
+  {
+   "name": "Brasserie Gengoulf",
+   "type": "brewery",
+   "town": "Villers-devant-Orval (Florenville)",
+   "lat": 49.6305,
+   "lng": 5.3205,
+   "text": "A microbrewery founded in 2013, 2 km from Orval, named after the village's patron saint. It brews a blond, an amber, a brown and a tripel, and has won a gold medal. Address: rue des Hawys 24.",
+   "url": "https://gengoulf.be",
+   "hours": "No fixed opening hours: contact the brewery on +32 494 18 14 45 (contact@gengoulf.be)."
+  },
+  {
+   "name": "Brasserie de la Clochette",
+   "type": "brewery",
+   "town": "Étalle",
+   "lat": 49.672,
+   "lng": 5.6,
+   "text": "A Gaume craft brewery making a blond, an amber, a tripel and seasonal beers. Address: rue de Virton 50. The site is accessible (Access-i label).",
+   "url": "https://brasseriedelaclochette.be",
+   "hours": "Not found: call +32 470 06 95 27.",
+   "confirmed": false
+  },
+  {
+   "name": "Brasserie artisanale de Rulles",
+   "type": "brewery",
+   "town": "Rulles (Habay)",
+   "lat": 49.717,
+   "lng": 5.56,
+   "text": "The best-known microbrewery in the Gaume, with beers exported abroad. Address: rue Maurice Grévisse 36. It runs guided tours with tastings on certain dates, and group visits by appointment.",
+   "url": "https://www.larulles.be",
+   "hours": "No regular opening hours found: call +32 63 41 18 38.",
+   "confirmed": false
+  },
+  {
+   "name": "Salaisons G. Blaise",
+   "type": "grocer",
+   "town": "Florenville",
+   "lat": 49.6993,
+   "lng": 5.3102,
+   "text": "A family charcuterie founded in 1910, recognisable by its shopfront with red Gothic lettering. Specialities: Gaume pie (pâté gaumais) PGI (about €17/kg), pipe gaumaise, dry sausages, beer pâté and regional cheeses. Address: Place Albert Ier 4.",
+   "url": "https://lefooding.com/commerces/salaisons-g-blaise",
+   "hours": "9 am-12 noon and 2-6 pm, Sunday from 10 am, closed Monday (according to Le Fooding, to be double-checked)."
+  },
+  {
+   "name": "Deremiens, chocolatier",
+   "type": "grocer",
+   "town": "Jamoigne (Chiny)",
+   "lat": 49.696,
+   "lng": 5.412,
+   "text": "An artisan chocolate workshop about 3 km from Izel, known for its grand cru chocolates and its Okabo blond chocolate. Address: Voie d'Orval 26.",
+   "url": "https://www.parismatch.be/i-like-belgium/2023/04/22/excellence-belge-deremiens-lalchimiste-des-grands-crus-de-chocolat-CZXCUFNTP5HVHMCN2IKQZXLQ2U/",
+   "hours": "Not verified: tel. +32 61 50 29 79.",
+   "confirmed": false
+  },
+  {
+   "name": "Le Poirier du Loup vineyard",
+   "type": "wine",
+   "town": "Torgny (Rouvroy)",
+   "lat": 49.509,
+   "lng": 5.474,
+   "text": "An organic community vineyard of about 1.6 ha, tended by some forty volunteers in Belgium's southernmost village. It produces sparkling wines, a rosé crémant, still wines and a ratafia. The cellar is on rue l'Ermitage, about 25 km from Izel.",
+   "url": "https://visitwallonia.com/en-gb/content/poirier-du-loup-vineyard",
+   "hours": "Sales at the tourist office near Torgny church. Guided tours by appointment."
+  },
+  {
+   "name": "Boucherie Protin",
+   "type": "grocer",
+   "town": "Chiny",
+   "lat": 49.7389,
+   "lng": 5.3417,
+   "text": "A butcher's in Chiny, listed by info-lux among the local food producers of the Gaume. Its address, products and opening hours have not been verified.",
+   "url": "https://www.info-lux.com/terroir-producteurs-province-luxembourg/",
+   "confirmed": false
+  }
+ ],
+ "restaurants": [
+  {
+   "name": "Au Cœur de Lacuisine",
+   "town": "Lacuisine (Florenville)",
+   "lat": 49.7141,
+   "lng": 5.3238,
+   "style": "Regional bistro cooking with Gaume produce, on the banks of the Semois",
+   "price": "€€",
+   "text": "The best value for money in the area: Michelin Bib Gourmand in 2024 and 2025 (a 2026 listing is reported) and 1 Radish from We're Smart in 2025. Seasonal cooking with plenty of vegetables, in a warm atmosphere. Booking recommended. Address: rue du Fond-des-Naux 7.",
+   "url": "https://www.aucoeurdelacuisine.be/"
+  },
+  {
+   "name": "L'Épisode",
+   "town": "Saint-Médard (Herbeumont)",
+   "lat": 49.795,
+   "lng": 5.33,
+   "style": "Modern French cuisine, surprise menu",
+   "price": "€€€",
+   "text": "Fine-dining restaurant of chef Jordan Boreux, who showcases local produce. Michelin Plate 2024-2025, 13.5/20 in Gault&Millau 2025, about 4.8/5 on Google. Address: Waillimont 2. Book by phone on +32 61 86 08 04.",
+   "url": "https://lepisode.be"
+  },
+  {
+   "name": "Coprin",
+   "town": "Straimont (Herbeumont)",
+   "lat": 49.787,
+   "lng": 5.387,
+   "style": "Seasonal “farm-to-table” cooking, wooden chalet in the forest",
+   "price": "€€€",
+   "text": "A restaurant in a wooden chalet in the forest. Michelin Plate 2024-2025, listed by Gault&Millau, about 5/5 on Google (nearly 280 reviews). Menus of 3 to 5 courses (about €55 to €85, to be checked), the same for the whole table. A car is essential. Address: rue du Mont 5.",
+   "url": "https://guide.michelin.com/en/be-luxembourg/straimont_1065991/restaurant/coprin"
+  },
+  {
+   "name": "Le Florentin",
+   "town": "Florenville",
+   "lat": 49.6995,
+   "lng": 5.3095,
+   "style": "Hotel-restaurant, traditional Belgian cooking and bistronomy",
+   "price": "€€",
+   "text": "A hotel in the Michelin selection, Place Albert Ier 58. The restaurant went up from 12 to 12.5/20 in Gault&Millau 2025. Tel. +32 61 31 11 23.",
+   "url": "https://guide.michelin.com/fr/fr/hotels-stays/florenville/le-florentin-hotel-restaurant-10659"
+  },
+  {
+   "name": "Hostellerie Sainte-Cécile",
+   "town": "Sainte-Cécile (Florenville)",
+   "lat": 49.727,
+   "lng": 5.245,
+   "style": "French cooking with fresh produce, family-run country inn",
+   "price": "€€€",
+   "text": "A family-run country inn (Relais du Silence) listed by Gault&Millau. The chef is said to be Frédéric Garnier (source: directory). Address: rue Neuve 1. Tel. +32 61 31 31 67. The restaurant's status in 2025-2026 has not been confirmed.",
+   "url": "https://www.info-lux.com/ou-manger-province-luxembourg/pays/belgique/wallonie/province-de-luxembourg/",
+   "confirmed": false
+  },
+  {
+   "name": "À l'Ange Gardien",
+   "town": "Orval (Villers-devant-Orval)",
+   "lat": 49.6405,
+   "lng": 5.347,
+   "style": "The abbey's tavern-restaurant",
+   "price": "€€",
+   "text": "The only place to drink Orval Vert. Orval cheese, bread and beer are also served here: a must after visiting the ruins. Off-season: 10.30 am-6.30 pm, closed Wednesday. Address: Route d'Orval 3. Tel. +32 61 31 18 86.",
+   "url": "https://www.orval.be/en/page/457-a-l-ange-gardien"
+  },
+  {
+   "name": "Le Chameleux",
+   "town": "Chamleux (Florenville)",
+   "lat": 49.668,
+   "lng": 5.33,
+   "style": "Roadside inn, traditional cooking",
+   "price": "€",
+   "text": "An institution since the 1960s, with its wood-panelled dining room in mountain-hut style. Le Fooding recommends the trout meunière, the omelette, the Gaume pie (pâté gaumais), the Orval cheese quiche and the dame blanche (vanilla ice cream with hot chocolate sauce). Menus from €16 to €35. Open 11 am-8.30 pm, closed Wednesday (and Tuesday from 15/5 to 15/9): 2024 opening hours.",
+   "url": "https://lefooding.com/restaurants/le-chameleux"
+  },
+  {
+   "name": "Le Moulin Cambier",
+   "town": "Chiny",
+   "lat": 49.7395,
+   "lng": 5.3365,
+   "style": "Bistro-brasserie in an old mill on the Semois",
+   "price": "€€",
+   "text": "An old mill on the Semois, in Chiny. The cooking is described as bistronomic and seasonal (carbonnade beef stew, beer-and-cheese meatballs), and it is rated about 4.3/5 on Google (over 400 reviews). The descriptions come from review aggregators and contradict each other (Petit Futé mentions Savoyard cuisine): to be checked.",
+   "url": "https://rankeat.fr/restaurants/le-moulin-cambier-chiny",
+   "confirmed": false
+  },
+  {
+   "name": "Le Tandem",
+   "town": "Chiny",
+   "lat": 49.7385,
+   "lng": 5.341,
+   "style": "Village restaurant, refined cooking and wine cellar",
+   "price": "€€",
+   "text": "Top of the review-aggregator rankings for Chiny, at about 4.5 to 4.7/5 (150 to 300 reviews). Guests mention a cosy dining room, good wines and a friendly welcome. The address and opening hours have not been verified.",
+   "url": "https://rankeat.fr/restaurants/le-tandem-chiny",
+   "confirmed": false
+  },
+  {
+   "name": "Hostellerie Les Comtes de Chiny",
+   "town": "Chiny",
+   "lat": 49.7392,
+   "lng": 5.342,
+   "style": "Logis hotel-restaurant, traditional cooking",
+   "price": "€€",
+   "text": "A Logis hotel-restaurant in the centre of Chiny, rated 9.7/10 by Logis. Lunch 12 noon-1.30 pm, dinner 6.30-8.30 pm.",
+   "url": "https://www.logishotels.com/en/restaurant/logis-hostellerie-comtes-de-chiny-254418"
+  },
+  {
+   "name": "Le Relais de Chassepierre",
+   "town": "Chassepierre (Florenville)",
+   "lat": 49.7088,
+   "lng": 5.265,
+   "style": "Family-run brasserie-restaurant with terrace",
+   "price": "€€",
+   "text": "A family-run brasserie with a terrace in the heart of Chassepierre, one of the Most Beautiful Villages of Wallonia. It stays open during the street arts festival (booking recommended). Address: rue Warlomont 7. No verified review score.",
+   "url": "https://rankeat.fr/restaurants/le-relais-de-chassepierre-florenville",
+   "confirmed": false
+  },
+  {
+   "name": "Frank Bar@Burgers",
+   "town": "Sainte-Marie-sur-Semois (Étalle)",
+   "lat": 49.67,
+   "lng": 5.545,
+   "style": "Homemade burgers (former village chip shop)",
+   "price": "€",
+   "text": "A village chip shop turned burger restaurant, with no fewer than 53 burgers on the menu. It has been listed in Gault&Millau (“Pop” category) since 2021 and is an info-lux favourite. A good relaxed option for families. About 12 km from Izel.",
+   "url": "https://www.info-lux.com/meilleurs-hamburgers-gaume-frank-etalle/"
+  }
+ ]
+}

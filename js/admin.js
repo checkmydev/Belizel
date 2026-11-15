@@ -40,7 +40,10 @@ const DB = {
     this.stories = s.data?.data || structuredClone(window.STORIES || []);
     const sn = await this.sb.from('content').select('data').eq('key','stories_nl').maybeSingle();
     this.storiesNl = sn.data?.data || structuredClone(window.STORIES_NL || []);
+    const se = await this.sb.from('content').select('data').eq('key','stories_en').maybeSingle();
+    this.storiesEn = se.data?.data || structuredClone(window.STORIES_EN || []);
     if(!this.manual.nl && window.MANUAL.nl) this.manual.nl = structuredClone(window.MANUAL.nl);
+    if(!this.manual.en && window.MANUAL.en) this.manual.en = structuredClone(window.MANUAL.en);
   },
   loadDemo(){
     const fd = window.FINANCE_DEMO || {bookings:[],expenses:[]};
@@ -50,7 +53,9 @@ const DB = {
     this.manual = store.get('adm.manual', null) || structuredClone(window.MANUAL);
     this.stories = store.get('adm.stories', null) || structuredClone(window.STORIES || []);
     this.storiesNl = store.get('adm.storiesNl', null) || structuredClone(window.STORIES_NL || []);
+    this.storiesEn = store.get('adm.storiesEn', null) || structuredClone(window.STORIES_EN || []);
     if(!this.manual.nl && window.MANUAL.nl) this.manual.nl = structuredClone(window.MANUAL.nl);
+    if(!this.manual.en && window.MANUAL.en) this.manual.en = structuredClone(window.MANUAL.en);
     this.guestCode = store.get('adm.gcode', 'IZEL2027');
   },
   key: r => r.id || r.uid,
@@ -81,7 +86,8 @@ const DB = {
       const a = await this.sb.from('manual').upsert({id:1, data:this.manual, guest_code:this.guestCode, updated_at:new Date().toISOString()}); if(a.error) throw a.error;
       const b = await this.sb.from('content').upsert({key:'stories', data:this.stories, updated_at:new Date().toISOString(), updated_by:this.email}); if(b.error) throw b.error;
       const c = await this.sb.from('content').upsert({key:'stories_nl', data:this.storiesNl.map(x => ({year:x.year, title:x.title, text:x.text})), updated_at:new Date().toISOString(), updated_by:this.email}); if(c.error) throw c.error;
-    } else { store.set('adm.manual', this.manual); store.set('adm.stories', this.stories); store.set('adm.storiesNl', this.storiesNl); store.set('adm.gcode', this.guestCode); }
+      const d = await this.sb.from('content').upsert({key:'stories_en', data:this.storiesEn.map(x => ({year:x.year, title:x.title, text:x.text})), updated_at:new Date().toISOString(), updated_by:this.email}); if(d.error) throw d.error;
+    } else { store.set('adm.manual', this.manual); store.set('adm.stories', this.stories); store.set('adm.storiesNl', this.storiesNl); store.set('adm.storiesEn', this.storiesEn); store.set('adm.gcode', this.guestCode); }
   },
   persist(){ if(this.mode==='demo'){ store.set('adm.bookings', this.bookings); store.set('adm.expenses', this.expenses); } }
 };
@@ -461,8 +467,8 @@ function renderContent(){
 }
 function dirty(){ $('#saveState').textContent = 'Modifications non enregistrées'; }
 let edLang = 'fr';
-const curMan = () => edLang === 'nl' ? (DB.manual.nl = DB.manual.nl || {sections: structuredClone(DB.manual.sections)}) : DB.manual;
-const curStories = () => edLang === 'nl' ? DB.storiesNl : DB.stories;
+const curMan = () => edLang === 'fr' ? DB.manual : (DB.manual[edLang] = DB.manual[edLang] || {sections: structuredClone(DB.manual.sections)});
+const curStories = () => edLang === 'nl' ? DB.storiesNl : edLang === 'en' ? DB.storiesEn : DB.stories;
 function drawManEd(){
   const M = curMan();
   $('#manEd').innerHTML = (DB.manual.demo?'<div class="banner">Contenu d\'exemple : relisez chaque réponse avec le propriétaire avant d\'activer le code invité.</div>':'') + M.sections.map((s,si) => `<div class="edsec"><h4>${icon(s.icon)} <input class="field" data-st="${si}" value="${esc(s.title)}" style="flex:1;border-radius:10px"></h4>
@@ -479,7 +485,7 @@ document.addEventListener('click', e => { const M = DB.manual ? curMan() : null;
   if(t.dataset.addq){ M.sections[+t.dataset.addq].items.push({q:'Nouvelle question', a:'[Réponse]'}); drawManEd(); dirty(); }
   if(t.dataset.rs){ curStories().splice(+t.dataset.rs,1); drawStories(); dirty(); } });
 function drawStories(){
-  const SL = curStories(); if(edLang==='nl') SL.forEach((x,i) => { if(!x.photo && DB.stories[i]) x.photo = DB.stories[i].photo; });
+  const SL = curStories(); if(edLang!=='fr') SL.forEach((x,i) => { if(!x.photo && DB.stories[i]) x.photo = DB.stories[i].photo; });
   $('#storyEd').innerHTML = SL.map((s,i) => `<div class="edsec">${s.demo?'<span class="demo" style="font-size:.7rem;background:#fff3cd;padding:2px 6px;border-radius:6px;font-weight:800">EXEMPLE</span>':''}
     <div class="edrow" style="grid-template-columns:110px 1fr 30px"><input class="field" data-sf="${i}.year" value="${esc(s.year)}" placeholder="Année"><input class="field" data-sf="${i}.title" value="${esc(s.title)}"><button class="mini" data-rs="${i}" style="border:0;background:none">✕</button></div>
     <textarea class="field area" data-sf="${i}.text" rows="3">${esc(s.text)}</textarea><input class="field" data-sf="${i}.photo" value="${esc(s.photo||'')}" placeholder="Photo (ex. img/p04.jpg)" style="border-radius:10px;width:100%"></div>`).join('');

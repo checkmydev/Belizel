@@ -77,3 +77,109 @@ window.LISTING.nl = {
   amenities: ["Wifi","Werkplek","Houtkachel","Centrale verwarming","Uitgeruste keuken","Vaatwasser","Wasmachine","Oven","Microgolfoven","Diepvriezer","Koffiezetapparaat","Waterkoker","Barbecue","Tuinmeubilair","Ligstoelen","Zicht op de tuin","Bad","Babybedje","Kinderboeken en speelgoed","Gezelschapsspellen","Bluetooth-luidspreker JBL","Mobiele airco","Gratis parking ter plaatse","Verduisterende gordijnen","Bedlinnen","Extra kussens en dekens","EHBO-kit","Rook- en CO-melders","Brandblusser","Lange verblijven"],
   gallery: ["Het huis aan de tuinkant","De tuin in de lente","Het stenen terras","De leefruimte met streekstenen","De grote eiken tafel","De uitgeruste keuken","De kamer onder het dak","De groene kamer","De kamer op de eerste verdieping","Ochtendlicht","De werkplek onder het dak","De badkamer","De douchekamer","Achtergevel en terras","De okerkleurige gevel, straatkant","Kerstmis in Belizel","De meanders van de Semois","De Semois in de lente","Herfstkleuren","Winterlicht op de rivier","De vallei onder de sneeuw"]
 };
+
+// EN-BEGIN — version anglaise (générée par tools/build_i18n_en.py, alignée par index sur le français)
+window.LISTING.en = {
+ "tagline": "In the heart of Gaume",
+ "intro": "A Gaume house with ochre walls, tucked away in the little village of Izel. Here, life follows the rhythm of the Semois: forests as far as the eye can see, a winding river, Orval Abbey a few minutes away and a wood fire once evening falls.",
+ "highlights": [
+  {
+   "title": "Wood stove",
+   "text": "Cosy living room with oak parquet and exposed local stone."
+  },
+  {
+   "title": "Garden & terrace",
+   "text": "Sun loungers, parasols, garden table and barbecue overlooking the greenery."
+  },
+  {
+   "title": "3 large bedrooms",
+   "text": "Including an all-wood attic bedroom with a king-size bed."
+  },
+  {
+   "title": "Families welcome",
+   "text": "Cot, children's books and toys, board games."
+  },
+  {
+   "title": "Remote working possible",
+   "text": "Wifi and a dedicated workspace under the eaves."
+  },
+  {
+   "title": "In the heart of Gaume",
+   "text": "Orval, Chiny, Chassepierre and Florenville less than 10 km away."
+  }
+ ],
+ "rooms": [
+  {
+   "name": "Large attic bedroom",
+   "beds": "1 king-size bed · 1 single bed · cot"
+  },
+  {
+   "name": "First-floor bedroom",
+   "beds": "1 queen-size bed"
+  },
+  {
+   "name": "Green bedroom",
+   "beds": "1 queen-size bed · 1 single bed"
+  },
+  {
+   "name": "Living room",
+   "beds": "1 sofa bed"
+  }
+ ],
+ "amenities": [
+  "Wifi",
+  "Workspace",
+  "Wood stove",
+  "Central heating",
+  "Equipped kitchen",
+  "Dishwasher",
+  "Washing machine",
+  "Oven",
+  "Microwave",
+  "Freezer",
+  "Coffee maker",
+  "Kettle",
+  "Barbecue",
+  "Outdoor furniture",
+  "Sun loungers",
+  "Garden view",
+  "Bath",
+  "Cot",
+  "Children's books and toys",
+  "Board games",
+  "JBL Bluetooth speaker",
+  "Portable air conditioner",
+  "Free parking on site",
+  "Blackout blinds",
+  "Bed linen",
+  "Extra pillows and blankets",
+  "First aid kit",
+  "Smoke & CO alarms",
+  "Fire extinguisher",
+  "Long stays"
+ ],
+ "gallery": [
+  "The house from the garden",
+  "The garden in spring",
+  "The stone terrace",
+  "The living room and its local stone",
+  "The large oak table",
+  "The equipped kitchen",
+  "The attic bedroom",
+  "The green bedroom",
+  "The first-floor bedroom",
+  "Morning light",
+  "The workspace under the eaves",
+  "The bathroom",
+  "The shower room",
+  "Rear façade and terrace",
+  "The ochre façade, street side",
+  "Christmas at Belizel",
+  "The meanders of the Semois",
+  "The Semois in spring",
+  "Autumn colours",
+  "Winter light on the river",
+  "The valley under snow"
+ ]
+};
+// EN-END

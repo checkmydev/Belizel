@@ -1,12 +1,12 @@
 /* Belizel — guide voyageurs en FR / NL / EN.
-   Langue : ?lang=fr|nl|en, sinon choix mémorisé, sinon langue du navigateur.
+   Langue : ?lang=fr|nl|en, sinon choix mémorisé, sinon français.
    L'interface est traduite à la volée (dictionnaire FR→NL appliqué aux textes du DOM, y compris rendus dynamiquement) ;
    les contenus (événements, histoire, terroir…) ont leur propre version néerlandaise (data/content.nl.js). */
 (function(){
 const q = new URLSearchParams(location.search).get('lang');
 let saved = null; try{ saved = localStorage.getItem('belizel.lang'); }catch(e){}
-const OK = ['fr','nl','en'], nav = (navigator.language||'').toLowerCase().slice(0,2);
-const LANG = OK.includes(q) ? q : (OK.includes(saved) ? saved : (nav === 'nl' ? 'nl' : nav === 'fr' ? 'fr' : 'en'));
+const OK = ['fr','nl','en'];
+const LANG = OK.includes(q) ? q : (OK.includes(saved) ? saved : 'fr');   // français par défaut
 try{ if(q) localStorage.setItem('belizel.lang', q); }catch(e){}
 window.LANG = LANG; window.LOCALE = {nl:'nl-BE', en:'en-GB'}[LANG] || 'fr-BE';
 document.documentElement.lang = LANG;

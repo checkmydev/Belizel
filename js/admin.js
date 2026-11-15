@@ -119,6 +119,7 @@ $('#tabs').onclick = e => { const a = e.target.closest('a'); if(a) go(a.dataset.
 $('#menuBtn').onclick = () => $('#side').classList.toggle('open');
 function openDrawer(title, html){ $('#dTitle').innerHTML = title; $('#dBody').innerHTML = html; $('#drawer').classList.add('on'); $('#drawerBg').classList.add('on'); }
 function closeDrawer(){ $('#drawer').classList.remove('on'); $('#drawerBg').classList.remove('on'); }
+Back.watch($('#drawer'), closeDrawer);
 $('#dClose').onclick = closeDrawer; $('#drawerBg').onclick = closeDrawer;
 
 /* ================= Concurrence : préparation ================= */

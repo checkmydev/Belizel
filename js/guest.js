@@ -220,6 +220,7 @@ $('#hikes').onclick = e => { const c = e.target.closest('.hike'); if(c && !e.tar
 let dMap;
 function openDrawer(title, html){ $('#dTitle').innerHTML = title; $('#dBody').innerHTML = html; $('#drawer').classList.add('on'); $('#drawerBg').classList.add('on'); document.body.style.overflow='hidden'; }
 function closeDrawer(){ $('#drawer').classList.remove('on'); $('#drawerBg').classList.remove('on'); document.body.style.overflow=''; if(dMap){ dMap.remove(); dMap = null; } }
+Back.watch($('#drawer'), closeDrawer); Back.watch($('#moreSheet')); Back.watch($('#lightbox')); Back.watch($('#welcome'));
 $('#dClose').onclick = closeDrawer; $('#drawerBg').onclick = closeDrawer; addEventListener('keydown', e => { if(e.key==='Escape') closeDrawer(); });
 
 function nearbyAlong(h){

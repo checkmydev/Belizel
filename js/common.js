@@ -185,3 +185,24 @@ window.revealAll = () => {
   $$('.reveal:not(.in)').forEach(el => io.observe(el));
 };
 })();
+
+/* ---------- Bouton « retour » (Android, navigateur) : ferme la fenêtre ouverte au lieu de quitter la page ---------- */
+const Back = (() => {
+  const open = [], pending = [];      // fenêtres ouvertes ; retours d'historique lancés par nous-mêmes
+  addEventListener('popstate', () => {
+    if(pending.length){ const cb = pending.shift(); if(cb) cb(); return; }
+    const o = open.pop(); if(o) o.close();
+  });
+  // un lien interne cliqué au moment où une fenêtre se ferme : on navigue après le retour d'historique
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a[href^="#"]'); if(!a || e.defaultPrevented || !pending.length) return;
+    const h = a.getAttribute('href'); if(h.length < 2) return;
+    e.preventDefault(); pending[pending.length-1] = () => { const t = document.querySelector(h);
+      if(location.hash === h){ if(t) t.scrollIntoView({behavior:'smooth'}); } else location.hash = h; };
+  });
+  return { watch(el, close){ if(!el) return; const o = {close: close || (() => el.classList.remove('on'))};
+    new MutationObserver(() => { const on = el.classList.contains('on'), i = open.indexOf(o);
+      if(on && i < 0){ open.push(o); history.pushState({overlay: true}, ''); }
+      else if(!on && i >= 0){ open.splice(i, 1); pending.push(null); history.back(); }
+    }).observe(el, {attributes: true, attributeFilter: ['class']}); } };
+})();

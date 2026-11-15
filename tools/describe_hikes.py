@@ -146,15 +146,15 @@ for h in hikes:
         nl.append(("Onderweg komt u door " + join(v, 'en')) + ('.' if len(villages) <= 4 else ', onder meer.'))
     else:
         fr.append("Aucun village sur le trajet : calme et nature garantis."); nl.append("Geen dorpen onderweg: rust en natuur gegarandeerd.")
+    art = lambda x: ('la ' + x) if x in ('Semois', 'Vierre', 'Rulles', 'Chiers', 'Marche', 'Breuvanne') else (('le ' + x[0].lower() + x[1:]) if x.lower().startswith(('ruisseau', 'rau')) else ('le ' + x))
     long_r = [(nm, km) for nm, km in riv if km >= 0.4]
     short_r = [nm for nm, km in riv if km < 0.4]
     if long_r:
         nm, km = long_r[0]
-        art = lambda x: ('la ' + x) if x in ('Semois', 'Vierre', 'Rulles', 'Chiers', 'Marche') else (('le ' + x[0].lower() + x[1:]) if x.lower().startswith(('ruisseau', 'rau')) else ('le ' + x))
         fr.append(f"On longe {art(nm)} sur environ {fmt(km)} km" + (f", puis {join([art(x) for x, _ in long_r[1:3]], 'et')}" if len(long_r) > 1 else '') + '.')
         nl.append(f"De route volgt de {nm} over ongeveer {fmt(km)} km" + (f", en ook de {join([x for x, _ in long_r[1:3]], 'en')}" if len(long_r) > 1 else '') + '.')
     elif short_r:
-        fr.append(f"On franchit {join(short_r[:2], 'et')}."); nl.append(f"De route steekt de {join(short_r[:2], 'en')} over.")
+        fr.append(f"On franchit {join([art(x) for x in short_r[:2]], 'et')}."); nl.append(f"De route steekt de {join(short_r[:2], 'en')} over.")
     up = h['up']; ratio = up / max(h['km'], .1)
     if ratio < 12: fr.append(f"Peu de dénivelé (+{up} m) : idéal en famille."); nl.append(f"Weinig hoogteverschil (+{up} m): ideaal voor gezinnen.")
     elif ratio < 25: fr.append(f"Quelques montées (+{up} m au total)."); nl.append(f"Enkele hellingen (+{up} m in totaal).")

@@ -3,6 +3,8 @@ Altitudes : OpenTopoData, EU-DEM 25 m. Tracés : © contributeurs OpenStreetMap 
 Usage : python tools/build_hikes.py geom.json
 """
 import json, math, sys, os, time, urllib.request, urllib.parse
+sys.path.insert(0, os.path.dirname(__file__))
+from route_graph import route_line
 HOUSE = (49.6913, 5.3794)
 OUT = os.path.join(os.path.dirname(__file__), '..', 'data', 'hikes.js')
 
@@ -70,8 +72,8 @@ def main(src):
     hikes = []
     for rel in data['elements']:
         t = rel.get('tags', {})
-        ways = [[(g['lat'], g['lon']) for g in m['geometry']] for m in rel.get('members', []) if m.get('type') == 'way' and m.get('geometry')]
-        line = chain(ways)
+        members = [(m.get('role', ''), [(g['lat'], g['lon']) for g in m['geometry']]) for m in rel.get('members', []) if m.get('type') == 'way' and m.get('geometry')]
+        line = route_line(members)   # graphe des chemins : ordre réel, allers-retours, sans variantes ni accès
         if len(line) < 2: continue
         L = sum(dist(line[i], line[i+1]) for i in range(len(line)-1)) / 1000
         kind = 'velo' if t.get('route') in ('bicycle', 'mtb') else 'pied'
